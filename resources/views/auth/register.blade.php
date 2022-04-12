@@ -102,6 +102,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Seleziona la tua specializzazione') }}</label>
+                            <div class="col-md-6">
+                                <select name="specialization" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option selected>Seleziona</option>
+                                    @foreach ($type as $element)
+                                    <option value="{{ $element->id }}" @if (old('element_id')=== $element->id) selected @endIf>
+                                        {{ $element->specialization }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
