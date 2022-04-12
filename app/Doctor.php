@@ -50,4 +50,11 @@ class Doctor extends Authenticatable
         return $this->belongsToMany('App\Specialization');
     }
 
+    public function message() {
+        return $this->hasMany('App\Message');
+    }
+
+    public function review() {
+        return $this->hasMany('App\Review');
+    }
 }
