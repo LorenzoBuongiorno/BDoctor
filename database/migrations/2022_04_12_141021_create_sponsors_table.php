@@ -19,7 +19,7 @@ class CreateSponsorsTable extends Migration
 
             $table->char('name', 50);
             $table->decimal('cost', 5, 2);
-            $table->timestamp('period');
+            $table->integer('period');
         });
     }
 

@@ -15,7 +15,7 @@ class CreateDoctorSponsorTable extends Migration
     {
         Schema::create('doctor_sponsor', function (Blueprint $table) {
             $table->id();
-            $table->timestamps('startDate');
+            $table->timestamps();
 
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
