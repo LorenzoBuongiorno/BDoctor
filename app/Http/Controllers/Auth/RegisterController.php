@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Specialization;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Doctor;
@@ -52,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
-            'address' => ['required', 'string', 'max:255'],
+            'specialization' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -67,13 +68,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $type = Specialization::all();
+
         return Doctor::create([
             'name' => $data['name'],
             'surname' => $data['name'],
-            'address' => $data['address'],
+            'address' => $data['specialization'],
             'city' => $data['city'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
 }
