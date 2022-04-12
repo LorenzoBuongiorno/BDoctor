@@ -68,7 +68,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $type = Specialization::all();
 
         return Doctor::create([
             'name' => $data['name'],
