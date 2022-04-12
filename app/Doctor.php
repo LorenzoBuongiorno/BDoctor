@@ -57,4 +57,8 @@ class Doctor extends Authenticatable
     public function review() {
         return $this->hasMany('App\Review');
     }
+
+    public function sponsor() {
+        return $this->belongsToMany('App\Sponsor');
+    }
 }

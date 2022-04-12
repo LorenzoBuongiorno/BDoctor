@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Specialization extends Model
+class Sponsor extends Model
 {
-    //
-    public function doctor(){
+    // relazioni
+    public function doctor() {
         return $this->belongsToMany('App\Doctor');
     }
 }
