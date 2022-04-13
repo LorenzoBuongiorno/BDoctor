@@ -72,7 +72,7 @@
                                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('choose your specialization') }}</label>
                                 <div class="col-md-6">
                                     <select name="specialization" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                        <option selected>{{$doctor->specialization}}</option>
+                                        <option selected>Choose different Specialization</option>
                                         @foreach ($type as $element)
                                         <option value="{{ $element->id }}" @if (old('element_id')=== $element->id) selected @endIf>
                                             {{ $element->specialization }}
