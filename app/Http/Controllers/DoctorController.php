@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Doctor;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $doctor = Doctor::all();
+        return view('doctors.index', compact('doctor'));
     }
 
     /**
@@ -55,9 +57,14 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doctor $doctor)
+    public function edit(Doctor $doctor, $id)
     {
-        //
+        $user_id= Auth::user()->id;
+        $doctorList = Doctor::all();
+        if($user_id == $doctorList->id){
+            $doctor = $doctorList->id;
+        }
+        return view('doctors.edit', ['doctors' => $doctor]);
     }
 
     /**
@@ -68,8 +75,10 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Doctor $doctor)
-    {
-        //
+    { 
+        $data = $request->all();
+        $doctor->update($data);
+        return redirect()->route('doctors.show', $doctor->id);
     }
 
     /**
