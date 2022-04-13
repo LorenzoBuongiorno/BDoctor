@@ -1,3 +1,7 @@
+*{
+  font-family: 'Roboto', Courier, monospace;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
@@ -5104,6 +5108,10 @@ fieldset:disabled .btn {
   color: #fff;
 }
 
+.container{
+  
+}
+
 .card {
   position: relative;
   display: flex;
@@ -5113,6 +5121,7 @@ fieldset:disabled .btn {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.25rem;
 }
 
