@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Doctor;
+use App\Specialization;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -80,9 +81,10 @@ class DoctorController extends Controller
         /* end of versione 2 */
 
         $doctor = Auth::user();
+        $type = Specialization::all();
         
         return view('doctors.edit',
-        compact('doctor')
+        compact('doctor', 'type')
         //  ['doctors' => $doctor]
         );
     }
