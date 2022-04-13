@@ -1,9 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>ciaoooo</h1>
-    @foreach ($doctors as $item => $value)
-        {{$value->id}}
-    @endforeach
-    {{-- @dd($doctors) --}}
+
+    
+    <h1> doctor.edit </h1>
+
+    <h3>{{$doctor->name}} {{ $doctor->surname }}</h3>
+    <h4>id: {{$doctor->id}}</h4>
+
+    @dd($doctor)
+    
+    
 @endsection

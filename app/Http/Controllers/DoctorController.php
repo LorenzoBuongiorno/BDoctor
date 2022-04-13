@@ -15,8 +15,10 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $doctor = Doctor::all();
-        return view('doctors.index', compact('doctor'));
+        $data = Doctor::all();
+
+        
+        return view('doctors.index', compact('data'));
     }
 
     /**
@@ -57,14 +59,32 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doctor $doctor, $id)
+    public function edit()
     {
-        $user_id= Auth::user()->id;
-        $doctorList = Doctor::all();
-        if($user_id == $doctorList->id){
-            $doctor = $doctorList->id;
-        }
-        return view('doctors.edit', ['doctors' => $doctor]);
+        // $user_id = Auth::user()->id;
+
+        // $doctorList = Doctor::all();
+        // if($user_id == $doctorList->id){
+        //     $doctor = $doctorList->id;
+        // }
+
+        /* versione 2 */
+        // $user_id = Doctor::where('id', $id);
+
+        // $doctor = Doctor::where('id', $user_id);
+
+        // $doctor = [
+        //     'name' => 'marco',
+        //     'surname' => 'giammarco'
+        // ];
+        /* end of versione 2 */
+
+        $doctor = Auth::user();
+        
+        return view('doctors.edit',
+        compact('doctor')
+        //  ['doctors' => $doctor]
+        );
     }
 
     /**

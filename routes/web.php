@@ -22,8 +22,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'DoctorController@index')->name('doctors.index');
-Route::get('/profile', 'DoctorController@edit')->name('doctors.edit');
+Route::get('/profile/index', 'DoctorController@index')->name('doctors.index');
+Route::get('/profile/edit', 'DoctorController@edit')->name('doctors.edit');
 
 
 
