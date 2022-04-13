@@ -98,9 +98,25 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     { 
-        $data = $request->all();
-        $doctor->update($data);
-        return redirect()->route('doctors.show', $doctor->id);
+        $data = $request->validate([
+            "name" => "required",
+            "surname" => "required",
+            "city" => "required",
+            "photo" => "nullable|image",
+            "number" => "nullable",
+            "curriculum" => "nullable",
+            "medicalService" => "nullable"
+          ]);
+
+          $doctor->update($data);
+
+          $doctor->save();
+
+          return redirect()->route("doctors.index");
+
+        // $data = $request->all();
+        // $doctor->update($data);
+        // return redirect()->route('doctors.show', $doctor->id);
     }
 
     /**

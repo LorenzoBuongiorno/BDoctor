@@ -2,6 +2,9 @@
 
 @section('content')
 
+<Form action="{{ route('doctors.update', $doctor->id) }}" method="post" enctype="multipart/form-data">
+    @csrf
+    @method("POST")
 
     <div class="container">
         <div class="row justify-content-center">
@@ -86,7 +89,7 @@
                                 <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('photo') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="photo" type="text" value="{{$doctor->photo}}" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" required autocomplete="photo" autofocus>
+                                    <input id="photo" type="text" value="{{$doctor->photo}}" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" autocomplete="photo" autofocus>
     
                                     @error('photo')
                                         <span class="invalid-feedback" role="alert">
@@ -100,7 +103,7 @@
                                 <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('number') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="number" type="text" value="{{$doctor->number}}" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="number" autofocus>
+                                    <input id="number" type="text" value="{{$doctor->number}}" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" autocomplete="number" autofocus>
     
                                     @error('number')
                                         <span class="invalid-feedback" role="alert">
@@ -114,7 +117,7 @@
                                 <label for="medicalService" class="col-md-4 col-form-label text-md-right">{{ __('medicalService') }}</label>
                                 
                                 <div class="col-md-6">
-                                    <input id="medicalService" type="text" value="{{$doctor->number}}" class="form-control @error('medicalService') is-invalid @enderror" name="medicalService" value="{{ old('medicalService') }}" required autocomplete="medicalService" autofocus>
+                                    <input id="medicalService" type="text" value="{{$doctor->number}}" class="form-control @error('medicalService') is-invalid @enderror" name="medicalService" value="{{ old('medicalService') }}" autocomplete="medicalService" autofocus>
                                     
                                     @error('medicalService')
                                         <span class="invalid-feedback" role="alert">
@@ -130,7 +133,7 @@
                                     <div class="col-md-6">
                                         <textarea name="curriculum" rows="8" value="{{$doctor->curriculum}}" class="form-control dark-theme 
                                             @error('curriculum') is-invalid @enderror"
-                                            placeholder="Inizia a scrivere qualcosa..." required>
+                                            placeholder="Inizia a scrivere qualcosa...">
                                             {{ old('curriculum') }}
                                         </textarea>          
                                         @error('curriculum')
@@ -154,6 +157,6 @@
             </div>
         </div>
     </div>
-
+</Form>
 
 @endsection
