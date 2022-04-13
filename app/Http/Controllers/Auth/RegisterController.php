@@ -79,4 +79,15 @@ class RegisterController extends Controller
         ]);
 
     }
+
+        /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        $type = Specialization::all();
+        return view('auth.register', compact('type'));
+    }
 }
