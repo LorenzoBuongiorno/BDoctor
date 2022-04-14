@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 /* rotta prima pagina home */
 Route::get('/', function () {
-    return view('welcome');
+    return view('homeVue');
 });
 
 
