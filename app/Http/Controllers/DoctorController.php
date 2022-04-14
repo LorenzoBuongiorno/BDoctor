@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Doctor;
+use App\Specialization;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -14,7 +16,10 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $data = Doctor::all();
+
+        
+        return view('doctors.index', compact('data'));
     }
 
     /**
@@ -46,7 +51,8 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        $profile = Doctor::where("doctor", $doctor);
+        return view('doctors.show', compact('profile'));
     }
 
     /**
@@ -55,9 +61,33 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Doctor $doctor)
+    public function edit()
     {
-        //
+        // $user_id = Auth::user()->id;
+
+        // $doctorList = Doctor::all();
+        // if($user_id == $doctorList->id){
+        //     $doctor = $doctorList->id;
+        // }
+
+        /* versione 2 */
+        // $user_id = Doctor::where('id', $id);
+
+        // $doctor = Doctor::where('id', $user_id);
+
+        // $doctor = [
+        //     'name' => 'marco',
+        //     'surname' => 'giammarco'
+        // ];
+        /* end of versione 2 */
+
+        $doctor = Auth::user();
+        $type = Specialization::all();
+        
+        return view('doctors.edit',
+        compact('doctor', 'type')
+        //  ['doctors' => $doctor]
+        );
     }
 
     /**
@@ -68,8 +98,26 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Doctor $doctor)
-    {
-        //
+    { 
+        $data = $request->validate([
+            "name" => "required",
+            "surname" => "required",
+            "city" => "required",
+            "photo" => "nullable|image",
+            "number" => "nullable",
+            "curriculum" => "nullable",
+            "medicalService" => "nullable"
+          ]);
+
+          $doctor->update($data);
+
+          $doctor->save();
+
+          return redirect()->route("doctors.index");
+
+        // $data = $request->all();
+        // $doctor->update($data);
+        // return redirect()->route('doctors.show', $doctor->id);
     }
 
     /**
