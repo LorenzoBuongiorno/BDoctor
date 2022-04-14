@@ -3,8 +3,9 @@
         <div class="jumbotron">
 
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container">
-                    <a class="navbar-brand" href="/">BDoctor.it</a>
+
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BDoctor.it</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -22,24 +23,11 @@
                 </div>
             </nav>
 
-            <div class="col-6 p-lg-5 mx-auto my-5">
-                <div class="d-flex flex-column align-items-center">
-
-                    <p class="lead fw-normal text-white">Trova lo specialista che fa per te</p>
-                    <h1 class="display-6 fw-normal text-white">Prenota la tua visita</h1>
-                    <form method="get" action="/" class="form-inline d-flex" >
-                                <input name="q" class="span5" type="text"  placeholder="Cardiologo" >
-                                <input name="loc" class="span5" type="text"  placeholder="Roma">
-                                <button type="submit" class="btn orange">Cerca</button>
-                    </form>
-                </div>
-                
-            </div>
-
         </div>
-        <!-- end of jumbotron -->
 
     </div>
+    
+    
 </template>
 
 <script>
@@ -49,21 +37,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .home-container {
     
     .jumbotron {
         height: 100vh;
-        width: 100%;
         background-color: #3a6ea5;
+        nav {
 
-        .btn.orange {
+            .nav-item.orange {
                 background-color:#ff6700;
                 border-radius: 8px;
-                color: whitesmoke;
+            }   
         }
-
-       
     }
     
 

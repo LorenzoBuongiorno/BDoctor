@@ -1,16 +1,17 @@
 <template>
-    <div class="container">
-        <h1>ciao</h1>
-        <h3>come mai non si vede</h3>
-
-        <router-view></router-view>
-    </div>
+        
+    <router-view></router-view>
+    
 </template>
 
 <script>
+import TheNavbar from '../components/TheNavbar.vue'
 import router from '../router'
 
 export default {
+  components: { 
+      TheNavbar,
+    },
     
 }
 </script>
