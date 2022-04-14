@@ -1,0 +1,25 @@
+* {
+    font-family: 'Roboto', 'sans-serif';
+    /* background-image: url('img/jumbo.jpg'); */
+
+}
+.top-left {
+    position: absolute;
+    display: flex;
+  }
+
+
+
+.top-left a{
+    transition: .5s;
+    color: whitesmoke;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px;
+  }
+  .top-left a:hover{
+    transition: .5s;
+    color: #ff6700;
+    text-decoration: none;
+  }
+  
