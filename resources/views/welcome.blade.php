@@ -282,7 +282,7 @@
             <div class="main-page">
                 <div class="flex-center">
                     <div class="content title">
-                        <a href="{{ url('/home') }}" class="title m-b-md">
+                        <a href="{{ route('home') }}" class="title m-b-md">
                             {{-- <img src="img/icon.png" alt=""> --}}
                             BDoctor
                         </a>

@@ -51,8 +51,10 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        $profile = Doctor::where("doctor", $doctor);
+
+        $profile = Auth::user();
         return view('doctors.show', compact('profile'));
+
     }
 
     /**
@@ -63,23 +65,6 @@ class DoctorController extends Controller
      */
     public function edit()
     {
-        // $user_id = Auth::user()->id;
-
-        // $doctorList = Doctor::all();
-        // if($user_id == $doctorList->id){
-        //     $doctor = $doctorList->id;
-        // }
-
-        /* versione 2 */
-        // $user_id = Doctor::where('id', $id);
-
-        // $doctor = Doctor::where('id', $user_id);
-
-        // $doctor = [
-        //     'name' => 'marco',
-        //     'surname' => 'giammarco'
-        // ];
-        /* end of versione 2 */
 
         $doctor = Auth::user();
         $type = Specialization::all();
