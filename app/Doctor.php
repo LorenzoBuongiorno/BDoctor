@@ -46,7 +46,7 @@ class Doctor extends Authenticatable
     ];
 
     /* relazioni */
-    public function specialzation() {
+    public function specialization() {
         return $this->belongsToMany('App\Specialization');
     }
 
