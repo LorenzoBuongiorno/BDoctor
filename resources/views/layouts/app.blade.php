@@ -45,7 +45,7 @@
                     @auth
                     <a href="{{ url('/home') }}">Home</a>
                     <a href="{{ url('/edit') }}">Modifica Il tuo profilo</a>
-                    <a href="{{ url('/messages') }}">Messaggi</a>
+                    <a href="{{ url('/edit') }}">Messaggi</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         
