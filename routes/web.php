@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/index', 'DoctorController@index')->name('doctors.index');
 Route::get('/profile/edit', 'DoctorController@edit')->name('doctors.edit');
 Route::get('/profile', 'DoctorController@show')->name('doctors.show');
+
+Route::resource('doctors', 'DoctorController');
 
 
 
