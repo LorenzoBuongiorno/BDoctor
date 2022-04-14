@@ -230,19 +230,35 @@
             .searchbar{
                 background-color: rgba(0, 0, 0, 0.253);
                 margin-top: 30px;
-                border-radius: 20px
+                border-radius: 20px;
+                padding-bottom: 10px;
             }
 
             .form-inline{
                display: flex;
                 justify-content: center;
                 margin-top: 20px;
-                justify-content: space-around;            
+                justify-content: space-around            
             }
 
             .srcbtn{
                 transition: .5s;
             }
+
+            .advbtn:hover{
+                text-decoration: none
+            }
+
+            a.btn-warning {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+
+            width: 200px;
+            height: 50px;
+            border-radius: 5px;
+            }
+
 
         </style>
     </head>
@@ -285,7 +301,7 @@
             <div class="main-page">
                 <div class="flex-center">
                     <div class="content title">
-                        <a href="{{ url('/') }}" class="title m-b-md">
+                        <a href="{{ url('/home') }}" class="title m-b-md">
                             {{-- <img src="img/icon.png" alt=""> --}}
                             BDoctor
                         </a>
@@ -301,6 +317,8 @@
                                 <button type="submit" class="srcbtn btn btn-primary"> <i class="icon-search icon-white"></i> Cerca</button>
                             </form>
                         </div>
+                        <a href="{{ url('/') }}" type="submit" class="btn-warning"><i class="icon-search icon-white"></i>  Ricerca Avanzata</a>
+
                     </div>
                 </div>
 
@@ -310,5 +328,20 @@
                 </div>
             </div>
 
+
+
+            {{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="img/jumbo.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="img/jumbo2.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="img/jumbo3.jpg" alt="Third slide">
+                  </div>
+                </div>
+              </div> --}}
     </body>
 </html>

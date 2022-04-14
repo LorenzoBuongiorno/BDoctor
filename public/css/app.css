@@ -5138,17 +5138,37 @@ fieldset:disabled .btn {
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  padding-top: 5px;
+}
+
+.bg_image {
+  background-image: url('img/jumbo.png');
+  height: 100px;
+  width: 100%;
+ }
+ 
+
 .top-right a{
   transition: .5s;
-  display: flex;
-  justify-content: center;
+  color: whitesmoke;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 20px;
 }
 .top-right a:hover{
-  font-size: 30px;
   transition: .5s;
   color: #ff6700;
-  font-size: 15px;
   text-decoration: none;
+}
+
+.card{
+  color: white;
+  background: rgba(0, 0, 0, 0.151);
+  width: 100%;
 }
 
 

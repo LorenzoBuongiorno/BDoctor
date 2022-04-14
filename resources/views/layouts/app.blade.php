@@ -33,9 +33,10 @@
 
 
 
+
 </head>
 <body>
-    <div id="app">
+    <div class="jumbotron bg_image" id="app">
         <div class=" flex-center position-ref">
             @if (Route::has('login'))
             <div class="navbar ">
@@ -54,6 +55,7 @@
             @endif
         </div>
         </nav>
+
 
         <main class="py-4">
             @yield('content')
