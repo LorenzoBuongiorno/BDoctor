@@ -23,7 +23,7 @@ Route::get('/', function () {
 Auth::routes();
 
 /* rotta dashboard parte admin */
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 /* rotte DoctorController */
 // Route::resource("doctors", "DoctorController");
