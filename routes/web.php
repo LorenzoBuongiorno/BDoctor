@@ -14,10 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* rotta prima pagina home */
 Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
+/* rotta dashboard parte admin */
 Route::get('/home', 'HomeController@index')->name('home');
+
+/* rotte DoctorController */
+Route::resource("doctors", "DoctorController");
+
+/* rotte MessageController */
+Route::resource("messages", "MessageController");
+
+/* rotte ReviewController */
+Route::resource("reviews", "ReviewController");
