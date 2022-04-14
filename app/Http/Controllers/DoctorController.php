@@ -51,7 +51,8 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        return view('doctors.show', compact('doctor'));
+        $profile = Doctor::where("doctor", $doctor);
+        return view('doctors.show', compact('profile'));
     }
 
     /**

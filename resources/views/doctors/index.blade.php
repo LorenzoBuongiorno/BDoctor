@@ -34,7 +34,7 @@
                         <p class="card-text">{{$item->curriculum}}</p>
                         <p class="card-text"><small class="text-muted">{{$item->updated_at}}</small></p>
                         <div class="d-flex justify-content-end">
-                            <a href="#" class="btn btn-primary">show</a>
+                            <a href="{{ route('doctors.show', $item->id) }}" class="btn btn-primary">show</a>
                         </div>
                     </div>
                     </div>
