@@ -49,7 +49,8 @@
             .top-right a:hover{
                 transition: .5s;
                 color: #ff6700;
-                font-size: 15px
+                font-size: 15px;
+                text-decoration: none;
             }
             .content {
                 display: inline-block;
@@ -58,10 +59,15 @@
             .title {
                 font-size: 84px;
                 display: block;
+                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
             }
             
             .slogan{
-                font-size: 20px
+                margin-top: 30px;
+                font-size: 20px;
+                color: whitesmoke;
+                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
             }
 
             .navbar{
@@ -96,14 +102,147 @@
                 cursor: pointer;
                 text-decoration: none;
                 color: #636B6F;
+                margin-bottom: 20px;
             }
             .title:hover{
                 font-size: 100px;
                 transition: .5s;
+                text-decoration: none;
+                color: whitesmoke;
+            }
+
+            .jumbotron{
+                background-image: url('{{ asset('img/jumbo.jpg') }}');
+                filter: blur(8px);
+                -webkit-filter: blur(8px);
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+            }
+
+            .main-page{
+                color: white;
+                font-weight: bold;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                width: 80%;
+                padding: 20px;
+                text-align: center;
+            }
+            .main-page a{
+                color: whitesmoke
+            }
+            /* .search {
+                background-color: #fff;
+                padding: 4px;
+                border-radius: 5px
+            }
+
+            .search-1 {
+
+            }
+
+            .search-1 input {
+                height: 45px;
+                border: none;
+                width: 100%;
+                padding-left: 34px;
+                padding-right: 10px;
+                border-right: 2px solid #eee;
+                width: 1000px;
+                background-color:greenyellow;
+            }
+
+            .search-1 input:focus {
+                border-color: none;
+                box-shadow: none;
+                outline: none
+            }
+
+            .search-1 i {
+                position: absolute;
+                top: 12px;
+                font-size: 24px;
+                color: #eee
+            }
+
+            ::placeholder {
+                color: #c0c0c0;
+                opacity: 1
+            }
+
+            .search-2 {
+                position: relative;
+                text-align: center
+                width: 100%;
+            }
+
+            .search-2 input {
+                height: 45px;
+                border: none;
+                width: 930px;
+                padding-left: 18px;
+                padding-right: 100px;
+                background-color: greenyellow;
+            }
+
+            .search-2 input:focus {
+                border-color: none;
+                box-shadow: none;
+                outline: none
+            }
+
+            .search-2 i {
+                position: absolute;
+                top: 12px;
+                left: -10px;
+                font-size: 24px;
+                color: #eee
+            }
+
+            .search-2 button {
+                position: absolute;
+                right: 1px;
+                top: 0px;
+                border: none;
+                height: 45px;
+                background-color: #ff6700;
+                color: #fff;
+                width: 90px;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: .5s;
                 
             }
 
+            .search-2 button:hover{
+                transition: .5s;
+                background-color: #a54a0e;
+            }  */
 
+            .content img{
+                width: 100px
+            }
+
+            .searchbar{
+                background-color: rgba(0, 0, 0, 0.253);
+                margin-top: 30px;
+                border-radius: 20px
+            }
+
+            .form-inline{
+               display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                justify-content: space-around;            
+            }
+
+            .srcbtn{
+                transition: .5s;
+            }
 
         </style>
     </head>
@@ -115,6 +254,9 @@
         <link rel="android-chrome-192x192" sizes="192x192" href="img/android-chrome-192x192.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body>
         <div class=" flex-center position-ref">
@@ -122,11 +264,9 @@
             <div class="navbar ">
                 <div class="top-right links">
                     @auth
-                    <a href="{{ url('/home') }}"><i class="fa-solid fa-user">Home</a>
+                    <a href="{{ url('/home') }}">Home</a>
                     @else
-                        
-                        <a href="{{ route('login') }}"></i>Login</a>
-
+                        <a href="{{ route('login') }}">Login</a>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrati</a>
                         @endif
@@ -137,19 +277,38 @@
             @endif
         </div>
         
-        <div class="main-page">
-            <div class="flex-center">
-                <div class="content title">
-                    <a href="{{ url('/home') }}" class="title m-b-md">
-                        BDoctor
-                    </a>
-                </div>
-            </div>
-            <div class="flex-center slogan">
-                Ricerca i tuoi medici con un click
-            </div>
+        
+        <div class="jumbotron">
+
         </div>
 
+            <div class="main-page">
+                <div class="flex-center">
+                    <div class="content title">
+                        <a href="{{ url('/') }}" class="title m-b-md">
+                            {{-- <img src="img/icon.png" alt=""> --}}
+                            BDoctor
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container searchbar">
+                    <div class="row">
+                        <div class="span12">
+                            <form method="get" action="/" class="form-inline" >
+                                <input name="q" class="span5" type="text"  placeholder="Cardiologo" >
+                                <input name="loc" class="span5" type="text"  placeholder="Roma">
+                                <button type="submit" class="srcbtn btn btn-primary"> <i class="icon-search icon-white"></i> Cerca</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex-center slogan">
+                    Ricerca i tuoi medici con un click
+                </div>
+            </div>
 
     </body>
 </html>

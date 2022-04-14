@@ -4533,14 +4533,11 @@ fieldset:disabled .btn {
   display: block;
 }
 
-.navbar {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.navbar{
+  width: 100%;
+  background-color: #3a6ea5;
+  height: 80px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navbar > .container,
@@ -5140,6 +5137,20 @@ fieldset:disabled .btn {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
+
+.top-right a{
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+}
+.top-right a:hover{
+  font-size: 30px;
+  transition: .5s;
+  color: #ff6700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
 
 .card > .list-group:last-child {
   border-bottom-width: 0;
