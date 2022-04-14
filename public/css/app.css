@@ -12307,16 +12307,12 @@ fieldset:disabled .btn {
   display: block;
 }
 
-.navbar {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.navbar{
+  width: 100%;
+  background-color: #3a6ea5;
+  height: 80px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
@@ -12910,7 +12906,6 @@ fieldset:disabled .btn {
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
-<<<<<<< HEAD
 .top-right {
   position: absolute;
   right: 10px;
@@ -12945,8 +12940,6 @@ fieldset:disabled .btn {
 }
 
 
-=======
->>>>>>> 1b63990d8c2a713094f5f28a8226eb9148d7deb1
 .card > .list-group:last-child {
   border-bottom-width: 0;
   border-bottom-right-radius: calc(0.25rem - 1px);

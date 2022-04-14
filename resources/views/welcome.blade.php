@@ -274,26 +274,7 @@
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
-    <body>
-        <div class=" flex-center position-ref">
-            @if (Route::has('login'))
-            <div class="navbar ">
-                <div class="top-right links">
-                    @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Registrati</a>
-                        @endif
-                    @endauth
-                </div>
-            </div>
-
-            @endif
-        </div>
-        
-        
+    <body>        
         <div class="jumbotron">
 
         </div>

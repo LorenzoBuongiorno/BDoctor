@@ -18,6 +18,7 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
 
@@ -43,12 +44,18 @@
                 <div class="top-right links">
                     @auth
                     <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/edit') }}">Modifica Il tuo profilo</a>
+                    <a href="{{ url('/messages') }}">Messaggi</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
+                        
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrati</a>
                         @endif
                     @endauth
+                </div>
+                <div class="top-left links">
+                    <a href="{{ url('/') }}">Pagina Iniziale</a>
                 </div>
             </div>
 
