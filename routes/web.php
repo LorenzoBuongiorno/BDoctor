@@ -29,5 +29,5 @@ Route::get('/profile', 'DoctorController@show')->name('doctors.show');
 
 Route::resource('doctors', 'DoctorController');
 
-
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
