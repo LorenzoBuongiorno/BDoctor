@@ -52,8 +52,8 @@ class DoctorController extends Controller
     public function show(Doctor $doctor)
     {
 
-        $profile = Auth::user();
-        return view('doctors.show', compact('profile'));
+        $doctor = Auth::user();
+        return view('doctors.show', compact('doctor'));
 
     }
 
