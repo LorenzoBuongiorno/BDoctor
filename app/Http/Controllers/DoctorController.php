@@ -98,7 +98,7 @@ class DoctorController extends Controller
 
           $doctor->save();
 
-          return redirect()->route("doctors.index");
+          return redirect()->route("doctors.index", $doctor->id);
 
         // $data = $request->all();
         // $doctor->update($data);

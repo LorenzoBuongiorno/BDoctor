@@ -4,8 +4,7 @@
 
 <Form action="{{ route('doctors.update', $doctor->id) }}" method="post" enctype="multipart/form-data">
     @csrf
-    @method("POST")
-
+    @method("PUT")
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
