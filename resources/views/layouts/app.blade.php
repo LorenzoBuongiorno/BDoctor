@@ -23,7 +23,7 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
-
+        
 
         {{-- icon --}}
         <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
