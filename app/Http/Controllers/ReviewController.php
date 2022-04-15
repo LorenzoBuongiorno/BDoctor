@@ -14,7 +14,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::all();
+        return view('reviews.index', compact('reviews'));
     }
 
     /**
@@ -44,9 +45,10 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review)
+    public function show(Review $reviews)
     {
-        //
+        $reviews = Review::findOrFail($reviews);
+        return view('reviews.show', compact('reviews'));
     }
 
     /**
