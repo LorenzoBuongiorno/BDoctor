@@ -9,33 +9,12 @@
         <div class="card mb-3 col-10 col-md-8">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="{{$doctor->photo}}" class="img-fluid rounded-start" alt="...">
+                <img src="https://via.placeholder.com/1024x1200" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
                   <h3 class="card-title"> {{$doctor->name}} {{$doctor->surname}}</h3>
         
-                  {{-- <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">e-mail:</li>
-                    <li class="list-group-item">{{$doctor->email}}</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">numero:</li>
-                    <li class="list-group-item">{{$doctor->number}}</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">indirizzo:</li>
-                    <li class="list-group-item">{{$doctor->address}}, {{$doctor->city}}</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">prestazioni:</li>
-                    <li class="list-group-item">{{$doctor->medicalService}}</li>
-                  </ul>
-                  <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">curriculum:</li>
-                    <li class="list-group-item">{{$doctor->curriculum}}</li>
-                  </ul> --}}
-
                 <table class="table">
                     <tbody>
                       <tr>
