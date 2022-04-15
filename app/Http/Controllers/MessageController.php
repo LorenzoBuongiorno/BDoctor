@@ -14,7 +14,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $data = Message::paginate(8);
+        $data = Message::paginate(4);
 
         return view('messages.index', compact('data'));
     }
