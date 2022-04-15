@@ -18,7 +18,6 @@ class DoctorController extends Controller
     {
         $data = Doctor::all();
 
-        
         return view('doctors.index', compact('data'));
     }
 
@@ -49,10 +48,10 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function show(Doctor $doctor)
+    public function show($id)
     {
+        $doctor = Doctor::findOrFail($id);
 
-        $doctor = Auth::user();
         return view('doctors.show', compact('doctor'));
 
     }
@@ -63,15 +62,15 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
+        $doctor = Doctor::findOrFail($id);
 
-        $doctor = Auth::user();
+        // $doctor = Auth::user();
         $type = Specialization::all();
         
-        return view('doctors.edit',
+        return view('doctors.edit1',
         compact('doctor', 'type')
-        //  ['doctors' => $doctor]
         );
     }
 
@@ -82,27 +81,33 @@ class DoctorController extends Controller
      * @param  \App\Doctor  $doctor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Doctor $doctor)
-    { 
+    public function update(Request $request, $id)
+    {
+
+        $doctor = Doctor::findOrFail($id);
+        
+
+        // $data = $request->all();
+
         $data = $request->validate([
             "name" => "required",
             "surname" => "required",
+            "email" => "required|email|unique:doctors,email, " . $id,
+            "address" => "required",
             "city" => "required",
-            "photo" => "nullable|image",
+            "photo" => "nullable",
             "number" => "nullable",
             "curriculum" => "nullable",
             "medicalService" => "nullable"
           ]);
+           
+        $doctor->update($data);
+        
+        $doctor->save($data);
 
-          $doctor->update($data);
+        
+        return redirect()->route("doctors.show", $doctor);
 
-          $doctor->save();
-
-          return redirect()->route("doctors.index", $doctor->id);
-
-        // $data = $request->all();
-        // $doctor->update($data);
-        // return redirect()->route('doctors.show', $doctor->id);
     }
 
     /**

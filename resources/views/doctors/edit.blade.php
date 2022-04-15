@@ -4,7 +4,7 @@
 
 <Form action="{{ route('doctors.update', $doctor->id) }}" method="post" enctype="multipart/form-data">
     @csrf
-    @method("PUT")
+    @method("POST")
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -14,6 +14,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
+                            @method("POST")
     
                             <div class="form-group row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

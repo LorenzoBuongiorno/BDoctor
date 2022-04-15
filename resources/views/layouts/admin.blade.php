@@ -40,10 +40,10 @@
                         <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="{{ route('doctors.show') }}">Profilo</a>
+                        <a class="nav-link" href="{{ route('doctors.show', Auth::user()->id) }}">Profilo</a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="{{ route('doctors.edit') }}">Modifica</a>
+                        <a class="nav-link" href="{{ route('doctors.edit', Auth::user()->id) }}">Modifica</a>
                     </li>
                     <li class="nav-item active btn">
                         <a class="nav-link" href="#">Messaggi</a>

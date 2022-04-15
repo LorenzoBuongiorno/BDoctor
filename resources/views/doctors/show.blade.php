@@ -22,7 +22,7 @@
                         <td>{{$doctor->email}}</td>
                       </tr>
                       <tr>
-                        <td>numero:</td>
+                        <td>telefono:</td>
                         <td>{{$doctor->number}}</td>
                       </tr>
                       <tr>
@@ -39,7 +39,7 @@
                       </tr>
                     </tbody>
                 </table>
-                <a class="btn btn-primary" href="{{route('doctors.edit')}}">Modifica</a>    
+                <a class="btn btn-primary" href="{{route('doctors.edit', $doctor->id)}}">Modifica</a>    
                 </div>
               </div>
             </div>

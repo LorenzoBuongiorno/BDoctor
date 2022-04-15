@@ -27,11 +27,11 @@ Auth::routes();
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 /* rotte DoctorController */
-// Route::resource("doctors", "DoctorController");
+Route::resource("doctors", "DoctorController");
 
-Route::get('/doctor/show', 'DoctorController@show')->name('doctors.show');
-Route::get('/doctor/edit', 'DoctorController@edit')->name('doctors.edit');
-Route::post('/doctor/update', 'DoctorController@update')->name('doctors.update');
+// Route::get('/doctor/show', 'DoctorController@show')->name('doctors.show');
+// Route::get('/doctor/edit', 'DoctorController@edit')->name('doctors.edit');
+// Route::patch('/doctor/update', 'DoctorController@update')->name('doctors.update');
 
 /* rotte MessageController */
 Route::resource("messages", "MessageController");
