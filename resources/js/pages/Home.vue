@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div class="home-container">
         <div class="jumbotron">
 
@@ -41,11 +40,6 @@
         <!-- end of jumbotron -->
 
     </div>
-=======
-    <main>
-        ciao da home.vue
-    </main>    
->>>>>>> 5217e6c47fdb133bca84d52cb6cc2b44d3620683
 </template>
 
 <script>
