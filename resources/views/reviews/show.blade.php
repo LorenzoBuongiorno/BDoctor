@@ -2,7 +2,7 @@
 @section('content')
     
     <div class="container">
-        @dd($reviews)
+        @dd($reviews->name)
     </div>
     
 @endsection
