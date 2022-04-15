@@ -109,7 +109,7 @@
               <div class="form-group row mb-3">
                 <label for="curriculum" class="col-md-4 col-form-label text-md-right">{{ __('curriculum') }}</label>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <textarea name="curriculum" rows="8" class="form-control dark-theme 
                         @error('curriculum') is-invalid @enderror">
                         {{ old('curriculum', $doctor->curriculum) }}

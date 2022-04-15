@@ -25,6 +25,10 @@ class Doctor extends Authenticatable
          'password',
          'address',
          'city',
+         'medicalService',
+         'curriculum',
+         'number',
+         'photo',
     ];
 
     /**

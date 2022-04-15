@@ -9,7 +9,7 @@
         <div class="card mb-3 col-10 col-md-8">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="https://via.placeholder.com/1024x1200" class="img-fluid rounded-start" alt="...">
+                <img src="{{$doctor->photo}}" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">

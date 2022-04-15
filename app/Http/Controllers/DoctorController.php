@@ -85,9 +85,6 @@ class DoctorController extends Controller
     {
 
         $doctor = Doctor::findOrFail($id);
-        
-
-        // $data = $request->all();
 
         $data = $request->validate([
             "name" => "required",
