@@ -49,7 +49,7 @@
                         <a class="nav-link" href="#">Messaggi</a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Recensioni</a>
+                        <a class="nav-link" href="{{route('reviews.index')}}">Recensioni</a>
                     </li>
                     <li class="nav-item active btn btn-danger">
                         <a class="nav-link" href="{{ route('logout') }}"

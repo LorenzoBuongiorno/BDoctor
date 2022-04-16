@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -14,7 +15,10 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;
+         $reviews = Review::where("doctor_id", Auth::user()->id)
+        ->get();
+        return view('reviews.index', compact('reviews'));
     }
 
     /**
@@ -44,9 +48,10 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review)
+    public function show($id)
     {
-        //
+        $review = Review::FindOrFail($id);
+        return view('reviews.show', compact('review'));
     }
 
     /**

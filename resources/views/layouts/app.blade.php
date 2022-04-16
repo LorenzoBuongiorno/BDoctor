@@ -69,8 +69,8 @@
                 <div class="top-right links">
                     @auth
                     <a href="{{ url('/dashboard') }}">Home</a>
-                    <a href="{{ route('doctors.show') }}">visualizza il tuo profilo</a>
-                    <a href="{{ route('doctors.edit') }}">Modifica Il tuo profilo</a>
+                    <a href="{{ route('doctors.show',Auth::user()->id) }}">visualizza il tuo profilo</a>
+                    <a href="{{ route('doctors.edit',Auth::user()->id) }}">Modifica Il tuo profilo</a>
                     <a href="{{ url('/messages') }}">Messaggi</a>
 
                     <div>ciao {{Auth::user()->name }}</div>
