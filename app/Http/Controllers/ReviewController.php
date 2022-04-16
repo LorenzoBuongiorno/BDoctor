@@ -15,6 +15,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
+        $id = Auth::user()->id;
+        // $reviews = Review::where("doctor_id", Auth::user()->id)
+        // ->get();
         $reviews = Review::all();
         return view('reviews.index', compact('reviews'));
     }
@@ -46,10 +49,10 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $reviews)
+    public function show($id)
     {
-        $reviews = Review::where($doctor_id = Auth::user()->id);
-        return view('reviews.show', compact('reviews'));
+        $review = Review::FindOrFail($id);
+        return view('reviews.show', compact('review'));
     }
 
     /**
