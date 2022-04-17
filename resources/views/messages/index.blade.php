@@ -59,9 +59,9 @@
         </div>
 
         {{-- paginate() in MessageController--}}
-        <div class="d-flex justify-content-center">
+        {{-- <div class="d-flex justify-content-center">
             {!! $messages->links() !!}
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection
