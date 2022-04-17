@@ -46,7 +46,7 @@
                         <a class="nav-link" href="{{ route('doctors.edit', Auth::user()->id) }}">Modifica</a>
                     </li>
                     <li class="nav-item active btn">
-                        <a class="nav-link" href="#">Messaggi</a>
+                        <a class="nav-link" href="{{route('messages.index')}}">Messaggi</a>
                     </li>
                     <li class="nav-item active btn">
                         <a class="nav-link" href="{{route('reviews.index')}}">Recensioni</a>
