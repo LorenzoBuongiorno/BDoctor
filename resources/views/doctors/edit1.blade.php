@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-md-8 pb-4">
         <div class="card">
           <div class="card-header d-flex">
               Modifica dati profilo
