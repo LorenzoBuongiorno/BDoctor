@@ -29,8 +29,8 @@
 
                     {{-- data --}}
                     {{-- nascosto solo in schermo xs --}}
-                    <div class="col-md-3 col-sm-4 p-2 d-none d-sm-block">
-                        <small class="fst-italic">{{ $message->created_at }}</small>
+                    <div class="col-md-3 col-sm-4 p-2 d-none d-sm-block text-secondary">
+                        <small class="fst-italic">{{$message->created_at->format("d-m-Y H:i")}}</small>
                     </div>
                 
                     {{-- BOTTONI --}}
@@ -41,9 +41,10 @@
                             </button>
                         </div> --}}
                         <div class="p-2">
-                            <button type="button" class="btn btn-danger text-white">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
+                            @include('partials.deleteBtn', [
+                                'id' => $message->id,
+                                'route' => 'messages.destroy',
+                            ])
                         </div>
                     </div>
                 </li>
