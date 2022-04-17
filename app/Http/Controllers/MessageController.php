@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -14,9 +15,11 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $data = Message::paginate(4);
+        $id = Auth::user()->id;
+        $messages = Message::where("doctor_id", Auth::user()->id);
+        $messages = Message::paginate(4);
 
-        return view('messages.index', compact('data'));
+        return view('messages.index', compact('messages'));
     }
 
     /**

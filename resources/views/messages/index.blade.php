@@ -13,7 +13,7 @@
         {{-- CORPO PAGINA --}}
         <div class="card-body">
             <ul class="list-group" style="border-radius: 20px; box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);">
-              @foreach ($data as $message)
+              @foreach ($messages as $message)
                 <li class="list-group-item d-flex align-items-center border-0" style="background-color:rgba(191, 219, 247, 0.4);">
 
                     {{-- name --}}
@@ -60,7 +60,7 @@
 
         {{-- paginate() in MessageController--}}
         <div class="d-flex justify-content-center">
-            {!! $data->links() !!}
+            {!! $messages->links() !!}
         </div>
     </div>
 </div>
