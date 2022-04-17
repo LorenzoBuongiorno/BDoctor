@@ -6,7 +6,7 @@
         {{-- TITOLO --}}
         <div class="d-flex justify-content-center p-4">
             <div class="col-12">
-                <h1 class="my-2" style="color:#FF6700">I MIEI MESSAGGI</h1>
+                <h1 style="color:#FF6700">I tuoi messaggi</h1>
             </div>
         </div>
 
@@ -29,8 +29,8 @@
 
                     {{-- data --}}
                     {{-- nascosto solo in schermo xs --}}
-                    <div class="col-md-3 col-sm-4 p-2 d-none d-sm-block">
-                        <small class="fst-italic">{{ $message->created_at }}</small>
+                    <div class="col-md-3 col-sm-4 p-2 d-none d-sm-block text-secondary">
+                        <small class="fst-italic">{{$message->created_at->format("d-m-Y H:i")}}</small>
                     </div>
                 
                     {{-- BOTTONI --}}
@@ -41,9 +41,10 @@
                             </button>
                         </div> --}}
                         <div class="p-2">
-                            <button type="button" class="btn btn-danger text-white">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
+                            @include('partials.deleteBtn', [
+                                'id' => $message->id,
+                                'route' => 'messages.destroy',
+                            ])
                         </div>
                     </div>
                 </li>
@@ -65,7 +66,3 @@
     </div>
 </div>
 @endsection
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-    </style> 
