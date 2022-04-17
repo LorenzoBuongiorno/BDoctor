@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container" style="font-family: Arial, Helvetica, sans-serif;">
@@ -6,7 +6,7 @@
         {{-- TITOLO --}}
         <div class="d-flex justify-content-center p-4">
             <div class="col-12">
-                <h1 class="my-2" style="color:#FF6700">I MIEI MESSAGGI</h1>
+                <h1 style="color:#FF6700">I tuoi messaggi</h1>
             </div>
         </div>
 
@@ -65,7 +65,3 @@
     </div>
 </div>
 @endsection
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-    </style> 
