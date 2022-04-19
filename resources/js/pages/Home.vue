@@ -1,7 +1,6 @@
 <template>
     <div class="home-container">
         <div class="jumbotron">
-
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
                     <a class="navbar-brand" href="/">BDoctor.it</a>
@@ -22,18 +21,16 @@
                 </div>
             </nav>
 
-            <div class="col-6 p-lg-5 mx-auto my-5">
-                <div class="d-flex flex-column align-items-center">
-
-                    <p class="lead fw-normal text-white">Trova lo specialista che fa per te</p>
-                    <h1 class="display-6 fw-normal text-white">Prenota la tua visita</h1>
-                    <form method="get" action="/" class="form-inline d-flex" >
-                                <input name="q" class="span5" type="text"  placeholder="Cardiologo" >
-                                <input name="loc" class="span5" type="text"  placeholder="Roma">
-                                <button type="submit" class="btn orange">Cerca</button>
+            <div class="col-6 p-lg-5 mx-auto" style="width: 60%;">
+                <div class="srcbar rounded" style="background:rgba(0, 0, 0, 0.274);">
+                    <p class="py-2 lead fw-normal text-white d-flex justify-content-center">Trova lo specialista che fa per te</p>
+                    <h1 class="display-6 fw-normal text-white d-flex justify-content-center">Prenota la tua visita</h1>
+                    <form method="get" action="/" class="py-4 px-4 d-flex justify-content-between" >
+                            <input name="q" class="span5 rounded" type="text"  placeholder="Cardiologo" style="width: 50%; border: orange 2px solid;">
+                            <input name="loc" class="span5 rounded " type="text"  placeholder="Roma" style="width: 30%; border: orange 2px solid;">
+                            <button type="submit" class="btn orange">Cerca</button>
                     </form>
                 </div>
-                
             </div>
 
         </div>
@@ -52,13 +49,24 @@ export default {
 
 .home-container {
     width: 100%;
+    height: 100vh;
+    background-image: url('https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg');
+    // filter: blur(8px);
+    // -webkit-filter: blur(8px);
+    background-size: cover;
     .jumbotron {
-        height: 100px;
+        height: 80px;
         background-color: #3a6ea5;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
         .btn.orange {
                 background-color:#ff6700;
                 border-radius: 8px;
                 color: whitesmoke;
+                input{
+                    // border-radius: 8px;
+                    // background: rgba(0, 0, 0, 0.274);
+                }
         }
 
        
