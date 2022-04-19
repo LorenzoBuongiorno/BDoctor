@@ -246,7 +246,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  width: 100%;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 100px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: whitesmoke;\n}", ""]);
 
 // exports
 
@@ -17255,7 +17255,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\agres\Desktop\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

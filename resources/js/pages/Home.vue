@@ -51,12 +51,10 @@ export default {
 <style lang="scss" scoped>
 
 .home-container {
-    
+    width: 100%;
     .jumbotron {
-        height: 100vh;
-        width: 100%;
+        height: 100px;
         background-color: #3a6ea5;
-
         .btn.orange {
                 background-color:#ff6700;
                 border-radius: 8px;
@@ -65,11 +63,6 @@ export default {
 
        
     }
-    
-
-    
-
-
 }
 
 </style>
