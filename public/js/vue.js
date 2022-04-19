@@ -181,6 +181,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -243,7 +245,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n  height: 200px;\n}\n.home-container .jumbotron form input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -1481,124 +1483,96 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home-container" }, [
-      _c("div", { staticClass: "jumbotron" }, [
-        _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-              _vm._v("BDoctor.it"),
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggler",
-                attrs: {
-                  type: "button",
-                  "data-bs-toggle": "collapse",
-                  "data-bs-target": "#navbarNav",
-                  "aria-controls": "navbarNav",
-                  "aria-expanded": "false",
-                  "aria-label": "Toggle navigation",
-                },
-              },
-              [_c("span", { staticClass: "navbar-toggler-icon" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse justify-content-end",
-                attrs: { id: "navbarNav" },
-              },
-              [
-                _c("ul", { staticClass: "navbar-nav" }, [
-                  _c("li", { staticClass: "nav-item active btn orange" }, [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/register" } },
-                      [_vm._v("Sei un dottore? Iscriviti!")]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item active btn" }, [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/login" } },
-                      [_vm._v("ACCEDI")]
-                    ),
-                  ]),
-                ]),
-              ]
-            ),
+      _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+            _vm._v("BDoctor.it"),
           ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: {
+                type: "button",
+                "data-bs-toggle": "collapse",
+                "data-bs-target": "#navbarNav",
+                "aria-controls": "navbarNav",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
+              },
+            },
+            [_c("span", { staticClass: "navbar-toggler-icon" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse justify-content-end",
+              attrs: { id: "navbarNav" },
+            },
+            [
+              _c("ul", { staticClass: "navbar-nav" }, [
+                _c("li", { staticClass: "btn orange me-2" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link", attrs: { href: "/register" } },
+                    [
+                      _vm._v("Sei un dottore? "),
+                      _c("span", { staticClass: "text-white" }, [
+                        _vm._v(" Iscriviti! "),
+                      ]),
+                    ]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "btn btn-outline-info" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link", attrs: { href: "/login" } },
+                    [_vm._v("Accedi")]
+                  ),
+                ]),
+              ]),
+            ]
+          ),
         ]),
-        _vm._v(" "),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "jumbotron py-4" }, [
         _c(
           "div",
-          {
-            staticClass: "col-6 p-lg-5 mx-auto",
-            staticStyle: { width: "60%" },
-          },
+          { staticClass: "text-box d-flex flex-column align-items-center" },
           [
-            _c(
-              "div",
-              {
-                staticClass: "srcbar rounded",
-                staticStyle: { background: "rgba(0, 0, 0, 0.274)" },
-              },
-              [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "py-2 lead fw-normal text-white d-flex justify-content-center",
-                  },
-                  [_vm._v("Trova lo specialista che fa per te")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "display-6 fw-normal text-white d-flex justify-content-center",
-                  },
-                  [_vm._v("Prenota la tua visita")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  {
-                    staticClass: "py-4 px-4 d-flex justify-content-between",
-                    attrs: { method: "get", action: "/" },
-                  },
-                  [
-                    _c("input", {
-                      staticClass: "span5 rounded",
-                      staticStyle: { width: "50%", border: "orange 2px solid" },
-                      attrs: {
-                        name: "q",
-                        type: "text",
-                        placeholder: "Cardiologo",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "span5 rounded ",
-                      staticStyle: { width: "30%", border: "orange 2px solid" },
-                      attrs: { name: "loc", type: "text", placeholder: "Roma" },
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      { staticClass: "btn orange", attrs: { type: "submit" } },
-                      [_vm._v("Cerca")]
-                    ),
-                  ]
-                ),
-              ]
-            ),
+            _c("p", { staticClass: "fw-normal text-white" }, [
+              _vm._v("Trova lo specialista che fa per te"),
+            ]),
+            _vm._v(" "),
+            _c("h1", { staticClass: "fw-normal text-white" }, [
+              _vm._v("Prenota la tua visita"),
+            ]),
           ]
         ),
+        _vm._v(" "),
+        _c(
+          "form",
+          { staticClass: "p-4", attrs: { method: "get", action: "/" } },
+          [
+            _c("input", {
+              staticClass: "col-8 rounded",
+              attrs: { name: "q", type: "text", placeholder: "Cardiologo" },
+            }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "col-3 rounded ",
+              attrs: { name: "loc", type: "text", placeholder: "Roma" },
+            }),
+          ]
+        ),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn orange", attrs: { type: "submit" } }, [
+          _vm._v("Cerca"),
+        ]),
       ]),
     ])
   },
@@ -17282,7 +17256,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\agres\Desktop\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })
