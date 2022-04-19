@@ -15,9 +15,11 @@ class DoctorsController extends Controller
      */
     public function index()
     {
-        $doctors = Doctor::paginate(4);
+         $doctors = Doctor::paginate(4);
 
+        
         return response()->json($doctors);
+
     }
 
     /**
@@ -38,18 +40,7 @@ class DoctorsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            "name" => "required|max:30",
-            "surname" => "required|max:140",
-
-            ]);
-
-            $newDoctor = new Doctor();
-            $newDoctor->fill($data);
-            $newDoctor->save();
-            $newDoctor->user_id = 5;
-            $newDoctor->slug = $this->generateSlug($data["title"]);
-            return response()->json($newDoctor);
+        //
     }
 
     /**
@@ -100,5 +91,18 @@ class DoctorsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search()
+    {
+        $search_specialization = $_GET['specialization_id'];
+        $search_city = $_GET['city'];
+
+        
+        $doctors = Doctor::where('city','LIKE','%'.$search_city. '%')->where('specialization_id','LIKE','%'.$search_specialization. '%')->get();
+
+        return response()->json($doctors);
+        
+        // http://       /api/search?city=&name=
     }
 }

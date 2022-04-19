@@ -111,9 +111,7 @@
 
                 <div class="col-md-12">
                     <textarea name="curriculum" rows="8" class="form-control dark-theme 
-                        @error('curriculum') is-invalid @enderror">
-                        {{ old('curriculum', $doctor->curriculum) }}
-                    </textarea>          
+                        @error('curriculum') is-invalid @enderror">{{ old('curriculum', $doctor->curriculum) }}</textarea>          
                     @error('curriculum')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

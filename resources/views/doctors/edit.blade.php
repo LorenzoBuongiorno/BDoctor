@@ -117,7 +117,7 @@
                                 <label for="medicalService" class="col-md-4 col-form-label text-md-right">{{ __('medicalService') }}</label>
                                 
                                 <div class="col-md-6">
-                                    <input id="medicalService" type="text" value="{{$doctor->number}}" class="form-control @error('medicalService') is-invalid @enderror" name="medicalService" value="{{ old('medicalService') }}" autocomplete="medicalService" autofocus>
+                                    <input id="medicalService" type="text" value="{{$doctor->medicalService}}" class="form-control @error('medicalService') is-invalid @enderror" name="medicalService" value="{{ old('medicalService') }}" autocomplete="medicalService" autofocus>
                                     
                                     @error('medicalService')
                                         <span class="invalid-feedback" role="alert">
