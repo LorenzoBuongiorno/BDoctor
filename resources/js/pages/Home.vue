@@ -43,8 +43,21 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    
+data() {
+    return {
+      doctors: [],
+    };
+  },
+  mounted() {
+      axios.get('/api/doctors').then((element) => {
+          this.doctors = element.data.data
+    })
+  },
+  methods: {
+
+  }
 }
 </script>
 
