@@ -1,6 +1,5 @@
 <template>
     <div class="home-container">
-        
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
@@ -22,22 +21,24 @@
             </div>
         </nav>
         <!-- end of navbar -->
-
+      
         <!-- jumbotron -->
-        <div class="jumbotron py-4">
-            <div class="text-box d-flex flex-column align-items-center">
+        <div class="jumbotron d-flex justify-content-center align-items-center py-4">
+            <div class="text-search col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                
                 <p class="fw-normal text-white">Trova lo specialista che fa per te</p>
                 <h1 class="fw-normal text-white">Prenota la tua visita</h1>
+                
+                <form method="get" action="/" class="text-center p-2" >
+                    <input name="q" class="col-7 rounded" type="text"  placeholder="Cardiologo">
+                    <input name="loc" class="col-4 rounded " type="text"  placeholder="Roma">
+                </form>
+                <button type="submit" class="btn orange">Cerca</button>
             </div>
-
-            <form method="get" action="/" class="p-4" >
-                <input name="q" class="col-8 rounded" type="text"  placeholder="Cardiologo">
-                <input name="loc" class="col-3 rounded " type="text"  placeholder="Roma">
-            </form>
-            <button type="submit" class="btn orange">Cerca</button>
+            
         </div>
         <!-- end of jumbotron -->
-
+      
     </div>
 </template>
 
@@ -50,15 +51,7 @@ export default {
 <style lang="scss" scoped>
 
 .home-container {
-
-    width: 100%;
-    height: 100vh;
-    background-image: url('https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg');
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
-    background-size: cover;
-    background-position: center;
-
+   
     .btn.orange {
         background-color: #ff6700;
         color: whitesmoke;
@@ -70,17 +63,21 @@ export default {
     }
 
     .jumbotron {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        height: 86vh;
 
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        background:rgba(0, 0, 0, 0.274);
-        height: 200px;
-        // margin-top: 50px;
+        background-image: url('https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg');
+        // filter: blur(8px);
+        // -webkit-filter: blur(8px);
+        background-size: cover;
+        background-position: center;
 
-        form {
+        
+        .text-search {
+            height: 200px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background:rgba(0, 0, 0, 0.274);
+
             input {
                 border: 2px solid orange;
                 // border-radius: 8px;

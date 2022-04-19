@@ -183,6 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -245,7 +246,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n  height: 200px;\n}\n.home-container .jumbotron form input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 86vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -1539,41 +1540,60 @@ var staticRenderFns = [
         ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "jumbotron py-4" }, [
-        _c(
-          "div",
-          { staticClass: "text-box d-flex flex-column align-items-center" },
-          [
-            _c("p", { staticClass: "fw-normal text-white" }, [
-              _vm._v("Trova lo specialista che fa per te"),
-            ]),
-            _vm._v(" "),
-            _c("h1", { staticClass: "fw-normal text-white" }, [
-              _vm._v("Prenota la tua visita"),
-            ]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "form",
-          { staticClass: "p-4", attrs: { method: "get", action: "/" } },
-          [
-            _c("input", {
-              staticClass: "col-8 rounded",
-              attrs: { name: "q", type: "text", placeholder: "Cardiologo" },
-            }),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "col-3 rounded ",
-              attrs: { name: "loc", type: "text", placeholder: "Roma" },
-            }),
-          ]
-        ),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn orange", attrs: { type: "submit" } }, [
-          _vm._v("Cerca"),
-        ]),
-      ]),
+      _c(
+        "div",
+        {
+          staticClass:
+            "jumbotron d-flex justify-content-center align-items-center py-4",
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
+            },
+            [
+              _c("p", { staticClass: "fw-normal text-white" }, [
+                _vm._v("Trova lo specialista che fa per te"),
+              ]),
+              _vm._v(" "),
+              _c("h1", { staticClass: "fw-normal text-white" }, [
+                _vm._v("Prenota la tua visita"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticClass: "text-center p-2",
+                  attrs: { method: "get", action: "/" },
+                },
+                [
+                  _c("input", {
+                    staticClass: "col-7 rounded",
+                    attrs: {
+                      name: "q",
+                      type: "text",
+                      placeholder: "Cardiologo",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "col-4 rounded ",
+                    attrs: { name: "loc", type: "text", placeholder: "Roma" },
+                  }),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn orange", attrs: { type: "submit" } },
+                [_vm._v("Cerca")]
+              ),
+            ]
+          ),
+        ]
+      ),
     ])
   },
 ]
