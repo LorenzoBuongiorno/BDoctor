@@ -60,7 +60,12 @@ class DoctorsController extends Controller
      */
     public function show($id)
     {
-        //
+        // $doctor = Doctor::where("id", $id);
+        $doctor = Doctor::findOrFail($id);
+
+        $doctor->load("Specialization","Review");
+
+        return response()->json($doctor);
     }
 
     /**
