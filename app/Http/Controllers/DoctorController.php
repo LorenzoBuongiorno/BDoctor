@@ -51,8 +51,10 @@ class DoctorController extends Controller
     public function show($id)
     {
         $doctor = Doctor::findOrFail($id);
+        $specializations = Specialization::all();
 
-        return view('doctors.show', compact('doctor'));
+
+        return view('doctors.show', compact('doctor', 'specializations'));
 
     }
 
@@ -66,11 +68,10 @@ class DoctorController extends Controller
     {
         $doctor = Doctor::findOrFail($id);
 
-        // $doctor = Auth::user();
-        $type = Specialization::all();
+        $specializations = Specialization::all();
         
-        return view('doctors.edit1',
-        compact('doctor', 'type')
+        return view('doctors.edit',
+        compact('doctor', 'specializations')
         );
     }
 
@@ -95,12 +96,19 @@ class DoctorController extends Controller
             "photo" => "nullable",
             "number" => "nullable",
             "curriculum" => "nullable",
-            "medicalService" => "nullable"
+            "medicalService" => "nullable",
+
+            "specializations" => "required"
           ]);
+
+        // return dump($data);
            
         $doctor->update($data);
         
         $doctor->save($data);
+
+
+        $doctor->specialization()->sync($data["specializations"]);
 
         
         return redirect()->route("doctors.show", $doctor);

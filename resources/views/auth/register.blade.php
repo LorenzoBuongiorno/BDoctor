@@ -108,14 +108,20 @@
                         <div class="form-group row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Seleziona la tua specializzazione *') }}</label>
                             <div class="col-md-6">
-                                <select name="specialization" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                    <option selected>Seleziona</option>
+                                <select name="specialization" class="form-select form-select-sm @error('specialization') is-invalid @enderror" aria-label=".form-select-sm example" >
+                                    <option disabled selected>Seleziona</option>
                                     @foreach ($type as $element)
                                     <option value="{{ $element->id }}" @if (old('element_id')=== $element->id) selected @endIf>
                                         {{ $element->specialization }}
                                     </option>
                                     @endforeach
                                 </select>
+
+                                @error('specialization')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             </div>
                         </div>
                         <div class="form-group row mb-3">
