@@ -183,6 +183,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -238,17 +264,9 @@ exports.push([module.i, ".home-container .jumbotron[data-v-eca07cf4] {\n  height
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&lang=scss&scoped=true& ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: white;\n  transition: 0.5s;\n}", ""]);
-
-// exports
-
+throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n    ╷\n120 │ >>>>>>> 015a986064afdfb2b42860027ce33f862fbb188d\r\n    │                                                 ^\n    ╵\n  C:\\Users\\agres\\Desktop\\BDoctor\\resources\\js\\pages\\Home.vue 120:49  root stylesheet");
 
 /***/ }),
 
@@ -1483,131 +1501,207 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home-container" }, [
-      _c("div", { staticClass: "jumbotron" }, [
-        _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-              _vm._v("BDoctor.it"),
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggler",
-                attrs: {
-                  type: "button",
-                  "data-bs-toggle": "collapse",
-                  "data-bs-target": "#navbarNav",
-                  "aria-controls": "navbarNav",
-                  "aria-expanded": "false",
-                  "aria-label": "Toggle navigation",
-                },
-              },
-              [_c("span", { staticClass: "navbar-toggler-icon" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse justify-content-end",
-                attrs: { id: "navbarNav" },
-              },
-              [
-                _c("ul", { staticClass: "navbar-nav" }, [
-                  _c("li", { staticClass: "nav-item active btn orange" }, [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/register" } },
-                      [_vm._v("Sei un dottore? Iscriviti!")]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item active btn" }, [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/login" } },
-                      [_vm._v("ACCEDI")]
-                    ),
-                  ]),
-                ]),
-              ]
-            ),
+      _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+            _vm._v("BDoctor.it"),
           ]),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-6 p-lg-5 mx-auto",
-            staticStyle: { width: "60%" },
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "srcbar rounded",
-                staticStyle: { background: "rgba(0, 0, 0, 0.274)" },
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: {
+                type: "button",
+                "data-bs-toggle": "collapse",
+                "data-bs-target": "#navbarNav",
+                "aria-controls": "navbarNav",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
               },
-              [
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "py-2 lead fw-normal text-white d-flex justify-content-center",
-                  },
-                  [_vm._v("Trova lo specialista che fa per te")]
-                ),
+            },
+            [_c("span", { staticClass: "navbar-toggler-icon" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse justify-content-end",
+              attrs: { id: "navbarNav" },
+            },
+            [
+              _c("ul", { staticClass: "navbar-nav" }, [
+                _vm._v("\n\n<<<<<<< HEAD\n                            "),
+                _c("li", { staticClass: "nav-item active btn orange" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link", attrs: { href: "/register" } },
+                    [_vm._v("Sei un dottore? Iscriviti!")]
+                  ),
+                ]),
                 _vm._v(" "),
+                _c("li", { staticClass: "nav-item active btn" }, [
+                  _c(
+                    "a",
+                    { staticClass: "nav-link", attrs: { href: "/login" } },
+                    [_vm._v("ACCEDI")]
+                  ),
+                ]),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-6 p-lg-5 mx-auto", staticStyle: { width: "60%" } },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "srcbar rounded",
+              staticStyle: { background: "rgba(0, 0, 0, 0.274)" },
+            },
+            [
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "py-2 lead fw-normal text-white d-flex justify-content-center",
+                },
+                [_vm._v("Trova lo specialista che fa per te")]
+              ),
+              _vm._v(" "),
+              _c(
+                "h1",
+                {
+                  staticClass:
+                    "display-6 fw-normal text-white d-flex justify-content-center",
+                },
+                [_vm._v("Prenota la tua visita")]
+              ),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticClass: "py-4 px-4 d-flex justify-content-between",
+                  attrs: { method: "get", action: "/" },
+                },
+                [
+                  _c("input", {
+                    staticClass: "span5 rounded",
+                    staticStyle: { width: "45%", border: "orange 2px solid" },
+                    attrs: {
+                      name: "q",
+                      type: "text",
+                      placeholder: "Cardiologo",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "span5 rounded ",
+                    staticStyle: { width: "30%", border: "orange 2px solid" },
+                    attrs: { name: "loc", type: "text", placeholder: "Roma" },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "btn orange", attrs: { type: "submit" } },
+                    [_vm._v("Cerca")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "btn orange", attrs: { type: "submit" } },
+                    [_vm._v("Ricerca Avanzata")]
+                  ),
+                ]
+              ),
+              _vm._v("\n=======\n                        "),
+              _c("li", { staticClass: "btn orange me-2" }, [
                 _c(
-                  "h1",
-                  {
-                    staticClass:
-                      "display-6 fw-normal text-white d-flex justify-content-center",
-                  },
-                  [_vm._v("Prenota la tua visita")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  {
-                    staticClass: "py-4 px-4 d-flex justify-content-between",
-                    attrs: { method: "get", action: "/" },
-                  },
+                  "a",
+                  { staticClass: "nav-link", attrs: { href: "/register" } },
                   [
-                    _c("input", {
-                      staticClass: "span5 rounded",
-                      staticStyle: { width: "45%", border: "orange 2px solid" },
-                      attrs: {
-                        name: "q",
-                        type: "text",
-                        placeholder: "Cardiologo",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "span5 rounded ",
-                      staticStyle: { width: "30%", border: "orange 2px solid" },
-                      attrs: { name: "loc", type: "text", placeholder: "Roma" },
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      { staticClass: "btn orange", attrs: { type: "submit" } },
-                      [_vm._v("Cerca")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      { staticClass: "btn orange", attrs: { type: "submit" } },
-                      [_vm._v("Ricerca Avanzata")]
-                    ),
+                    _vm._v("Sei un dottore? "),
+                    _c("span", { staticClass: "text-white" }, [
+                      _vm._v(" Iscriviti! "),
+                    ]),
                   ]
                 ),
-              ]
-            ),
-          ]
-        ),
-      ]),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "btn btn-outline-info" }, [
+                _c(
+                  "a",
+                  { staticClass: "nav-link", attrs: { href: "/login" } },
+                  [_vm._v("Accedi")]
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._v(
+                "\n>>>>>>> 015a986064afdfb2b42860027ce33f862fbb188d\n                "
+              ),
+            ]
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "jumbotron d-flex justify-content-center align-items-center py-4",
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
+            },
+            [
+              _c("p", { staticClass: "fw-normal text-white" }, [
+                _vm._v("Trova lo specialista che fa per te"),
+              ]),
+              _vm._v(" "),
+              _c("h1", { staticClass: "fw-normal text-white" }, [
+                _vm._v("Prenota la tua visita"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticClass: "text-center p-2",
+                  attrs: { method: "get", action: "/" },
+                },
+                [
+                  _c("input", {
+                    staticClass: "col-7 rounded",
+                    attrs: {
+                      name: "q",
+                      type: "text",
+                      placeholder: "Cardiologo",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "col-4 rounded ",
+                    attrs: { name: "loc", type: "text", placeholder: "Roma" },
+                  }),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn orange", attrs: { type: "submit" } },
+                [_vm._v("Cerca")]
+              ),
+            ]
+          ),
+        ]
+      ),
     ])
   },
 ]
