@@ -1999,8 +1999,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      doctor: null
+    };
+  }
+});
 
 /***/ }),
 
@@ -2062,7 +2083,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  width: 100%;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 91.5vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -3292,104 +3313,158 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "home-container" }, [
+    _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+          _vm._v("BDoctor.it"),
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse justify-content-end",
+            attrs: { id: "navbarNav" },
+          },
+          [
+            _c("ul", { staticClass: "navbar-nav ms-5" }, [
+              !_vm.doctor
+                ? _c("li", { staticClass: "nav-item" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-outline-info",
+                        attrs: { href: "/login" },
+                      },
+                      [_vm._v(" Accedi ")]
+                    ),
+                  ])
+                : _c("li", [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "/dashboard" },
+                      },
+                      [
+                        _vm._v(
+                          " Benvenuto Dr. " + _vm._s(_vm.$doctor.surname) + "! "
+                        ),
+                      ]
+                    ),
+                  ]),
+            ]),
+          ]
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
+    _vm._m(2),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home-container" }, [
-      _c("div", { staticClass: "jumbotron" }, [
-        _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-              _vm._v("BDoctor.it"),
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggler",
-                attrs: {
-                  type: "button",
-                  "data-bs-toggle": "collapse",
-                  "data-bs-target": "#navbarNav",
-                  "aria-controls": "navbarNav",
-                  "aria-expanded": "false",
-                  "aria-label": "Toggle navigation",
-                },
-              },
-              [_c("span", { staticClass: "navbar-toggler-icon" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse justify-content-end",
-                attrs: { id: "navbarNav" },
-              },
-              [
-                _c("ul", { staticClass: "navbar-nav" }, [
-                  _c("li", { staticClass: "nav-item active btn orange" }, [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/register" } },
-                      [_vm._v("Sei un dottore? Iscriviti!")]
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item active btn" }, [
-                    _c(
-                      "a",
-                      { staticClass: "nav-link", attrs: { href: "/login" } },
-                      [_vm._v("ACCEDI")]
-                    ),
-                  ]),
-                ]),
-              ]
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-6 p-lg-5 mx-auto my-5" }, [
-          _c("div", { staticClass: "d-flex flex-column align-items-center" }, [
-            _c("p", { staticClass: "lead fw-normal text-white" }, [
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-bs-toggle": "collapse",
+          "data-bs-target": "#navbarNav",
+          "aria-controls": "navbarNav",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation",
+        },
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-item active btn orange me-2",
+        attrs: { href: "/register" },
+      },
+      [
+        _vm._v(" Sei un dottore? "),
+        _c("span", { staticClass: "text-white" }, [_vm._v(" Iscriviti! ")]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "jumbotron d-flex justify-content-center align-items-center py-4",
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass:
+              "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
+          },
+          [
+            _c("p", { staticClass: "fw-normal text-white" }, [
               _vm._v("Trova lo specialista che fa per te"),
             ]),
             _vm._v(" "),
-            _c("h1", { staticClass: "display-6 fw-normal text-white" }, [
+            _c("h1", { staticClass: "fw-normal text-white" }, [
               _vm._v("Prenota la tua visita"),
             ]),
             _vm._v(" "),
             _c(
               "form",
               {
-                staticClass: "form-inline d-flex",
+                staticClass: "text-center p-2",
                 attrs: { method: "get", action: "/" },
               },
               [
                 _c("input", {
-                  staticClass: "span5",
+                  staticClass: "col-7 rounded",
                   attrs: { name: "q", type: "text", placeholder: "Cardiologo" },
                 }),
                 _vm._v(" "),
                 _c("input", {
-                  staticClass: "span5",
+                  staticClass: "col-4 rounded ",
                   attrs: { name: "loc", type: "text", placeholder: "Roma" },
                 }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "btn orange", attrs: { type: "submit" } },
-                  [_vm._v("Cerca")]
-                ),
               ]
             ),
-          ]),
-        ]),
-      ]),
-    ])
+            _vm._v(" "),
+            _c("div", { staticClass: "py-2" }, [
+              _c(
+                "button",
+                { staticClass: "btn orange", attrs: { type: "submit" } },
+                [_vm._v("Cerca")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn orange", attrs: { type: "submit" } },
+                [_vm._v("Ricerca Avanzata")]
+              ),
+            ]),
+          ]
+        ),
+      ]
+    )
   },
 ]
 render._withStripped = true
