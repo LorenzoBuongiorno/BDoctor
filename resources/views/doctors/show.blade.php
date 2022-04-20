@@ -18,6 +18,20 @@
                 <table class="table">
                     <tbody>
                       <tr>
+                        <td>specializzazioni:</td>
+                        <td>
+                          <ul class="list-group">
+                            @foreach($specializations as $element)
+                              @if ($doctor->specialization->contains($element))
+                              <li class="">
+                                {{$element->specialization}}
+                              </li>
+                              @endif
+                            @endforeach
+                            </ul>
+                        </td>
+                      </tr>
+                      <tr>
                         <td>email:</td>
                         <td>{{$doctor->email}}</td>
                       </tr>

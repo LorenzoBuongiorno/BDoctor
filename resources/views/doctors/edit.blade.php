@@ -2,161 +2,160 @@
 
 @section('content')
 
-<Form action="{{ route('doctors.update', $doctor->id) }}" method="post" enctype="multipart/form-data">
-    @csrf
-    @method("POST")
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
-    
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
-                            @method("POST")
-    
-                            <div class="form-group row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="name" type="text" value="{{$doctor->name}}" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-    
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row mb-3">
-                                <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="surname" type="text" value="{{$doctor->surname}}" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
-    
-                                    @error('surname')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row mb-3">
-                                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="address" type="text" value="{{$doctor->address}}" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
-    
-                                    @error('address')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group row mb-3">
-                                <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="city" type="text" value="{{$doctor->city}}" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
-    
-                                    @error('city')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row mb-3">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('choose your specialization') }}</label>
-                                <div class="col-md-6">
-                                    <select name="specialization" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                        <option selected>Choose different Specialization</option>
-                                        @foreach ($type as $element)
-                                        <option value="{{ $element->id }}" @if (old('element_id')=== $element->id) selected @endIf>
-                                            {{ $element->specialization }}
-                                        </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 pb-4">
+        <div class="card">
+          <div class="card-header d-flex">
+              Modifica dati profilo
+          </div>
 
-                            <div class="form-group row mb-3">
-                                <label for="photo" class="col-md-4 col-form-label text-md-right">{{ __('photo') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="photo" type="text" value="{{$doctor->photo}}" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" autocomplete="photo" autofocus>
-    
-                                    @error('photo')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+          <div class="card-body">
 
-                            <div class="form-group row mb-3">
-                                <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('number') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="number" type="text" value="{{$doctor->number}}" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" autocomplete="number" autofocus>
-    
-                                    @error('number')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+            <form action="{{ route('doctors.update', $doctor->id) }}" method="post">
+              @csrf
+              @method("patch")
 
-                            <div class="form-group row mb-3">
-                                <label for="medicalService" class="col-md-4 col-form-label text-md-right">{{ __('medicalService') }}</label>
-                                
-                                <div class="col-md-6">
-                                    <input id="medicalService" type="text" value="{{$doctor->number}}" class="form-control @error('medicalService') is-invalid @enderror" name="medicalService" value="{{ old('medicalService') }}" autocomplete="medicalService" autofocus>
-                                    
-                                    @error('medicalService')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
+              <div class="mb-3">
+                <label>Nome*</label>
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                  placeholder="Inserisci il nome" value="{{ old('name', $doctor->name) }}" required>
+                @error('name')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="mb-3">
+                <label>Cognome*</label>
+                <input type="text" name="surname" class="form-control @error('surname') is-invalid @enderror"
+                  placeholder="Inserisci il cognome" value="{{ old('name', $doctor->surname) }}" required>
+                @error('surname')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
 
-                                <div class="form-group row mb-3">
-                                    <label for="curriculum" class="col-md-4 col-form-label text-md-right">{{ __('curriculum') }}</label>
-        
-                                    <div class="col-md-6">
-                                        <textarea name="curriculum" rows="8" value="{{$doctor->curriculum}}" class="form-control dark-theme 
-                                            @error('curriculum') is-invalid @enderror"
-                                            placeholder="Inizia a scrivere qualcosa...">
-                                            {{ old('curriculum') }}
-                                        </textarea>          
-                                        @error('curriculum')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
+              <div class="form-group row mb-3">
+                <label for="specialization" class="col-md-4 col-form-label text-md-right">{{ __('Specializzazione *') }}</label>
+                <div class="col-md-6">
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('edit') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
+                    <p> 
+
+                      <ul class="list-group">
+                      @foreach($specializations as $element)
+                        @if ($doctor->specialization->contains($element))
+                        <li class="list-group-item">
+                          {{$element->specialization}}
+                        </li>
+                        @endif
+                      @endforeach
+                      </ul>
+
+                      <button class="form-select form-select-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Scegli la specializzazione
+                      </button>
+
+                      
+                        <ul class="list-group collapse" id="collapseExample" >
+                          @foreach ($specializations as $element )
+                          <li class="list-group-item">
+                            <input class="form-check-input" type="checkbox" value="{{ $element->id }}"
+                            id="specialization_{{ $element->id }}" name="specializations[]" {{$doctor->specialization->contains($element) ? 'checked' : '' }}>
+                          <label class="form-check-label" for="specialization_{{ $element->id }}">{{ $element->specialization }}</label>
+                          </li>
+                          @endforeach
+                        </ul>
+                    </p>
+                   
                 </div>
             </div>
-        </div>
-    </div>
-</Form>
 
+              <div class="mb-3">
+                <label>Email*</label>
+                <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
+                  placeholder="Inserisci l'email" value="{{ old('email', $doctor->email) }}" required>
+                @error('email')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Telefono*</label>
+                <input type="text" name="number" class="form-control @error('number') is-invalid @enderror"
+                  placeholder="Numero di telefono" value="{{ old('number', $doctor->number ?? null) }}" >
+                @error('number')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Indirizzo*</label>
+                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"
+                  placeholder="Inserisci l'indirizzo"
+                  value="{{ old('address', $doctor->address ?? null) }}">
+                @error('address')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Città*
+                  
+                </label>
+                <input type="text" name="city" class="form-control @error('city') is-invalid @enderror"
+                  placeholder="Inserisci la città"
+                  value="{{ old('city', $doctor->city ?? null) }}">
+                @error('city')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Foto profilo</label>
+                <input type="text" name="photo" class="form-control @error('photo') is-invalid @enderror"
+                  placeholder="Inserisci URL della foto"
+                  value="{{ old('photo', $doctor->photo ?? null) }}">
+                @error('photo')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+              
+              <div class="mb-3">
+                <label>Prestazioni</label>
+                <input type="text" name="medicalService" class="form-control @error('medicalService') is-invalid @enderror"
+                  placeholder="Inserisci le prestazioni"
+                  value="{{ old('medicalService', $doctor->medicalService ?? null) }}">
+                @error('medicalService')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+
+
+              <div class="form-group row mb-3">
+                <label for="curriculum" class="col-md-4 col-form-label text-md-right">{{ __('curriculum') }}</label>
+
+                <div class="col-md-12">
+                    <textarea name="curriculum" rows="6" class="form-control dark-theme @error('curriculum') is-invalid @enderror">
+                        {{ old('curriculum', $doctor->curriculum) ?? null }}
+                    </textarea>          
+                    @error('curriculum')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+
+
+              <div class="form-group">
+                <a href="{{ route('doctors.show', $doctor->id) }}" class="btn orange">Annulla</a>
+                <button type="submit" class="btn btn-primary">Salva</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
 @endsection
