@@ -8,15 +8,24 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <!-- <ul class="navbar-nav">
 
                         <li class="nav-item active btn orange me-2">
-                            <a class="nav-link" href="/register">Sei un dottore?<span class="text-white"> Iscriviti!</span> </a>
                         </li>
                         <li class="btn btn-outline-info">
                             <a class="nav-link text-white" href="/login">ACCEDI</a>
                         </li>
-                </ul>
+                    </ul> -->
+
+                    <ul class="navbar-nav ms-5">
+                        <li class="nav-item" v-if="!doctor">
+                            <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
+                            <a class="btn btn-outline-info" href="/login"> Accedi </a>
+                        </li>
+                        <li v-else>
+                            <a class="nav-link" href="/dashboard" > Benvenuto Dr. {{ $doctor.surname }}! </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -51,6 +60,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            doctor: null,
+        };
+    },
     
 }
 </script>
@@ -70,7 +84,7 @@ export default {
     }
 
     .jumbotron {
-        height: 100vh;
+        height: 91.5vh;
         background-image: url('https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg');
         // filter: blur(8px);
         // -webkit-filter: blur(8px);
