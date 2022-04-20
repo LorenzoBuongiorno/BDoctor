@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Doctor;
 use App\Http\Controllers\Controller;
+use App\Specialization;
 use Illuminate\Http\Request;
 
 class DoctorsController extends Controller
@@ -95,14 +96,22 @@ class DoctorsController extends Controller
 
     public function search()
     {
-        $search_specialization = $_GET['specialization_id'];
+        $search_specialization = $_GET['specialization'];
         $search_city = $_GET['city'];
 
-        
-        $doctors = Doctor::where('city','LIKE','%'.$search_city. '%')->where('specialization_id','LIKE','%'.$search_specialization. '%')->get();
+
+        $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
+                                ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
+                                ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
+                                ->where('doctors.city','LIKE','%'.$search_city.'%')
+                                ->get();
 
         return response()->json($doctors);
+
+
+
+
         
-        // http://       /api/search?city=&name=
+        // http://       /api/search?city=&specialization=
     }
 }
