@@ -188,6 +188,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -250,7 +253,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 86vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -1518,18 +1521,26 @@ var staticRenderFns = [
             },
             [
               _c("ul", { staticClass: "navbar-nav" }, [
-                _c("li", { staticClass: "nav-item active btn orange" }, [
+                _c("li", { staticClass: "nav-item active btn orange me-2" }, [
                   _c(
                     "a",
                     { staticClass: "nav-link", attrs: { href: "/register" } },
-                    [_vm._v("Sei un dottore? Iscriviti!")]
+                    [
+                      _vm._v("Sei un dottore?"),
+                      _c("span", { staticClass: "text-white" }, [
+                        _vm._v(" Iscriviti!"),
+                      ]),
+                    ]
                   ),
                 ]),
                 _vm._v(" "),
-                _c("li", { staticClass: "nav-item active btn" }, [
+                _c("li", { staticClass: "btn btn-outline-info" }, [
                   _c(
                     "a",
-                    { staticClass: "nav-link", attrs: { href: "/login" } },
+                    {
+                      staticClass: "nav-link text-white",
+                      attrs: { href: "/login" },
+                    },
                     [_vm._v("ACCEDI")]
                   ),
                 ]),
@@ -1584,17 +1595,19 @@ var staticRenderFns = [
                 ]
               ),
               _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn orange", attrs: { type: "submit" } },
-                [_vm._v("Cerca")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn orange", attrs: { type: "submit" } },
-                [_vm._v("Ricerca Avanzata")]
-              ),
+              _c("div", { staticClass: "py-2" }, [
+                _c(
+                  "button",
+                  { staticClass: "btn orange", attrs: { type: "submit" } },
+                  [_vm._v("Cerca")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn orange", attrs: { type: "submit" } },
+                  [_vm._v("Ricerca Avanzata")]
+                ),
+              ]),
             ]
           ),
         ]
@@ -17281,7 +17294,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\agres\Desktop\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

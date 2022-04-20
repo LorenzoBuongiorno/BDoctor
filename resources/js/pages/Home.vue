@@ -10,11 +10,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
 
-                        <li class="nav-item active btn orange">
-                            <a class="nav-link" href="/register">Sei un dottore? Iscriviti!</a>
+                        <li class="nav-item active btn orange me-2">
+                            <a class="nav-link" href="/register">Sei un dottore?<span class="text-white"> Iscriviti!</span> </a>
                         </li>
-                        <li class="nav-item active btn">
-                            <a class="nav-link" href="/login">ACCEDI</a>
+                        <li class="btn btn-outline-info">
+                            <a class="nav-link text-white" href="/login">ACCEDI</a>
                         </li>
                 </ul>
                 </div>
@@ -35,8 +35,11 @@
                     <input name="q" class="col-7 rounded" type="text"  placeholder="Cardiologo">
                     <input name="loc" class="col-4 rounded " type="text"  placeholder="Roma">
                 </form>
-                <button type="submit" class="btn orange">Cerca</button>
-                <button type="submit" class="btn orange">Ricerca Avanzata</button>
+                <div class="py-2">
+                    <button type="submit" class="btn orange">Cerca</button>
+                    <button type="submit" class="btn orange">Ricerca Avanzata</button>
+                </div>
+
 
             </div>
             
@@ -67,8 +70,7 @@ export default {
     }
 
     .jumbotron {
-        height: 86vh;
-
+        height: 100vh;
         background-image: url('https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg');
         // filter: blur(8px);
         // -webkit-filter: blur(8px);
