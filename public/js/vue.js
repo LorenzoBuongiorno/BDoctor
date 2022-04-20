@@ -181,6 +181,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -243,7 +245,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: whitesmoke;\n}", ""]);
+exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  width: 100%;\n  height: 100vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  border-radius: 8px;\n  color: white;\n  transition: 0.5s;\n}", ""]);
 
 // exports
 
@@ -1574,7 +1576,7 @@ var staticRenderFns = [
                   [
                     _c("input", {
                       staticClass: "span5 rounded",
-                      staticStyle: { width: "50%", border: "orange 2px solid" },
+                      staticStyle: { width: "45%", border: "orange 2px solid" },
                       attrs: {
                         name: "q",
                         type: "text",
@@ -1592,6 +1594,12 @@ var staticRenderFns = [
                       "button",
                       { staticClass: "btn orange", attrs: { type: "submit" } },
                       [_vm._v("Cerca")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      { staticClass: "btn orange", attrs: { type: "submit" } },
+                      [_vm._v("Ricerca Avanzata")]
                     ),
                   ]
                 ),

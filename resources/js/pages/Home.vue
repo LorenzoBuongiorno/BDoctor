@@ -26,9 +26,11 @@
                     <p class="py-2 lead fw-normal text-white d-flex justify-content-center">Trova lo specialista che fa per te</p>
                     <h1 class="display-6 fw-normal text-white d-flex justify-content-center">Prenota la tua visita</h1>
                     <form method="get" action="/" class="py-4 px-4 d-flex justify-content-between" >
-                            <input name="q" class="span5 rounded" type="text"  placeholder="Cardiologo" style="width: 50%; border: orange 2px solid;">
+                            <input name="q" class="span5 rounded" type="text"  placeholder="Cardiologo" style="width: 45%; border: orange 2px solid;">
                             <input name="loc" class="span5 rounded " type="text"  placeholder="Roma" style="width: 30%; border: orange 2px solid;">
                             <button type="submit" class="btn orange">Cerca</button>
+                            <button type="submit" class="btn orange">Ricerca Avanzata</button>
+
                     </form>
                 </div>
             </div>
@@ -62,14 +64,9 @@ export default {
         .btn.orange {
                 background-color:#ff6700;
                 border-radius: 8px;
-                color: whitesmoke;
-                input{
-                    // border-radius: 8px;
-                    // background: rgba(0, 0, 0, 0.274);
-                }
-        }
-
-       
+                color: white;
+                transition: .5s;
+        }       
     }
 }
 
