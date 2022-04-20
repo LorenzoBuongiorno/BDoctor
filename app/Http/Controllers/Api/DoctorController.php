@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Specialization;
 use Illuminate\Http\Request;
 
-class DoctorsController extends Controller
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
