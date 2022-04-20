@@ -188,27 +188,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -264,9 +243,17 @@ exports.push([module.i, ".home-container .jumbotron[data-v-eca07cf4] {\n  height
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=style&index=0&id=b3c5cf30&lang=scss&scoped=true& ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n    ╷\n120 │ >>>>>>> 015a986064afdfb2b42860027ce33f862fbb188d\r\n    │                                                 ^\n    ╵\n  C:\\Users\\agres\\Desktop\\BDoctor\\resources\\js\\pages\\Home.vue 120:49  root stylesheet");
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 86vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -1531,7 +1518,6 @@ var staticRenderFns = [
             },
             [
               _c("ul", { staticClass: "navbar-nav" }, [
-                _vm._v("\n\n<<<<<<< HEAD\n                            "),
                 _c("li", { staticClass: "nav-item active btn orange" }, [
                   _c(
                     "a",
@@ -1552,101 +1538,6 @@ var staticRenderFns = [
           ),
         ]),
       ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-6 p-lg-5 mx-auto", staticStyle: { width: "60%" } },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "srcbar rounded",
-              staticStyle: { background: "rgba(0, 0, 0, 0.274)" },
-            },
-            [
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "py-2 lead fw-normal text-white d-flex justify-content-center",
-                },
-                [_vm._v("Trova lo specialista che fa per te")]
-              ),
-              _vm._v(" "),
-              _c(
-                "h1",
-                {
-                  staticClass:
-                    "display-6 fw-normal text-white d-flex justify-content-center",
-                },
-                [_vm._v("Prenota la tua visita")]
-              ),
-              _vm._v(" "),
-              _c(
-                "form",
-                {
-                  staticClass: "py-4 px-4 d-flex justify-content-between",
-                  attrs: { method: "get", action: "/" },
-                },
-                [
-                  _c("input", {
-                    staticClass: "span5 rounded",
-                    staticStyle: { width: "45%", border: "orange 2px solid" },
-                    attrs: {
-                      name: "q",
-                      type: "text",
-                      placeholder: "Cardiologo",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "span5 rounded ",
-                    staticStyle: { width: "30%", border: "orange 2px solid" },
-                    attrs: { name: "loc", type: "text", placeholder: "Roma" },
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    { staticClass: "btn orange", attrs: { type: "submit" } },
-                    [_vm._v("Cerca")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    { staticClass: "btn orange", attrs: { type: "submit" } },
-                    [_vm._v("Ricerca Avanzata")]
-                  ),
-                ]
-              ),
-              _vm._v("\n=======\n                        "),
-              _c("li", { staticClass: "btn orange me-2" }, [
-                _c(
-                  "a",
-                  { staticClass: "nav-link", attrs: { href: "/register" } },
-                  [
-                    _vm._v("Sei un dottore? "),
-                    _c("span", { staticClass: "text-white" }, [
-                      _vm._v(" Iscriviti! "),
-                    ]),
-                  ]
-                ),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "btn btn-outline-info" }, [
-                _c(
-                  "a",
-                  { staticClass: "nav-link", attrs: { href: "/login" } },
-                  [_vm._v("Accedi")]
-                ),
-              ]),
-              _vm._v(" "),
-              _vm._v(
-                "\n>>>>>>> 015a986064afdfb2b42860027ce33f862fbb188d\n                "
-              ),
-            ]
-          ),
-        ]
-      ),
       _vm._v(" "),
       _c(
         "div",
@@ -1697,6 +1588,12 @@ var staticRenderFns = [
                 "button",
                 { staticClass: "btn orange", attrs: { type: "submit" } },
                 [_vm._v("Cerca")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn orange", attrs: { type: "submit" } },
+                [_vm._v("Ricerca Avanzata")]
               ),
             ]
           ),
@@ -17384,7 +17281,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\agres\Desktop\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })
