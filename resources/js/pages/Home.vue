@@ -41,11 +41,11 @@
                 <h1 class="fw-normal text-white">Prenota la tua visita</h1>
                 
                 <form method="get" action="/" class="text-center p-2" >
-                    <input name="q" class="col-7 rounded" type="text"  placeholder="Cardiologo">
-                    <input name="loc" class="col-4 rounded " type="text"  placeholder="Roma">
+                    <input name="specialization" class="col-7 rounded" type="text"  placeholder="Cardiologo" v-model="specialization">
+                    <input name="city" class="col-4 rounded " type="text"  placeholder="Roma"  v-model="city">
                 </form>
                 <div class="py-2">
-                    <button type="submit" class="btn orange">Cerca</button>
+                    <button type="submit" class="btn orange" @click="search(city,specialization)">Cerca</button>
                     <button type="submit" class="btn orange">Ricerca Avanzata</button>
                 </div>
 
@@ -63,9 +63,20 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            doctor: null,
+            doctors: [],
+            city:'',
+            specialization:'',
         };
     },
+    mounted () {
+        },
+  methods: {
+      search(city,specialization) {
+          axios.get('http://127.0.0.1:8000/api/search?city=' + city + '&specialization=' + specialization).then((element) => {
+            this.doctors = element.data;
+        });
+}
+  },
     
 }
 </script>
