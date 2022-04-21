@@ -108,10 +108,30 @@ class DoctorsController extends Controller
 
         return response()->json($doctors);
 
-
-
-
-        
         // http://       /api/search?city=&specialization=
     }
+
+    public function advanceSearch()
+    {
+        $search_specialization = $_GET['specialization'];
+        $search_city = $_GET['city'];
+        $search_medical = $_GET['medicalService'];
+        $search_name = $_GET['name'];
+        $search_surname = $_GET['surname'];
+
+
+        $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
+                                ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
+                                ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
+                                ->where('doctors.city','LIKE','%'.$search_city.'%')
+                                ->where('doctors.medicalService','LIKE','%'.$search_medical.'%')
+                                ->where('doctors.name','LIKE','%'.$search_name.'%')
+                                ->where('doctors.surname','LIKE','%'.$search_surname.'%')
+                                ->get();
+
+        return response()->json($doctors);
+
+        // http://        /api/advanceSearch?city=&specialization=&medicalService=&name=&surname=
+    }
+
 }
