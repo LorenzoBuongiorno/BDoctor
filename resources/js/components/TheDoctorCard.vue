@@ -1,7 +1,8 @@
 <template>
-<div class="ps-4 pt-4 col-4">
-  <div class="card" style="width: 18rem">
-    <img :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" class="card-img-top card-img" alt="..."  />
+<div class="mx-auto p-4">
+  <div class="card col-xl-4 col-md-6 col-sm-8 col-xs-12">
+    <div class="card-header bg-info text-white text-end">{{doc.city}}</div>
+    <img :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" class="card-img-top" alt="..."  />
     <div class="card-body">
       <h1>{{ doc.name }} {{ doc.surname }}</h1>
       <h4>{{ doc.specialization }}</h4>
@@ -18,5 +19,21 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.card {
+
+  width: 400px;
+  height: 500px;
+
+  img {
+    object-fit: fill;
+    height: 280px; 
+  }
+
+  .card-body {
+    height: 250px;
+    overflow-y: auto;
+  }
+
+}
 </style>

@@ -19,24 +19,16 @@
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
-          <!-- <ul class="navbar-nav">
-
-                        <li class="nav-item active btn orange me-2">
-                        </li>
-                        <li class="btn btn-outline-info">
-                            <a class="nav-link text-white" href="/login">ACCEDI</a>
-                        </li>
-                    </ul> -->
-
+         
           <ul class="navbar-nav ms-5">
-                        <li class="nav-item" v-if="!doctor">
-                            <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
-                            <a class="btn btn-outline-info" href="/login"> Accedi </a>
-                        </li>
-                        <li v-else>
-                            <a class="nav-link" href="/dashboard" > Benvenuto Dr. {{ $doctor.surname }}! </a> 
-                        </li>
-                    </ul>
+            <li class="nav-item" v-if="!doctor">
+              <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
+              <a class="btn btn-outline-info" href="/login"> Accedi </a>
+            </li>
+            <li v-else>
+              <a class="nav-link" href="/dashboard" > Benvenuto Dr. {{ $doctor.surname }}! </a> 
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -50,8 +42,8 @@
         d-flex
         justify-content-center
         align-items-center
-        py-4
         flex-column
+        py-4
       "
     >
       <div
@@ -88,17 +80,21 @@
             type="submit"
             class="btn orange"
             @click="search(city, specialization)"
+            href="/search"
           >
             Cerca
           </button>
           <button type="submit" class="btn orange">Ricerca Avanzata</button>
         </div>
       </div>
-      <div class="d-flex flex-wrap">
-        <TheDoctorCard v-for="doc in doctors" :key="doc.id" :doc="doc" />
-      </div>
     </div>
     <!-- end of jumbotron -->
+
+    <!-- doctors list -->
+    <div class="d-flex flex-wrap">
+      <TheDoctorCard v-for="doc in doctors" :key="doc.id" :doc="doc" />
+    </div>
+
   </div>
 </template>
 
