@@ -3400,7 +3400,7 @@ var render = function () {
         _vm._v(" "),
         _c("h4", [_vm._v(_vm._s(_vm.doc.specialization))]),
         _vm._v(" "),
-        _c("h6", [_vm._v(_vm._s(_vm.doc.medicalService))]),
+        _c("h6", [_vm._v(_vm._s(_vm.doc.vote))]),
         _vm._v(" "),
         _c("p", {
           staticClass: "card-text",

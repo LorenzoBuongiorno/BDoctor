@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Doctor;
 use App\Http\Controllers\Controller;
+use App\Review;
 use App\Specialization;
 use Illuminate\Http\Request;
 
@@ -102,7 +103,6 @@ class DoctorController extends Controller
 
         $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
                                 ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
-                                ->join('reviews', 'doctors.id', '=', 'reviews.doctor_id')
                                 ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
                                 ->where('doctors.city','LIKE','%'.$search_city.'%')
                                 ->get();
@@ -134,5 +134,12 @@ class DoctorController extends Controller
 
         // http://        /api/advanceSearch?city=&specialization=&medicalService=&name=&surname=
     }
+
+
+    // SELECT reviews.doctor_id, AVG(vote) average FROM reviews GROUP BY doctor_id
+
+    // public function reviwAverage() {
+    //     Review::avg('reviews.vote')->get();
+    // }
 
 }

@@ -83,11 +83,15 @@
                             </div>
                         </div>
 
+
+
+
+                        {{-- PASSWORD --}}
                         <div class="form-group row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="txtPassword" type="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -97,16 +101,21 @@
                             </div>
                         </div>
 
+
+                        {{-- CONFIRM PASSWORD --}}
                         <div class="form-group row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
+                            <label for="password-confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" required>
+                                <input id="txtConfirmPassword" type="password" class="form-control" required autocomplete="new-password" required>
                             </div>
                         </div>
 
+
+
+
                         <div class="form-group row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Seleziona la tua specializzazione *') }}</label>
+                            <label for="specialization" class="col-md-4 col-form-label text-md-right">{{ __('Seleziona la tua specializzazione *') }}</label>
                             <div class="col-md-6">
                                 <select name="specialization" class="form-select form-select-sm @error('specialization') is-invalid @enderror" aria-label=".form-select-sm example" >
                                     <option disabled selected>Seleziona</option>
@@ -126,7 +135,7 @@
                         </div>
                         <div class="form-group row mb-3">
                             <div class="offset-md-4">
-                                <button type="submit" class="btn btn-info text-white">
+                                <button type="submit" class="btn btn-info text-white" onclick="return Validate()">
                                     {{ __('Registrati') }}
                                 </button>
                             </div>
@@ -136,5 +145,22 @@
             </div>
         </div>
     </div>
+    <script>
+    function Validate() {
+
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match!");
+            document.getElementById("txtPassword").classList.add("border-danger");
+            document.getElementById("txtConfirmPassword").classList.add("border-danger");
+
+            return false;
+        }
+        return true;
+    }
+    </script>
 </div>
+
+
 @endsection

@@ -6,7 +6,7 @@
     <div class="card-body">
       <h1>{{ doc.name }} {{ doc.surname }}</h1>
       <h4>{{ doc.specialization }}</h4>
-      <h6>{{ doc.medicalService }}</h6>
+      <h6>{{ doc.vote }}</h6>
       <p class="card-text" v-html="doc.curriculum"></p>
     </div>
   </div>
