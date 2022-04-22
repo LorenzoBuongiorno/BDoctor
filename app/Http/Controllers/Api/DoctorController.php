@@ -102,6 +102,7 @@ class DoctorController extends Controller
 
         $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
                                 ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
+                                ->join('reviews', 'doctors.id', '=', 'reviews.doctor_id')
                                 ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
                                 ->where('doctors.city','LIKE','%'.$search_city.'%')
                                 ->get();
