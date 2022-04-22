@@ -21,8 +21,9 @@ use App\Http\Controllers\Api\DoctorController;
 //     return $request->user();
 // });
 
-Route::get("/doctors", "Api\DoctorController@index");
-Route::get("/doctors/{doctor}", "Api\DoctorController@show");
-Route::get("/search", "Api\DoctorController@search");
+Route::get("/doctors", "Api\DoctorsController@index");
+Route::get("/doctors/{doctor}", "Api\DoctorsController@show");
+Route::get("/search", "Api\DoctorsController@search");
+Route::get("/advanceSearch", "Api\DoctorsController@advanceSearch");
 
 
