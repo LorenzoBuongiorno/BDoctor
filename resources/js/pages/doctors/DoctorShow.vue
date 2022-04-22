@@ -55,17 +55,9 @@
                      <!-- end of sezione messaggi -->        
 
                     <!-- sezione recensioni -->
-                    <form action="" class="pt-4">
-                        <h4>
-                            <i class="fa-solid fa-star"></i>
-                            Lascia una recensione
-                        </h4>
-                        <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px"></textarea>
-                        <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
-                        </div>
-                        <button class="btn btn-outline-info my-2">Invia</button>
-                    </form>
+                    <send-review
+                    :doctor_id="doc.id"
+                    />
                     <!-- end of sezione recensioni -->
                 </div>
                 <!-- end of colonna form -->
@@ -77,9 +69,10 @@
 <script>
 import axios from "axios";
 import TheNavbar from "../../components/TheNavbar.vue";
+import SendReview from '../../components/sendReview.vue';
 
 export default {
-    components: { TheNavbar },
+    components: { TheNavbar, SendReview },
    data() {
     return {
       doc: {},
