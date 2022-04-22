@@ -9,7 +9,13 @@
       <h6>{{ doc.medicalService }}</h6>
       <p class="card-text" v-html="doc.curriculum"></p>
     </div>
+
+    <!-- <button class="btn btn-info text-white text-end">Dettagli dottore ></button> -->
+    <div class="btn btn-info text-white text-end">
+      <router-link :to=" { name: 'doctors.show' }" title="Mostra dettagli del medico">Dettagli medico > </router-link>
+    </div>
   </div>
+
 </div>
 </template>
 
