@@ -2110,6 +2110,15 @@ __webpack_require__.r(__webpack_exports__);
         _this.doctors = element.data;
       });
     }
+  },
+  computed: {
+    filteredDoc: function filteredDoc() {
+      return this.doctors.filter(function (v, i, a) {
+        return a.findIndex(function (t) {
+          return t.id === v.id;
+        }) === i;
+      });
+    }
   }
 });
 
@@ -3665,7 +3674,7 @@ var render = function () {
     _c(
       "div",
       { staticClass: "d-flex flex-wrap" },
-      _vm._l(_vm.doctors, function (doc) {
+      _vm._l(_vm.filteredDoc, function (doc) {
         return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
       }),
       1
@@ -19476,7 +19485,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

@@ -92,7 +92,7 @@
 
     <!-- doctors list -->
     <div class="d-flex flex-wrap">
-      <TheDoctorCard v-for="doc in doctors" :key="doc.id" :doc="doc" />
+      <TheDoctorCard v-for="doc in filteredDoc" :key="doc.id" :doc="doc" />
     </div>
 
   </div>
@@ -125,6 +125,11 @@ export default {
         });
     },
   },
+    computed: {
+ filteredDoc () {
+  return this.doctors.filter((v,i,a)=>a.findIndex(t=>(t.id===v.id))===i)
+}
+}
 };
 </script>
 
