@@ -1,42 +1,76 @@
 <template>
     <div>
-        <!-- navbar -->
-        <!-- <nav class="navbar navbar-expand-lg navbar-dark">
+        <TheNavbar/>
+
         <div class="container">
-            <a class="navbar-brand" href="/">BDoctor.it</a>
-            <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            >
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-            >
-            
-            <ul class="navbar-nav ms-5">
-                <li class="nav-item" v-if="!doctor">
-                <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
-                <a class="btn btn-outline-info" href="/login"> Accedi </a>
-                </li>
-                <li v-else>
-                <a class="nav-link" href="/dashboard" > Benvenuto Dr. {{ $doctor.surname }}! </a> 
-                </li>
-            </ul>
+            <div class="row">
+                <h1 class="pt-4 px-4 pb-2"><span style="color: #ff6700;">Pagina dettagli</span> Dott. {{doc.surname}}</h1>
+
+                <!-- colonna informazioni -->
+                <div class="col-12 col-md-8 px-4">
+
+                    <div class="infos d-flex flex-column justify-content-between p-4">
+
+                        <img class="align-self-center" :src="doc.photo"/>
+                        
+                        <h2 class="py-4"> {{doc.name}} {{doc.surname}}</h2>
+                       
+                        <!-- <h4>{{ doc.specialization["specialization"]}}</h4>  -->
+
+                        <h5>{{ doc.medicalService }}</h5>
+                        <p class="card-text" v-html="doc.curriculum"></p>
+
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center py-4">
+                            <span class="text-center px-2">
+                                <i class="fa-solid fa-at"></i>
+                                {{doc.email}}
+                            </span>
+
+                            <span class="text-center px-2">
+                                <i class="fa-solid fa-phone"></i>
+                                {{doc.number}}
+                            </span>
+
+                            <span class="text-center px-2">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                               {{doc.address}}, {{doc.city}}
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of colonna informazioni -->
+
+                <!-- colonna form -->
+                <div class="col-12 col-md-4 p-4">
+                     <!-- sezione messaggi -->
+                    <form action="">
+                        <h4>Contatta il tuo medico!</h4>
+                        <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Scrivi qui il tuo messaggio...</label>
+                        </div>
+                        <button class="btn btn-outline-info my-2">Invia</button>
+                    </form>
+                     <!-- end of sezione messaggi -->        
+
+                    <!-- sezione recensioni -->
+                    <form action="" class="pt-4">
+                        <h4>
+                            <i class="fa-solid fa-star"></i>
+                            Lascia una recensione
+                        </h4>
+                        <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px"></textarea>
+                        <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
+                        </div>
+                        <button class="btn btn-outline-info my-2">Invia</button>
+                    </form>
+                    <!-- end of sezione recensioni -->
+                </div>
+                <!-- end of colonna form -->
             </div>
         </div>
-        </nav> -->
-        
-        <TheNavbar/>
-        <h1>Pagina Dettagli</h1>
-        <h1> {{doc.name}} </h1>
-
     </div>
 </template>
 
@@ -66,5 +100,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.container {
+    .row {
+        .infos {
+            img {
+                object-fit: cover;
+                width: 440px;
+                height: 320px;
+                border-radius: 50px; 
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            }
+        }
+    }
+}
 </style>
