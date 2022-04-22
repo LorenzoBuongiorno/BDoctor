@@ -135,6 +135,8 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
+    background: rgb(58,110,165);
+    background: linear-gradient(0deg, rgba(58,110,165,1) 65%, rgba(255,255,255,0) 91%);
   .btn.orange {
     background-color: #ff6700;
     color: whitesmoke;
@@ -147,7 +149,8 @@ export default {
 
   .jumbotron {
     height: 91.5vh;
-    background-image: url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
+    background: linear-gradient(to top, rgba(58,110,165,1) 0%, rgba(255,255,255,0) 15%), url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
+    
     // filter: blur(8px);
     // -webkit-filter: blur(8px);
     background-size: cover;
