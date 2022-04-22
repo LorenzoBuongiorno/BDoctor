@@ -1922,7 +1922,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     doc: Object
@@ -1988,6 +1987,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TheDoctorCard.vue */ "./resources/js/components/TheDoctorCard.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -3398,14 +3401,11 @@ var render = function () {
           _vm._v(_vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname)),
         ]),
         _vm._v(" "),
-        _c("h4", [_vm._v(_vm._s(_vm.doc.specialization))]),
+        _c("h4", [_vm._v(_vm._s(_vm.doc.medicalService))]),
         _vm._v(" "),
-        _c("h6", [_vm._v(_vm._s(_vm.doc.vote))]),
-        _vm._v(" "),
-        _c("p", {
-          staticClass: "card-text",
-          domProps: { innerHTML: _vm._s(_vm.doc.curriculum) },
-        }),
+        _c("p", { staticClass: "card-text" }, [
+          _vm._v(_vm._s(_vm.doc.curriculum)),
+        ]),
       ]),
     ]),
   ])
@@ -3671,14 +3671,18 @@ var render = function () {
       ]
     ),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "d-flex flex-wrap" },
-      _vm._l(_vm.filteredDoc, function (doc) {
-        return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
-      }),
-      1
-    ),
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "d-flex flex-wrap" },
+          _vm._l(_vm.filteredDoc, function (doc) {
+            return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
+          }),
+          1
+        ),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = [

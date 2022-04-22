@@ -134,9 +134,7 @@
                 <label for="curriculum" class="col-md-4 col-form-label text-md-right">{{ __('curriculum') }}</label>
 
                 <div class="col-md-12">
-                    <textarea name="curriculum" rows="6" class="form-control dark-theme @error('curriculum') is-invalid @enderror">
-                        {{ old('curriculum', $doctor->curriculum) ?? null }}
-                    </textarea>          
+                    <textarea name="curriculum" rows="6" class="form-control dark-theme @error('curriculum') is-invalid @enderror">{{ old('curriculum', $doctor->curriculum) ?? null }}</textarea>          
                     @error('curriculum')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

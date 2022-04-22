@@ -91,8 +91,12 @@
     <!-- end of jumbotron -->
 
     <!-- doctors list -->
-    <div class="d-flex flex-wrap">
-      <TheDoctorCard v-for="doc in filteredDoc" :key="doc.id" :doc="doc" />
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-wrap">
+            <TheDoctorCard v-for="doc in filteredDoc" :key="doc.id" :doc="doc" />
+            </div>
+        </div>
     </div>
 
   </div>
