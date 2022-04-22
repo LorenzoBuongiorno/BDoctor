@@ -11,9 +11,9 @@ const router = new VueRouter({
   mode: "history",
   routes: [
     {
-        path: "/",
-        component: Home,
-        name: "homepage",
+      path: "/",
+      component: Home,
+      name: "homepage",
     },
     { path: "/doctors/:doctor", 
 			component: DoctorShow, 

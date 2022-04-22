@@ -1,39 +1,6 @@
 <template>
-  <div class="home-container">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="container">
-        <a class="navbar-brand" href="/">BDoctor.it</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-         
-          <ul class="navbar-nav ms-5">
-            <li class="nav-item" v-if="!doctor">
-              <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
-              <a class="btn btn-outline-info" href="/login"> Accedi </a>
-            </li>
-            <li v-else>
-              <a class="nav-link" href="/dashboard" > Benvenuto Dr. {{ $doctor.surname }}! </a> 
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- end of navbar -->
+  <div>
+  <TheNavbar/>
 
     <!-- jumbotron -->
     <div
@@ -90,9 +57,9 @@
     </div>
     <!-- end of jumbotron -->
 
-    <!-- doctors list -->
+    <!-- doctors cards -->
     <div class="d-flex flex-wrap">
-      <TheDoctorCard v-for="doc in doctors" :key="doc.id" :doc="doc" />
+      <TheDoctorCard v-for="doc of doctors" :key="doc.id" :doc="doc" />
     </div>
 
   </div>
@@ -100,9 +67,11 @@
 
 <script>
 import axios from "axios";
+import TheNavbar from "../components/TheNavbar.vue";
 import TheDoctorCard from "../components/TheDoctorCard.vue";
+
 export default {
-  components: { TheDoctorCard },
+  components: { TheNavbar, TheDoctorCard },
   data() {
     return {
       doctors: [],
@@ -129,17 +98,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-container {
-  .btn.orange {
-    background-color: #ff6700;
-    color: whitesmoke;
-  }
-
-  nav {
-    height: 80px;
-    background-color: #3a6ea5;
-  }
-
   .jumbotron {
     height: 91.5vh;
     background-image: url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
@@ -147,6 +105,11 @@ export default {
     // -webkit-filter: blur(8px);
     background-size: cover;
     background-position: center;
+
+    .btn.orange {
+      background-color: #ff6700;
+      color: whitesmoke;
+    }
 
     .text-search {
       height: 200px;
@@ -162,5 +125,4 @@ export default {
       }
     }
   }
-}
 </style>
