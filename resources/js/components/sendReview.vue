@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-floating my-1">
-            <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px" v-model="newReview.review"></textarea>
+            <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px" v-model="newReview.text"></textarea>
             <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
         </div>
         <button class="btn my-2" @click="postReview()">Invia</button>
@@ -48,7 +48,7 @@ export default {
             newReview: {
                 name: '',
                 vote: '',
-                review: '',
+                text: '',
                 doctor_id: '',
             }
 
@@ -62,7 +62,7 @@ export default {
 
             console.log(this.newReview);
 
-            await axios.post('api/doctors/review', this.newReview);
+            await axios.post('api/review', this.newReview);
 
         },
         mouseOver: function(index) {

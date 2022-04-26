@@ -44,7 +44,7 @@ class ReviewController extends Controller
         $data = $request->validate([
             "name" => "required",
             "vote" => "required",
-            "review" => "required",
+            "text" => "required",
             "doctor_id" => "required",
           ]);
       
@@ -53,7 +53,7 @@ class ReviewController extends Controller
 
           $newReview->name = $data['name'];
           $newReview->vote = $data['vote'];
-          $newReview->review = $data['review'];
+          $newReview->text = $data['text'];
           $newReview->doctor_id = $data['doctor_id'];
 
 

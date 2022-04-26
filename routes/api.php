@@ -27,4 +27,5 @@ Route::get("/search", "Api\DoctorController@search");
 Route::get("/advanceSearch", "Api\DoctorsController@advanceSearch");
 
 
-Route::post('/doctors/review', "Api\ReviewController@store");
+
+Route::resource('review', 'Api\ReviewController');

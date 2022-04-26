@@ -2064,7 +2064,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       newReview: {
         name: '',
         vote: '',
-        review: '',
+        text: '',
         doctor_id: ''
       }
     };
@@ -2081,7 +2081,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 this.newReview.doctor_id = this.doctor_id;
                 console.log(this.newReview);
                 _context.next = 5;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/doctors/review', this.newReview);
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/review', this.newReview);
 
               case 5:
               case "end":
@@ -4721,20 +4721,20 @@ var render = function () {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.newReview.review,
-            expression: "newReview.review",
+            value: _vm.newReview.text,
+            expression: "newReview.text",
           },
         ],
         staticClass: "form-control",
         staticStyle: { height: "200px" },
         attrs: { placeholder: "Leave a review here", id: "floatingTextarea2" },
-        domProps: { value: _vm.newReview.review },
+        domProps: { value: _vm.newReview.text },
         on: {
           input: function ($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.newReview, "review", $event.target.value)
+            _vm.$set(_vm.newReview, "text", $event.target.value)
           },
         },
       }),
