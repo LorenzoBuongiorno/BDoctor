@@ -32,7 +32,7 @@ export default {
   height: 500px;
 
   img {
-    object-fit: fill;
+    object-fit: cover;
     height: 280px; 
   }
 

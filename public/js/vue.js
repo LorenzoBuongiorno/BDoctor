@@ -2370,7 +2370,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-653167c5] {\n  width: 400px;\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: fill;\n     object-fit: fill;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n  overflow-y: auto;\n}", ""]);
+exports.push([module.i, ".card[data-v-653167c5] {\n  width: 400px;\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n  overflow-y: auto;\n}", ""]);
 
 // exports
 
