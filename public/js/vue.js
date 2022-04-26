@@ -1994,8 +1994,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2009,6 +2007,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2040,6 +2048,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     doctor_id: Number
@@ -2048,26 +2060,53 @@ __webpack_require__.r(__webpack_exports__);
     return {
       hoverState: 'false',
       hoverIndex: '',
-      vote: ''
+      vote: '',
+      newReview: {
+        name: '',
+        vote: '',
+        review: '',
+        doctor_id: ''
+      }
     };
   },
   // end of data
   methods: {
+    postReview: function () {
+      var _postReview = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                this.newReview.vote = this.vote;
+                this.newReview.doctor_id = this.doctor_id;
+                console.log(this.newReview);
+                _context.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('api/doctors/review', this.newReview);
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function postReview() {
+        return _postReview.apply(this, arguments);
+      }
+
+      return postReview;
+    }(),
     mouseOver: function mouseOver(index) {
       // this.hoverState = true;
       this.hoverIndex = index;
-      console.log('index:', this.hoverIndex);
     },
     mouseLeave: function mouseLeave() {// this.hoverState = false;
     },
     voteStars: function voteStars(index) {
       this.vote = index;
-      console.log('voto: ', this.vote);
       return index <= this.vote ? true : false;
     },
-    // colorStars: function(index) {
-    //     return index <= this.hoverIndex ? true : false
-    // },
     colorStars: function colorStars(index) {
       if (index <= this.vote) {
         return 'selected';
@@ -4532,80 +4571,74 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "home-container" }, [
-    _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-          _vm._v("BDoctor.it"),
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "collapse navbar-collapse justify-content-end",
-            attrs: { id: "navbarNav" },
-          },
-          [
-            _c("ul", { staticClass: "navbar-nav ms-5" }, [
-              !_vm.doctor
-                ? _c("li", { staticClass: "nav-item" }, [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-outline-info",
-                        attrs: { href: "/login" },
-                      },
-                      [_vm._v(" Accedi ")]
-                    ),
-                  ])
-                : _c("li"),
-            ]),
-          ]
-        ),
-      ]),
-    ]),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "collapse",
-          "data-bs-target": "#navbarNav",
-          "aria-controls": "navbarNav",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation",
-        },
-      },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "nav-item active btn orange me-2",
-        attrs: { href: "/register" },
-      },
-      [
-        _vm._v(" Sei un dottore? "),
-        _c("span", { staticClass: "text-white" }, [_vm._v(" Iscriviti! ")]),
-      ]
-    )
+    return _c("div", { staticClass: "home-container" }, [
+      _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+            _vm._v("BDoctor.it"),
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: {
+                type: "button",
+                "data-bs-toggle": "collapse",
+                "data-bs-target": "#navbarNav",
+                "aria-controls": "navbarNav",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
+              },
+            },
+            [_c("span", { staticClass: "navbar-toggler-icon" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse justify-content-end",
+              attrs: { id: "navbarNav" },
+            },
+            [
+              _c("ul", { staticClass: "navbar-nav ms-5" }, [
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-item active btn orange me-2",
+                      attrs: { href: "/register" },
+                    },
+                    [
+                      _vm._v(" Sei un dottore? "),
+                      _c("span", { staticClass: "text-white" }, [
+                        _vm._v(" Iscriviti! "),
+                      ]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-outline-info",
+                      attrs: { href: "/login" },
+                    },
+                    [_vm._v(" Accedi ")]
+                  ),
+                ]),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -4656,46 +4689,89 @@ var render = function () {
       0
     ),
     _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c("button", { staticClass: "btn btn-outline-info my-2" }, [
-      _vm._v("Invia"),
-    ]),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-floating my-1" }, [
+    _c("div", { staticClass: "form-floating my-1" }, [
       _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.newReview.name,
+            expression: "newReview.name",
+          },
+        ],
         staticClass: "form-control",
         attrs: { type: "text", id: "floatingInput", placeholder: "Nome" },
+        domProps: { value: _vm.newReview.name },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.newReview, "name", $event.target.value)
+          },
+        },
       }),
       _vm._v(" "),
       _c("label", { attrs: { for: "floatingInput" } }, [_vm._v("Nome")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-floating my-1" }, [
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "form-floating my-1" }, [
       _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.newReview.review,
+            expression: "newReview.review",
+          },
+        ],
         staticClass: "form-control",
         staticStyle: { height: "200px" },
         attrs: { placeholder: "Leave a review here", id: "floatingTextarea2" },
+        domProps: { value: _vm.newReview.review },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.newReview, "review", $event.target.value)
+          },
+        },
       }),
       _vm._v(" "),
       _c("label", { attrs: { for: "floatingTextarea2" } }, [
         _vm._v("Scrivi qui la tua recensione..."),
       ]),
-    ])
-  },
-]
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn my-2",
+        on: {
+          click: function ($event) {
+            return _vm.postReview()
+          },
+        },
+      },
+      [_vm._v("Invia")]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "btn btn success",
+        on: {
+          click: function ($event) {
+            return _vm.postReview()
+          },
+        },
+      },
+      [_vm._v("form")]
+    ),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

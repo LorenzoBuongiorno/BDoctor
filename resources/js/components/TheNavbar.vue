@@ -21,13 +21,11 @@
           >
           
           <ul class="navbar-nav ms-5">
-            <li class="nav-item" v-if="!doctor">
+            <li class="nav-item">
             <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
             <a class="btn btn-outline-info" href="/login"> Accedi </a>
             </li>
-            <li v-else>
-            <!-- <a class="nav-link" href="/dashboard" > Benvenuto Dr. {{ $doctor.surname }}! </a>  -->
-            </li>
+           
           </ul>
         </div>
       </div>

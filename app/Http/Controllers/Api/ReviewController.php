@@ -29,7 +29,7 @@ class ReviewController extends Controller
     public function create()
     {
         //
-        
+
     }
 
     /**
@@ -41,6 +41,26 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->validate([
+            "name" => "required",
+            "vote" => "required",
+            "review" => "required",
+            "doctor_id" => "required",
+          ]);
+      
+          $newReview = new Review();
+        //   $newReview->fill($data);
+
+          $newReview->name = $data['name'];
+          $newReview->vote = $data['vote'];
+          $newReview->review = $data['review'];
+          $newReview->doctor_id = $data['doctor_id'];
+
+
+          $newReview->save();
+
+          return var_dump($newReview);
+          return response()->json($newReview);
     }
 
     /**
