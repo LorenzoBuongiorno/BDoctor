@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\DoctorController;
+use App\Http\Controllers\Api\MessageController;
 
 
 /*
@@ -25,5 +26,10 @@ Route::get("/doctors", "Api\DoctorController@index");
 Route::get("/doctors/{doctor}", "Api\DoctorController@show");
 Route::get("/search", "Api\DoctorController@search");
 Route::get("/advanceSearch", "Api\DoctorsController@advanceSearch");
+Route::get("/messagetest", "Api\MessageController@show");
+Route::middleware('api')->group(function () {
+    Route::resource('messages', 'MessageController');
+});
+
 
 

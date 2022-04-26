@@ -1,5 +1,5 @@
 <template>
-    <form action="" class="pt-4">
+    <form action="POST" class="pt-4" @submit.prevent="">
         <h4>
             Lascia una recensione
         </h4>

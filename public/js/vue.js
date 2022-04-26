@@ -2181,6 +2181,15 @@ __webpack_require__.r(__webpack_exports__);
         _this.doctors = element.data;
       });
     }
+  },
+  computed: {
+    filteredDoc: function filteredDoc() {
+      return this.doctors.filter(function (v, i, a) {
+        return a.findIndex(function (t) {
+          return t.id === v.id;
+        }) === i;
+      });
+    }
   }
 });
 
@@ -2275,6 +2284,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2285,7 +2310,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      doc: {}
+      doc: {},
+      message: {}
     };
   },
   methods: {
@@ -2312,6 +2338,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    addMessage: function addMessage() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/api/messages", this.message).then(function (response) {
+        return _this2.$router.push({});
+      })["catch"](function (err) {
+        return console.log(err);
+      })["finally"](function () {
+        return _this2.loadin = false;
+      });
     }
   },
   mounted: function mounted() {
@@ -4607,39 +4644,51 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "pt-4", attrs: { action: "" } }, [
-    _c("h4", [_vm._v("\n        Lascia una recensione\n    ")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vote my-3" },
-      _vm._l(5, function (index) {
-        return _c("i", {
-          key: index,
-          staticClass: "fa-solid fa-star mx-1",
-          class: _vm.colorStars(index),
-          on: {
-            click: function ($event) {
-              return _vm.voteStars(index)
+  return _c(
+    "form",
+    {
+      staticClass: "pt-4",
+      attrs: { action: "POST" },
+      on: {
+        submit: function ($event) {
+          $event.preventDefault()
+        },
+      },
+    },
+    [
+      _c("h4", [_vm._v("\n        Lascia una recensione\n    ")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vote my-3" },
+        _vm._l(5, function (index) {
+          return _c("i", {
+            key: index,
+            staticClass: "fa-solid fa-star mx-1",
+            class: _vm.colorStars(index),
+            on: {
+              click: function ($event) {
+                return _vm.voteStars(index)
+              },
+              mouseover: function ($event) {
+                return _vm.mouseOver(index)
+              },
+              mouseleave: function ($event) {
+                return _vm.mouseLeave()
+              },
             },
-            mouseover: function ($event) {
-              return _vm.mouseOver(index)
-            },
-            mouseleave: function ($event) {
-              return _vm.mouseLeave()
-            },
-          },
-        })
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("button", { staticClass: "btn btn-outline-info my-2" }, [
-      _vm._v("Invia"),
-    ]),
-  ])
+          })
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-outline-info my-2" }, [
+        _vm._v("Invia"),
+      ]),
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
@@ -4793,7 +4842,7 @@ var render = function () {
       _c(
         "div",
         { staticClass: "d-flex flex-wrap" },
-        _vm._l(_vm.doctors, function (doc) {
+        _vm._l(_vm.filteredDoc, function (doc) {
           return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
         }),
         1
@@ -4835,7 +4884,7 @@ var render = function () {
             _c("span", { staticStyle: { color: "#ff6700" } }, [
               _vm._v("Pagina dettagli"),
             ]),
-            _vm._v(" Dott. " + _vm._s(_vm.doc.surname)),
+            _vm._v(" Dott.\n        " + _vm._s(_vm.doc.surname) + "\n      "),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-12 col-md-8 px-4" }, [
@@ -4852,9 +4901,7 @@ var render = function () {
                 }),
                 _vm._v(" "),
                 _c("h2", { staticClass: "py-4" }, [
-                  _vm._v(
-                    " " + _vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname)
-                  ),
+                  _vm._v(_vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname)),
                 ]),
                 _vm._v(" "),
                 _c("h5", [_vm._v(_vm._s(_vm.doc.medicalService))]),
@@ -4868,35 +4915,35 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      "d-flex flex-column flex-md-row justify-content-between align-items-center py-4",
+                      "\n              d-flex\n              flex-column flex-md-row\n              justify-content-between\n              align-items-center\n              py-4\n            ",
                   },
                   [
                     _c("span", { staticClass: "text-center px-2" }, [
                       _c("i", { staticClass: "fa-solid fa-at" }),
                       _vm._v(
-                        "\n                            " +
+                        "\n              " +
                           _vm._s(_vm.doc.email) +
-                          "\n                        "
+                          "\n            "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "text-center px-2" }, [
                       _c("i", { staticClass: "fa-solid fa-phone" }),
                       _vm._v(
-                        "\n                            " +
+                        "\n              " +
                           _vm._s(_vm.doc.number) +
-                          "\n                        "
+                          "\n            "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "text-center px-2" }, [
                       _c("i", { staticClass: "fa-solid fa-map-location-dot" }),
                       _vm._v(
-                        "\n                           " +
+                        "\n              " +
                           _vm._s(_vm.doc.address) +
                           ", " +
                           _vm._s(_vm.doc.city) +
-                          "\n                        "
+                          "\n            "
                       ),
                     ]),
                   ]
@@ -4909,7 +4956,57 @@ var render = function () {
             "div",
             { staticClass: "col-12 col-md-4 p-4" },
             [
-              _vm._m(0),
+              _c(
+                "form",
+                {
+                  attrs: { action: "", method: "post" },
+                  on: {
+                    submit: function ($event) {
+                      $event.preventDefault()
+                      return _vm.addMessage()
+                    },
+                  },
+                },
+                [
+                  _c("h4", [_vm._v("Contatta il tuo medico!")]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-floating" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.message.text,
+                          expression: "message.text",
+                        },
+                      ],
+                      staticClass: "form-control",
+                      staticStyle: { height: "100px" },
+                      attrs: {
+                        placeholder: "Leave a message here",
+                        id: "floatingTextarea2",
+                      },
+                      domProps: { value: _vm.message.text },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.message, "text", $event.target.value)
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "floatingTextarea2" } }, [
+                      _vm._v("Scrivi qui il tuo messaggio..."),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "btn btn-outline-info my-2" }, [
+                    _vm._v("\n            Invia\n          "),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
               _c("send-review", { attrs: { doctor_id: _vm.doc.id } }),
             ],
@@ -4921,35 +5018,7 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("form", { attrs: { action: "" } }, [
-      _c("h4", [_vm._v("Contatta il tuo medico!")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-floating" }, [
-        _c("textarea", {
-          staticClass: "form-control",
-          staticStyle: { height: "100px" },
-          attrs: {
-            placeholder: "Leave a message here",
-            id: "floatingTextarea2",
-          },
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "floatingTextarea2" } }, [
-          _vm._v("Scrivi qui il tuo messaggio..."),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-outline-info my-2" }, [
-        _vm._v("Invia"),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -20899,7 +20968,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/agostinodefelice/Desktop/progetto finale/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })
