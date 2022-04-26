@@ -40,14 +40,38 @@
                 {{ doc.number }}
               </span>
 
-              <span class="text-center px-2">
-                <i class="fa-solid fa-map-location-dot"></i>
-                {{ doc.address }}, {{ doc.city }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <!-- end of colonna informazioni -->
+                            <span class="text-center px-2">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                               {{doc.address}}, {{doc.city}}
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of colonna informazioni -->
+
+                <!-- colonna form -->
+                <div class="col-12 col-md-4 p-4">
+                     <!-- sezione messaggi -->
+                    <form action="">
+                        <h4>Contatta il tuo medico!</h4>
+                        <div class="form-floating my-1">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Nome">
+                            <label for="floatingInput">Nome</label>
+                        </div>
+
+                        <div class="form-floating my-1">
+                            <input type="email" class="form-control" id="floatingPassword" placeholder="E-mail">
+                            <label for="floatingPassword">E-mail</label>
+                        </div>
+
+                        <div class="form-floating my-1">
+                            <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Scrivi qui il tuo messaggio...</label>
+                        </div>
+                        <button class="btn btn-outline-info my-2">Invia</button>
+                    </form>
+                     <!-- end of sezione messaggi -->        
 
         <!-- colonna form -->
         <div class="col-12 col-md-4 p-4">

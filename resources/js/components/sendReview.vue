@@ -18,15 +18,23 @@
         </div>
         <!-- end of sistema di voto -->
 
-        <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px"></textarea>
-        <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
+        <div class="form-floating my-1">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Nome" v-model="newReview.name">
+            <label for="floatingInput">Nome</label>
         </div>
-        <button class="btn btn-outline-info my-2">Invia</button>
+
+        <div class="form-floating my-1">
+            <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px" v-model="newReview.text"></textarea>
+            <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
+        </div>
+        <button class="btn btn-outline-info my-2" @click="postReview()">Invia</button>
+        <!-- <div class="btn btn success" @click="postReview()">form</div> -->
     </form>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     props: {
         doctor_id: Number,
@@ -36,14 +44,30 @@ export default {
         return {
             hoverState: 'false',
             hoverIndex: '',
-            vote: ''
+            vote: '',
+            newReview: {
+                name: '',
+                vote: '',
+                text: '',
+                doctor_id: '',
+            }
+
+
         }
     }, // end of data
     methods: {
+        postReview: async function() {
+            this.newReview.vote = this.vote;
+            this.newReview.doctor_id = this.doctor_id;
+
+            console.log(this.newReview);
+
+            await axios.post('api/review', this.newReview);
+
+        },
         mouseOver: function(index) {
             // this.hoverState = true;
             this.hoverIndex = index;
-            console.log('index:', this.hoverIndex)
         },
         mouseLeave: function() {
             // this.hoverState = false;
@@ -52,14 +76,9 @@ export default {
        
         voteStars: function(index) {
             this.vote = index
-        
-            console.log('voto: ', this.vote);
             return index <= this.vote ? true : false
 
         },
-        // colorStars: function(index) {
-        //     return index <= this.hoverIndex ? true : false
-        // },
         colorStars: function(index) {
             if(index <= this.vote) {
                 return 'selected'

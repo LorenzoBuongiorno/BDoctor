@@ -33,3 +33,5 @@ Route::middleware('api')->group(function () {
 
 
 
+
+Route::resource('review', 'Api\ReviewController');
