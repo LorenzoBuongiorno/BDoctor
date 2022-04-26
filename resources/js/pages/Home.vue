@@ -1,28 +1,13 @@
 <template>
+
+
+
   <div>
-  <TheNavbar/>
+    <TheNavbar/>
 
     <!-- jumbotron -->
-    <div
-      class="
-        jumbotron
-        d-flex
-        justify-content-center
-        align-items-center
-        flex-column
-        py-4
-      "
-    >
-      <div
-        class="
-          text-search
-          col-lg-6
-          d-flex
-          flex-column
-          justify-content-center
-          align-items-center
-        "
-      >
+    <div class="jumbotron d-flex justify-content-center align-items-center flex-column py-4">
+      <div class="text-search col-lg-6 d-flex flex-column justify-content-center align-items-center">
         <p class="fw-normal text-white">Trova lo specialista che fa per te</p>
         <h1 class="fw-normal text-white">Prenota la tua visita</h1>
 
@@ -63,6 +48,7 @@
     </div>
 
   </div>
+
 </template>
 
 <script>
@@ -71,34 +57,36 @@ import TheNavbar from "../components/TheNavbar.vue";
 import TheDoctorCard from "../components/TheDoctorCard.vue";
 
 export default {
-  components: { TheNavbar, TheDoctorCard },
+  components: { 
+    TheNavbar,
+    TheDoctorCard 
+  }, 
   data() {
     return {
       doctors: [],
       city: "",
       specialization: "",
     };
+  }, // end of data
+  mounted() {
+
   },
-  mounted() {},
   methods: {
     search(city, specialization) {
-      axios
-        .get(
-          "http://127.0.0.1:8000/api/search?city=" +
+      axios.get("/api/doctor?city=" +
             city +
             "&specialization=" +
             specialization
-        )
-        .then((element) => {
+        ).then((element) => {
           this.doctors = element.data;
         });
     },
-  },
-    computed: {
- filteredDoc () {
-  return this.doctors.filter((v,i,a)=>a.findIndex(t=>(t.id===v.id))===i)
-}
-}
+  }, // end of methods
+  computed: {
+    filteredDoc () {
+      return this.doctors.filter((v,i,a)=>a.findIndex(t=>(t.id===v.id))===i)
+    }
+  }, // end of computed
 };
 </script>
 

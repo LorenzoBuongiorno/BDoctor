@@ -17,10 +17,23 @@ class DoctorController extends Controller
      */
     public function index()
     {
-         $doctors = Doctor::paginate(4);
+
+        $search_specialization = $_GET['specialization'];
+        $search_city = $_GET['city'];
+
+
+        $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
+            ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
+            ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
+            ->where('doctors.city','LIKE','%'.$search_city.'%')
+            ->get();
+
+        return response()->json($doctors);
+
+        //  $doctors = Doctor::paginate(4);
 
         
-        return response()->json($doctors);
+        // return response()->json($doctors);
 
     }
 
@@ -97,17 +110,17 @@ class DoctorController extends Controller
 
     public function search()
     {
-        $search_specialization = $_GET['specialization'];
-        $search_city = $_GET['city'];
+        // $search_specialization = $_GET['specialization'];
+        // $search_city = $_GET['city'];
 
 
-        $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
-                                ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
-                                ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
-                                ->where('doctors.city','LIKE','%'.$search_city.'%')
-                                ->get();
+        // $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
+        //                         ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
+        //                         ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
+        //                         ->where('doctors.city','LIKE','%'.$search_city.'%')
+        //                         ->get();
 
-        return response()->json($doctors);
+        // return response()->json($doctors);
 
         // http://       /api/search?city=&specialization=
     }

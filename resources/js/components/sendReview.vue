@@ -1,5 +1,6 @@
 <template>
-    <form action="POST" class="pt-4" @submit.prevent="">
+    <div class="review">
+
         <h4>
             Lascia una recensione
         </h4>
@@ -13,8 +14,9 @@
             @mouseover="mouseOver(index)"
             @mouseleave="mouseLeave()"
             class="fa-solid fa-star mx-1"
-        
-            :class="colorStars(index)"></i>
+            :class="colorStars(index)"
+            >
+            </i>
         </div>
         <!-- end of sistema di voto -->
 
@@ -29,7 +31,8 @@
         </div>
         <button class="btn btn-outline-info my-2" @click="postReview()">Invia</button>
         <!-- <div class="btn btn success" @click="postReview()">form</div> -->
-    </form>
+    </div>
+    
 </template>
 
 <script>
@@ -92,7 +95,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    form {
+    .review {
 
         .vote {
 

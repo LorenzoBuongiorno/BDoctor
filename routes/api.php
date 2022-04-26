@@ -22,16 +22,16 @@ use App\Http\Controllers\Api\MessageController;
 //     return $request->user();
 // });
 
-Route::get("/doctors", "Api\DoctorController@index");
-Route::get("/doctors/{doctor}", "Api\DoctorController@show");
-Route::get("/search", "Api\DoctorController@search");
-Route::get("/advanceSearch", "Api\DoctorsController@advanceSearch");
-Route::get("/messagetest", "Api\MessageController@show");
-Route::middleware('api')->group(function () {
-    Route::resource('messages', 'MessageController');
-});
+// Route::get("/doctors", "Api\DoctorController@index");
+// Route::get("/doctors/{doctor}", "Api\DoctorController@show");
+// Route::get("/search", "Api\DoctorController@search");
+// Route::get("/advanceSearch", "Api\DoctorsController@advanceSearch");
+// Route::get("/messagetest", "Api\MessageController@show");
+// Route::middleware('api')->group(function () {
+//     Route::resource('messages', 'MessageController');
+// });
 
 
-
-
+Route::resource('message', 'Api\messageController');
+Route::resource('doctor', 'Api\DoctorController');
 Route::resource('review', 'Api\ReviewController');

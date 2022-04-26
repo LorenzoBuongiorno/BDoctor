@@ -1,108 +1,104 @@
 <template>
   <div>
+
     <TheNavbar />
 
     <div class="container">
-      <div class="row">
-        <h1 class="pt-4 px-4 pb-2">
-          <span style="color: #ff6700">Pagina dettagli</span> Dott.
-          {{ doc.surname }}
-        </h1>
+      <div class="row my-5">
 
         <!-- colonna informazioni -->
-        <div class="col-12 col-md-8 px-4">
-          <div class="infos d-flex flex-column justify-content-between p-4">
-            <img class="align-self-center" :src="doc.photo" />
+        <div class="col-12 col-md-8 info-container">
+          <div class="container ">
+              <!-- titolo -->
+              <div class="row justify-content-center my-4">
+                <h2 class="col-12 title">
+                   {{doc.name}} {{doc.surname}}
+                </h2>
+              </div>
+              <!-- end of titolo -->
 
-            <h2 class="py-4">{{ doc.name }} {{ doc.surname }}</h2>
-
-            <!-- <h4>{{ doc.specialization["specialization"]}}</h4>  -->
-
-            <h5>{{ doc.medicalService }}</h5>
-            <p class="card-text" v-html="doc.curriculum"></p>
-
-            <div
-              class="
-                d-flex
-                flex-column flex-md-row
-                justify-content-between
-                align-items-center
-                py-4
-              "
-            >
-              <span class="text-center px-2">
-                <i class="fa-solid fa-at"></i>
-                {{ doc.email }}
-              </span>
-
-              <span class="text-center px-2">
-                <i class="fa-solid fa-phone"></i>
-                {{ doc.number }}
-              </span>
-
-                            <span class="text-center px-2">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                               {{doc.address}}, {{doc.city}}
-                            </span>
-                        </div>
-                    </div>
+              <!-- img + info -->
+              <div class="row my-3">
+                <div class="col-12 col-md-6">
+                  <img class="profile-img" :src="doc.photo" alt="">
 
                 </div>
-                <!-- end of colonna informazioni -->
 
-                <!-- colonna form -->
-                <div class="col-12 col-md-4 p-4">
-                     <!-- sezione messaggi -->
-                    <form action="">
-                        <h4>Contatta il tuo medico!</h4>
-                        <div class="form-floating my-1">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Nome">
-                            <label for="floatingInput">Nome</label>
-                        </div>
+               <div class="col-12 col-md-4">
 
-                        <div class="form-floating my-1">
-                            <input type="email" class="form-control" id="floatingPassword" placeholder="E-mail">
-                            <label for="floatingPassword">E-mail</label>
-                        </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      
+                      <td>
+                        <i class="fa-solid fa-at"></i>
+                      </td>
+                      <td> {{doc.email}} </td>
+                      
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fa-solid fa-phone"></i>
+                      </td>
+                      <td> {{doc.number}}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fa-solid fa-map-location-dot"></i>
+                      </td>
+                      <td> {{doc.address}}, {{doc.city}}</td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+                
+               </div>
+              </div>
+              <!-- end of img + info -->
 
-                        <div class="form-floating my-1">
-                            <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">Scrivi qui il tuo messaggio...</label>
-                        </div>
-                        <button class="btn btn-outline-info my-2">Invia</button>
-                    </form>
-                     <!-- end of sezione messaggi -->        
+              <!-- medical info -->
+              <div class="row my-4 flex-wrap">
+                <div class="col-12">
+                  <h4>
+                    Prestazioni:
+                  </h4>
+                  <div>
+                    {{doc.medicalService}}
+                  </div>
+                </div>
+                <div class="col-12 my-4">
+                  <h4>Curriculum:</h4>
+                  <div>
+                    {{doc.curriculum}}  
+                  </div>
+                </div>
+              </div>
+              <!-- end of medical info -->
 
-        <!-- colonna form -->
-        <div class="col-12 col-md-4 p-4">
-          <!-- sezione messaggi -->
-          <form action="" method="post" @submit.prevent="addMessage()">
-            <h4>Contatta il tuo medico!</h4>
-            <div class="form-floating">
-              <textarea
-                class="form-control"
-                placeholder="Leave a message here"
-                id="floatingTextarea2"
-                style="height: 100px"
-                v-model="message.text"
-              ></textarea>
-              <label for="floatingTextarea2"
-                >Scrivi qui il tuo messaggio...</label
-              >
-            </div>
-            <button class="btn btn-outline-info my-2">
-              Invia
-            </button>
-          </form>
-          <!-- end of sezione messaggi -->
-
-          <!-- sezione recensioni -->
-          <send-review :doctor_id="doc.id" />
-          <!-- end of sezione recensioni -->
+          </div>
         </div>
-        <!-- end of colonna form -->
+        <!-- end of colonna informazioni -->
+
+        <!-- colonna interazioni -->
+        <div class="col-12 col-md-4 interaction-container">
+          
+          <!-- sezione messaggi -->
+          <send-message
+          class="my-3"
+          :doctor_id="doc.id"
+          />
+          <!-- sezione recensioni -->
+          <send-review
+          class="my-3"
+          :doctor_id="doc.id"
+          />
+        </div>
+        <!-- end of colonna interazioni -->
+
+
       </div>
     </div>
+
   </div>
 </template>
 
@@ -110,48 +106,43 @@
 import axios from "axios";
 import TheNavbar from "../../components/TheNavbar.vue";
 import SendReview from "../../components/sendReview.vue";
+import SendMessage from '../../components/sendMessage.vue';
 
 export default {
-  components: { TheNavbar, SendReview },
+  components: { 
+    TheNavbar,
+    SendReview,
+    SendMessage,
+  },
   data() {
     return {
       doc: {},
       message: {},
     };
-  },
+  }, // end of data
   methods: {
     async fetchDoctor() {
-      const resp = await axios.get("/api/doctors/" + this.$route.params.doc);
+      const resp = await axios.get("/api/doctor/" + this.$route.params.doc);
       this.doc = resp.data;
     },
-    addMessage() {
-      axios
-        .post("http://127.0.0.1:8000/api/messages", this.message)
-        .then((response) => this.$router.push({ }))
-        .catch((err) => console.log(err))
-        .finally(() => (this.loadin = false));
-    },
-  },
+   
+  }, // end of methods
   mounted() {
     console.log(this.$route.params.doc);
     this.fetchDoctor();
-  },
-};
+  }, // end of mounted
+}; 
 </script>
 
 <style lang="scss" scoped>
-.container {
-  .row {
-    .infos {
-      img {
+
+.profile-img {
+        width: 80%;
         object-fit: cover;
-        width: 440px;
-        height: 320px;
         border-radius: 50px;
-        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-          rgba(0, 0, 0, 0.23) 0px 6px 6px;
-      }
-    }
-  }
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+
+
 </style>

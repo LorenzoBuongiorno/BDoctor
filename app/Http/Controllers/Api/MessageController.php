@@ -38,14 +38,20 @@ class MessageController extends Controller
     {
         $data = $request->validate([
             'text'=>'required',
-           'doctor_id'=>'required',
-           'name'=>'required',
-           'email'=>'required',
+            'doctor_id'=>'required',
+            'name'=>'required',
+            'email'=>'required',
         ]);
         // return dd($data);
         $newMessage = new Message();
-        $newMessage->fill($data);
+        
+        $newMessage->name = $data['name'];
+        $newMessage->doctor_id = $data['doctor_id'];
+        $newMessage->text = $data['text'];
+        $newMessage->email = $data['email'];
+
         $newMessage->save();
+        
         return response()->json($newMessage);
         // dd($newMessage);
     }

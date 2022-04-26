@@ -12,7 +12,7 @@
 
     <!-- <button class="btn btn-info text-white text-end">Dettagli dottore ></button> -->
     <div class="btn btn-ouline-info text-white text-end p-2">
-      <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico > </router-link>
+      <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
     </div>
   </div>
 
@@ -21,7 +21,9 @@
 
 <script>
 export default {
-  props: { doc: Object },
+  props: { 
+    doc: Object 
+  },
 };
 </script>
 
