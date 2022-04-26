@@ -2181,6 +2181,15 @@ __webpack_require__.r(__webpack_exports__);
         _this.doctors = element.data;
       });
     }
+  },
+  computed: {
+    filteredDoc: function filteredDoc() {
+      return this.doctors.filter(function (v, i, a) {
+        return a.findIndex(function (t) {
+          return t.id === v.id;
+        }) === i;
+      });
+    }
   }
 });
 
@@ -4793,7 +4802,7 @@ var render = function () {
       _c(
         "div",
         { staticClass: "d-flex flex-wrap" },
-        _vm._l(_vm.doctors, function (doc) {
+        _vm._l(_vm.filteredDoc, function (doc) {
           return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
         }),
         1
