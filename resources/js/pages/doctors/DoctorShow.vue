@@ -46,9 +46,19 @@
                      <!-- sezione messaggi -->
                     <form action="">
                         <h4>Contatta il tuo medico!</h4>
-                        <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Scrivi qui il tuo messaggio...</label>
+                        <div class="form-floating my-1">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Nome">
+                            <label for="floatingInput">Nome</label>
+                        </div>
+
+                        <div class="form-floating my-1">
+                            <input type="email" class="form-control" id="floatingPassword" placeholder="E-mail">
+                            <label for="floatingPassword">E-mail</label>
+                        </div>
+
+                        <div class="form-floating my-1">
+                            <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Scrivi qui il tuo messaggio...</label>
                         </div>
                         <button class="btn btn-outline-info my-2">Invia</button>
                     </form>

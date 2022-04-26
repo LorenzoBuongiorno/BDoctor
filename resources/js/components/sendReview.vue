@@ -17,8 +17,11 @@
             :class="colorStars(index)"></i>
         </div>
         <!-- end of sistema di voto -->
-
-        <div class="form-floating">
+        <div class="form-floating my-1">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Nome">
+            <label for="floatingInput">Nome</label>
+        </div>
+        <div class="form-floating my-1">
         <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px"></textarea>
         <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
         </div>

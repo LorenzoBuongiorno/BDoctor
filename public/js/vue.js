@@ -2037,6 +2037,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     doctor_id: Number
@@ -2216,6 +2219,16 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4645,6 +4658,8 @@ var render = function () {
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
     _c("button", { staticClass: "btn btn-outline-info my-2" }, [
       _vm._v("Invia"),
     ]),
@@ -4655,7 +4670,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-floating" }, [
+    return _c("div", { staticClass: "form-floating my-1" }, [
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", id: "floatingInput", placeholder: "Nome" },
+      }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "floatingInput" } }, [_vm._v("Nome")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-floating my-1" }, [
       _c("textarea", {
         staticClass: "form-control",
         staticStyle: { height: "200px" },
@@ -4938,7 +4966,29 @@ var staticRenderFns = [
     return _c("form", { attrs: { action: "" } }, [
       _c("h4", [_vm._v("Contatta il tuo medico!")]),
       _vm._v(" "),
-      _c("div", { staticClass: "form-floating" }, [
+      _c("div", { staticClass: "form-floating my-1" }, [
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "text", id: "floatingInput", placeholder: "Nome" },
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "floatingInput" } }, [_vm._v("Nome")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-floating my-1" }, [
+        _c("input", {
+          staticClass: "form-control",
+          attrs: {
+            type: "email",
+            id: "floatingPassword",
+            placeholder: "E-mail",
+          },
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "floatingPassword" } }, [_vm._v("E-mail")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-floating my-1" }, [
         _c("textarea", {
           staticClass: "form-control",
           staticStyle: { height: "100px" },
