@@ -9,7 +9,13 @@
       <h6>{{ doc.vote }}</h6>
       <p class="card-text" v-html="doc.curriculum"></p>
     </div>
+
+    <!-- <button class="btn btn-info text-white text-end">Dettagli dottore ></button> -->
+    <div class="btn btn-ouline-info text-white text-end p-2">
+      <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico > </router-link>
+    </div>
   </div>
+
 </div>
 </template>
 
