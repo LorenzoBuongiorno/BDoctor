@@ -27,8 +27,8 @@
             <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px" v-model="newReview.text"></textarea>
             <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
         </div>
-        <button class="btn my-2" @click="postReview()">Invia</button>
-        <div class="btn btn success" @click="postReview()">form</div>
+        <button class="btn btn-outline-info my-2" @click="postReview()">Invia</button>
+        <!-- <div class="btn btn success" @click="postReview()">form</div> -->
     </form>
 </template>
 

@@ -4747,7 +4747,7 @@ var render = function () {
     _c(
       "button",
       {
-        staticClass: "btn my-2",
+        staticClass: "btn btn-outline-info my-2",
         on: {
           click: function ($event) {
             return _vm.postReview()
@@ -4755,19 +4755,6 @@ var render = function () {
         },
       },
       [_vm._v("Invia")]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "btn btn success",
-        on: {
-          click: function ($event) {
-            return _vm.postReview()
-          },
-        },
-      },
-      [_vm._v("form")]
     ),
   ])
 }
