@@ -6,51 +6,52 @@
     <TheNavbar/>
 
     <!-- jumbotron -->
-    <div class="jumbotron d-flex justify-content-center align-items-center flex-column py-4">
-      <div class="text-search col-lg-6 d-flex flex-column justify-content-center align-items-center">
-        <p class="fw-normal text-white">Trova lo specialista che fa per te</p>
-        <h1 class="fw-normal text-white">Prenota la tua visita</h1>
+    <div class="main-content">
+      <div class="jumbotron d-flex justify-content-center align-items-center flex-column py-4">
+        <div class="text-search col-lg-6 d-flex flex-column justify-content-center align-items-center">
+          <p class="fw-normal text-white">Trova lo specialista che fa per te</p>
+          <h1 class="fw-normal text-white">Prenota la tua visita</h1>
 
-        <form method="get" action="/" class="text-center p-2">
-          <input
-            name="specialization"
-            class="col-7 rounded"
-            type="text"
-            placeholder="Cardiologo"
-            v-model="specialization"
-          />
-          <input
-            name="city"
-            class="col-4 rounded"
-            type="text"
-            placeholder="Roma"
-            v-model="city"
-          />
-        </form>
-        <div class="py-2">
-          <button
-            type="submit"
-            class="btn orange"
-            @click="search(city, specialization)"
-            href="/search"
-          >
-            Cerca
-          </button>
-          <button type="submit" class="btn orange">Ricerca Avanzata</button>
+          <form method="get" action="/" class="text-center p-2">
+            <input
+              name="specialization"
+              class="col-7 rounded"
+              type="text"
+              placeholder="Cardiologo"
+              v-model="specialization"
+            />
+            <input
+              name="city"
+              class="col-4 rounded"
+              type="text"
+              placeholder="Roma"
+              v-model="city"
+            />
+          </form>
+          <div class="py-2">
+            <button
+              type="submit"
+              class="btn orange"
+              @click="search(city, specialization)"
+              href="/search"
+            >
+              Cerca
+            </button>
+            <button type="submit" class="btn orange">Ricerca Avanzata</button>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- end of jumbotron -->
+      <!-- end of jumbotron -->
 
-    <!-- doctors list -->
-    <div class="container">
-        <div class="row">
-            <div class="d-flex flex-wrap">
-            <TheDoctorCard v-for="doc in filteredDoc" :key="doc.id" :doc="doc" />
-            </div>
-        </div>
+      <!-- doctors list -->
+      <div class="container">
+          <div class="row">
+              <div class="d-flex flex-wrap">
+              <TheDoctorCard v-for="doc in filteredDoc" :key="doc.id" :doc="doc" />
+              </div>
+          </div>
+      </div>
     </div>
-
   </div>
 
 </template>
@@ -95,20 +96,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home-container {
+.main-content{
+
     background: rgb(58,110,165);
+
+  .jumbotron {
     background: linear-gradient(0deg, rgba(58,110,165,1) 65%, rgba(255,255,255,0) 91%);
   .btn.orange {
     background-color: #ff6700;
     color: whitesmoke;
   }
-
+  
   nav {
     height: 80px;
     background-color: #3a6ea5;
   }
-
-  .jumbotron {
     height: 91.5vh;
     background: linear-gradient(to top, rgba(58,110,165,1) 0%, rgba(255,255,255,0) 15%), url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
     

@@ -2326,6 +2326,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2661,7 +2662,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n}\n.home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 91.5vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 91.5vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -5163,121 +5164,127 @@ var render = function () {
     [
       _c("TheNavbar"),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "jumbotron d-flex justify-content-center align-items-center flex-column py-4",
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass:
-                "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
-            },
-            [
-              _c("p", { staticClass: "fw-normal text-white" }, [
-                _vm._v("Trova lo specialista che fa per te"),
-              ]),
-              _vm._v(" "),
-              _c("h1", { staticClass: "fw-normal text-white" }, [
-                _vm._v("Prenota la tua visita"),
-              ]),
-              _vm._v(" "),
-              _c(
-                "form",
-                {
-                  staticClass: "text-center p-2",
-                  attrs: { method: "get", action: "/" },
-                },
-                [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.specialization,
-                        expression: "specialization",
-                      },
-                    ],
-                    staticClass: "col-7 rounded",
-                    attrs: {
-                      name: "specialization",
-                      type: "text",
-                      placeholder: "Cardiologo",
-                    },
-                    domProps: { value: _vm.specialization },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.specialization = $event.target.value
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.city,
-                        expression: "city",
-                      },
-                    ],
-                    staticClass: "col-4 rounded",
-                    attrs: { name: "city", type: "text", placeholder: "Roma" },
-                    domProps: { value: _vm.city },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.city = $event.target.value
-                      },
-                    },
-                  }),
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-2" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn orange",
-                    attrs: { type: "submit", href: "/search" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.search(_vm.city, _vm.specialization)
-                      },
-                    },
-                  },
-                  [_vm._v("\n          Cerca\n        ")]
-                ),
+      _c("div", { staticClass: "main-content" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "jumbotron d-flex justify-content-center align-items-center flex-column py-4",
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
+              },
+              [
+                _c("p", { staticClass: "fw-normal text-white" }, [
+                  _vm._v("Trova lo specialista che fa per te"),
+                ]),
+                _vm._v(" "),
+                _c("h1", { staticClass: "fw-normal text-white" }, [
+                  _vm._v("Prenota la tua visita"),
+                ]),
                 _vm._v(" "),
                 _c(
-                  "button",
-                  { staticClass: "btn orange", attrs: { type: "submit" } },
-                  [_vm._v("Ricerca Avanzata")]
+                  "form",
+                  {
+                    staticClass: "text-center p-2",
+                    attrs: { method: "get", action: "/" },
+                  },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.specialization,
+                          expression: "specialization",
+                        },
+                      ],
+                      staticClass: "col-7 rounded",
+                      attrs: {
+                        name: "specialization",
+                        type: "text",
+                        placeholder: "Cardiologo",
+                      },
+                      domProps: { value: _vm.specialization },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.specialization = $event.target.value
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.city,
+                          expression: "city",
+                        },
+                      ],
+                      staticClass: "col-4 rounded",
+                      attrs: {
+                        name: "city",
+                        type: "text",
+                        placeholder: "Roma",
+                      },
+                      domProps: { value: _vm.city },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.city = $event.target.value
+                        },
+                      },
+                    }),
+                  ]
                 ),
-              ]),
-            ]
-          ),
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "d-flex flex-wrap" },
-            _vm._l(_vm.filteredDoc, function (doc) {
-              return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
-            }),
-            1
-          ),
+                _vm._v(" "),
+                _c("div", { staticClass: "py-2" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn orange",
+                      attrs: { type: "submit", href: "/search" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.search(_vm.city, _vm.specialization)
+                        },
+                      },
+                    },
+                    [_vm._v("\n            Cerca\n          ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "btn orange", attrs: { type: "submit" } },
+                    [_vm._v("Ricerca Avanzata")]
+                  ),
+                ]),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "d-flex flex-wrap" },
+              _vm._l(_vm.filteredDoc, function (doc) {
+                return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
+              }),
+              1
+            ),
+          ]),
         ]),
       ]),
     ],
@@ -21477,7 +21484,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })
