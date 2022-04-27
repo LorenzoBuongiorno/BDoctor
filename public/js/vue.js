@@ -5104,7 +5104,7 @@ var render = function () {
         staticClass: "btn btn-outline-info my-2 ms-1",
         on: {
           click: function ($event) {
-            return _vm.openModale()
+            _vm.openModale(), _vm.postReview()
           },
         },
       },
@@ -21477,7 +21477,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })
