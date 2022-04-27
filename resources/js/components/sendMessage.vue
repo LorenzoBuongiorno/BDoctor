@@ -19,6 +19,7 @@
         </div>
 
         <button class="btn btn-outline-info my-2" @click="postMessage()">Invia</button>
+        <h2>prova</h2>
 
     </div>
 </template>
