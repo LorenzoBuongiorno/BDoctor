@@ -2,6 +2,8 @@
   <div class="message">
     <h4>Contatta il medico per un appuntamento</h4>
 
+  
+
     <div class="form-floating my-1">
       <input
         type="text"
@@ -35,25 +37,16 @@
       <label for="floatingTextarea2">Scrivi qui il tuo messaggio</label>
     </div>
 
-    <button class="btn btn-outline-info my-2" @click="openModal()">
-      Invia
-    </button>
+      <button class="btn btn-outline-info my-2 ms-1" @click="openModal(), postMessage()">Invia</button>
 
     <div class="bg-modal">
       <div class="modal-contents">
         <h5>Il tuo messaggio è stato inviato.</h5>
-        <div class="content">
-            <ul>
-                <!-- bug: appena inserisci un valore di un v-model il container scompare dal flusso -->
-         <!--   <li>Nome: {{$newMessage.name}}</li> 
-                <li>Email: {{$newMessage.text}}</li> 
-                <li>Testo Messaggio: {{$newMessage.email}}</li> -->
-            </ul>
-        </div>
-        <button class="close btn btn-outline-info my-2" @click="closeModal()">Invia un altro messaggio.</button>
+        <button class="close btn btn-outline-info my-2 mt-4" @click="closeModal()">Invia un altro messaggio.</button>
       </div>
     </div>
-  </div>
+    </div>
+
 </template>
 
 <script>
@@ -101,11 +94,12 @@ export default {
       display: none;
       justify-content: center;
       align-items: center;
+      border-radius: 20pxpx;
     }
     
     .modal-contents {
+      width: 100%;
       height: 100%;
-      width: 500px;
       background-color: white;
       text-align: center;
       padding: 20px;

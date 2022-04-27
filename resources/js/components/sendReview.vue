@@ -29,8 +29,14 @@
             <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px" v-model="newReview.text"></textarea>
             <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
         </div>
-        <button class="btn btn-outline-info my-2" @click="postReview()">Invia</button>
+        <button class="btn btn-outline-info my-2 ms-1" @click="openModale()">Invia</button>
         <!-- <div class="btn btn success" @click="postReview()">form</div> -->
+        <div class="bg-modale">
+      <div class="modale-contents">
+        <h5>La tua recensione è stata inviata.</h5>
+        <button class="close btn btn-outline-info my-2 mt-4" @click="closeModale()">Invia un'altra recensione.</button>
+      </div>
+    </div>
     </div>
     
 </template>
@@ -53,8 +59,7 @@ export default {
                 vote: '',
                 text: '',
                 doctor_id: '',
-            }
-
+            },
 
         }
     }, // end of data
@@ -89,6 +94,13 @@ export default {
                 return 'active'
             } 
         },
+         openModale() {
+      document.querySelector(".bg-modale").style.display = "flex";
+    },
+
+    closeModale() {
+      document.querySelector(".bg-modale").style.display = "none";
+    },
     }
 
 }
@@ -96,6 +108,37 @@ export default {
 
 <style lang="scss" scoped>
     .review {
+        position: relative;
+}
+ .bg-modale {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    
+    .modale-contents {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      border-radius: 4px;
+      background-color: #3A6EA5;
+      overflow: auto;
+    }
+    
+    .close {
+        width: 190px;
+        margin: 50px auto;
+        bottom: 0;
+        font-size: 14px;
+    }
 
         .vote {
 
@@ -113,5 +156,5 @@ export default {
             }
 
         }
-    }
+    
 </style>
