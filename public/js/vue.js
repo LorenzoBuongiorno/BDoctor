@@ -2317,6 +2317,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -2652,7 +2656,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbotron[data-v-b3c5cf30] {\n  height: 91.5vh;\n  background-image: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n}\n.home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 91.5vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -5244,14 +5248,18 @@ var render = function () {
         ]
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "d-flex flex-wrap" },
-        _vm._l(_vm.filteredDoc, function (doc) {
-          return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
-        }),
-        1
-      ),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "d-flex flex-wrap" },
+            _vm._l(_vm.filteredDoc, function (doc) {
+              return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
+            }),
+            1
+          ),
+        ]),
+      ]),
     ],
     1
   )
@@ -21449,7 +21457,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })
