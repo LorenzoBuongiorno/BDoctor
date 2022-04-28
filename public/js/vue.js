@@ -2590,7 +2590,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-653167c5] {\n  width: 400px;\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n}", ""]);
+exports.push([module.i, ".card[data-v-653167c5] {\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n}", ""]);
 
 // exports
 
@@ -4717,7 +4717,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mx-auto p-4" }, [
-    _c("div", { staticClass: "card col-xl-4 col-md-6 col-sm-8 col-xs-12" }, [
+    _c("div", { staticClass: "card col-12" }, [
       _c("div", { staticClass: "card-header bg-info text-white text-end" }, [
         _vm._v(_vm._s(_vm.doc.city)),
       ]),
@@ -21486,7 +21486,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })
