@@ -1,6 +1,6 @@
 <template>
 <div class="mx-auto p-4">
-  <div class="card col-xl-4 col-md-6 col-sm-8 col-xs-12">
+  <div class="card col-12">
     <div class="card-header bg-info text-white text-end">{{doc.city}}</div>
     <img :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" class="card-img-top" alt="..."  />
     <div class="card-body">
@@ -28,12 +28,12 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-
-  width: 400px;
+  // width: 400px;
   height: 500px;
 
   img {
     object-fit: cover;
+    width: 100%;
     height: 280px; 
   }
 
