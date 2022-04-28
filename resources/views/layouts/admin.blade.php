@@ -22,7 +22,7 @@
             </button>
             @if(Route::has('login'))
             @auth
-            <a class="nav-link text-white" href="/login">
+            <a class="nav-link text-white d-none d-lg-block d-xl-block" href="/login">
                 Benvenuto Dr. {{ Auth::user()->surname }}!
             </a>
             @endauth
