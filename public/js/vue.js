@@ -2677,7 +2677,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: #3a6ea5;\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://images.unsplash.com/photo-1625134673337-519d4d10b313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2738&q=80\");\n  background-size: cover;\n  background-position: right;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\n  background: rgba(0, 0, 0, 0.3);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid #ff6700;\n}", ""]);
 
 // exports
 
@@ -5119,11 +5119,11 @@ var render = function () {
                 "text-search col-lg-8 d-flex flex-column justify-content-center align-items-center",
             },
             [
-              _c("p", { staticClass: "fw-normal text-white" }, [
+              _c("p", { staticClass: "text-white fs-5" }, [
                 _vm._v("Trova lo specialista che fa per te"),
               ]),
               _vm._v(" "),
-              _c("h1", { staticClass: "fw-normal text-white" }, [
+              _c("h1", { staticClass: "text-white" }, [
                 _vm._v("Prenota la tua visita"),
               ]),
               _vm._v(" "),
@@ -21462,7 +21462,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })
