@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
 
             $table->unsignedBigInteger('doctor_id');
             $table->char('name', 50);
-            $table->text('text', 50);
+            $table->text('text', 50)->nullable();
             $table->tinyInteger('vote');
 
             $table->foreign('doctor_id')
