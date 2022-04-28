@@ -64,14 +64,14 @@
                         </form>
                     </li>
                     @else
-                        <li class="nav-item active btn">
-                            <a class="nav-link" href="{{ route('login') }}">ACCEDI</a>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-info" href="/login">Accedi</a>
                         </li>
                         
                         
                         @if (Route::has('register'))
-                        <li class="nav-item active btn orange">
-                            <a class="nav-link" href="{{ route('register') }}">Sei un dottore? Iscriviti!</a>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn orange" href="/register">Sei un dottore? <span class="text-white"> Iscriviti! </span></a>
                         </li>
                         @endif
 
@@ -88,3 +88,9 @@
 
 </body>
 </html>
+<style>
+    .orange {
+    background-color: #ff6700;
+    color: whitesmoke;
+  }
+</style>

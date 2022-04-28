@@ -1983,16 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2622,7 +2612,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n}", ""]);
+exports.push([module.i, "nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n}\nnav .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\nnav ul li[data-v-eca07cf4] {\n  list-style: none;\n}", ""]);
 
 // exports
 
@@ -4803,10 +4793,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home-container" }, [
+    return _c("div", [
       _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+        _c("div", { staticClass: "container-fluid mx-4 py-2" }, [
+          _c("a", { staticClass: "navbar-brand fs-2", attrs: { href: "/" } }, [
             _vm._v("BDoctor.it"),
           ]),
           _vm._v(" "),
@@ -4829,34 +4819,35 @@ var staticRenderFns = [
           _c(
             "div",
             {
-              staticClass:
-                "collapse navbar-collapse d-flex justify-content-end",
+              staticClass: "collapse navbar-collapse",
               attrs: { id: "navbarNav" },
             },
             [
-              _c("ul", { staticClass: "navbar-nav ms-5 mt-2" }, [
-                _c("li", { staticClass: "nav-item" }, [
+              _c("ul", { staticClass: "navbar-nav ms-auto" }, [
+                _c("li", { staticClass: "nav-item m-1" }, [
                   _c(
                     "a",
                     {
-                      staticClass: "nav-item active btn orange me-2",
+                      staticClass: "nav-link btn btn-info",
+                      attrs: { href: "/login" },
+                    },
+                    [_vm._v("Accedi")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item m-1" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link btn orange",
                       attrs: { href: "/register" },
                     },
                     [
-                      _vm._v(" Sei un dottore? "),
+                      _vm._v("Sei un dottore? "),
                       _c("span", { staticClass: "text-white" }, [
                         _vm._v(" Iscriviti! "),
                       ]),
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-outline-info",
-                      attrs: { href: "/login" },
-                    },
-                    [_vm._v(" Accedi ")]
                   ),
                 ]),
               ]),
