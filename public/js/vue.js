@@ -2345,8 +2345,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2372,6 +2370,19 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    console: function (_console) {
+      function console(_x) {
+        return _console.apply(this, arguments);
+      }
+
+      console.toString = function () {
+        return _console.toString();
+      };
+
+      return console;
+    }(function (test) {
+      console.log(test);
+    }),
     search: function search(city, specialization) {
       var _this2 = this;
 
@@ -5115,7 +5126,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "container my-3" }, [
-                _c("form", { staticClass: "row g-3 align-items-center" }, [
+                _c("div", { staticClass: "row g-3 align-items-center" }, [
                   _c("div", { staticClass: "col-12 col-md-6 offset-md-1" }, [
                     _c(
                       "label",
@@ -5234,7 +5245,6 @@ var render = function () {
                       "button",
                       {
                         staticClass: "btn orange",
-                        attrs: { type: "submit", href: "#search-container" },
                         on: {
                           click: function ($event) {
                             return _vm.search(_vm.city, _vm.specialization)

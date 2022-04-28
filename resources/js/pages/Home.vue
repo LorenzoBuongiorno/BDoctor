@@ -10,7 +10,7 @@
           <h1 class="fw-normal text-white">Prenota la tua visita</h1>
 
           <div class="container my-3">
-            <form class="row g-3 align-items-center">
+            <div class="row g-3 align-items-center">
 
             <!-- select specializzazioni -->
             <div class="col-12 col-md-6 offset-md-1">
@@ -39,16 +39,14 @@
             </div>
 
             <div class="col-6 col-md-1">
-              <button 
-              type="submit" 
+              <button  
               class="btn orange"
               @click="search(city, specialization)"
-              href="#search-container"
               >
                 Cerca
               </button>
             </div>
-          </form>
+          </div>
           </div>
           
 
@@ -96,6 +94,9 @@ export default {
     
   },
   methods: {
+    console: function(test) {
+      console.log(test)
+    },
     search: function(city, specialization) {
       axios.get("/api/doctor?city=" +
             city +
