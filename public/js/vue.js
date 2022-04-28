@@ -4705,12 +4705,7 @@ var render = function () {
       _vm._v(" "),
       _c("img", {
         staticClass: "card-img-top",
-        attrs: {
-          src: _vm.doc.photo
-            ? _vm.doc.photo
-            : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-          alt: "...",
-        },
+        attrs: { src: _vm.doc.photo, alt: "..." },
       }),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [

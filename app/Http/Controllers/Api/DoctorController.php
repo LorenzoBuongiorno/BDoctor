@@ -27,7 +27,13 @@ class DoctorController extends Controller
             ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
             ->where('doctors.city','LIKE','%'.$search_city.'%')
             ->get();
-
+            $doctors->each(function ($doctor) {
+                if($doctor->photo) {
+                    $doctor->photo = asset("storage/" . $doctor->photo);
+                } else {
+                    $doctor->photo = "https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png";
+                }
+            });
         return response()->json($doctors);
 
         //  $doctors = Doctor::paginate(4);

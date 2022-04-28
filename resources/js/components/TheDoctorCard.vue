@@ -2,7 +2,7 @@
 <div class="mx-auto p-4">
   <div class="card col-12">
     <div class="card-header bg-info text-white text-end">{{doc.city}}</div>
-    <img :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" class="card-img-top" alt="..."  />
+    <img :src="doc.photo" class="card-img-top" alt="..."  />
     <div class="card-body">
       <h3>{{ doc.name }} {{ doc.surname }}</h3>
       <h5>{{ doc.specialization }}</h5>
