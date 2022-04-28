@@ -1,90 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BDoctor | Area riservata</title>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-     <!-- Scripts -->
-     <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-     <!-- Styles -->
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark nav-layout">
-        <div class="container">
-            <a class="navbar-brand" href="/">BDoctor.it</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            @if(Route::has('login'))
-            @auth
-            <a class="nav-link text-white d-none d-lg-block d-xl-block" href="/login">
-                Benvenuto Dr. {{ Auth::user()->surname }}!
-            </a>
-            @endauth
-            @endif
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                @if(Route::has('login'))
-                <ul class="navbar-nav">
-     
-                    @auth
-                    
-                    <li class="nav-item btn">
-                       
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="{{ route('doctors.show', Auth::user()->id) }}">Profilo</a>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="{{ route('doctors.edit', Auth::user()->id) }}">Modifica profilo</a>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="{{route('messages.index') }}">Messaggi</a>
-                    </li>
-                    <li class="nav-item active btn">
-                        <a class="nav-link" href="{{route('reviews.index')}}">Recensioni</a>
-                    </li>
-                    <li class="nav-item active btn btn-danger">
-                        <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                        
-                        </a>
+        <title>BDoctor.it | Area riservata</title>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
-                    @else
-                        <li class="nav-item active btn">
-                            <a class="nav-link" href="{{ route('login') }}">ACCEDI</a>
-                        </li>
-                        
-                        
-                        @if (Route::has('register'))
-                        <li class="nav-item active btn orange">
-                            <a class="nav-link" href="{{ route('register') }}">Sei un dottore? Iscriviti!</a>
-                        </li>
-                        @endif
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
 
-                    @endauth
-                </ul>
-                @endif
-            </div>
-        </div>
-    </nav>
+         <!-- Fonts -->
+         <link rel="dns-prefetch" href="//fonts.gstatic.com">
+         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <main>
-        @yield('content')
-    </main>
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        
+        {{-- Favicon --}}
+        {{-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"> --}}
+        {{-- <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"> --}}
+        {{-- <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"> --}}
+        <link rel="android-chrome-512x512" sizes="512x512" href="img/android-chrome-512x512.png">
+        <link rel="android-chrome-192x192" sizes="192x192" href="img/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
 
-</body>
+        {{-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> --}}
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    </head>
+
+    <body>
+        {{-- admin navbar --}}
+        @include('partials.navbar')
+
+        {{-- admin content --}}
+        <main>
+            @yield('content')
+        </main>
+
+    </body>
 </html>
