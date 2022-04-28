@@ -91,7 +91,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
 
                             <div class="col-md-6">
-                                <input id="txtPassword" type="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
+                                <input name="password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -104,10 +104,10 @@
 
                         {{-- CONFIRM PASSWORD --}}
                         <div class="form-group row mb-3">
-                            <label for="password-confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
 
                             <div class="col-md-6">
-                                <input id="txtConfirmPassword" type="password" class="form-control" required autocomplete="new-password" required>
+                                <input id="password-confirm" name="password_confirmation" type="password" class="form-control" required autocomplete="new-password" required>
                             </div>
                         </div>
 
@@ -145,15 +145,16 @@
             </div>
         </div>
     </div>
+    
     <script>
     function Validate() {
 
-        var password = document.getElementById("txtPassword").value;
-        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("password-confirm").value;
         if (password != confirmPassword) {
             alert("Passwords do not match!");
-            document.getElementById("txtPassword").classList.add("border-danger");
-            document.getElementById("txtConfirmPassword").classList.add("border-danger");
+            document.getElementById("password").classList.add("border-danger");
+            document.getElementById("password-confirm").classList.add("border-danger");
 
             return false;
         }
