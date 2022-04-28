@@ -52,6 +52,7 @@ export default {
     background-color: #3a6ea5;
     position: fixed;
     width: 100%;
+    z-index: 5;
   }
 }
 

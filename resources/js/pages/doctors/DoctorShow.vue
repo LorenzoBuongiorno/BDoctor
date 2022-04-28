@@ -4,10 +4,10 @@
     <TheNavbar />
 
     <div class="container">
-      <div class="row my-5">
+      <div class="row">
 
         <!-- colonna informazioni -->
-        <div class="col-12 col-md-8 info-container">
+        <div class="col-12 col-md-8 info-container margin-top-nav">
           <div class="container ">
               <!-- titolo -->
               <div class="row justify-content-center my-4">
@@ -80,7 +80,7 @@
         <!-- end of colonna informazioni -->
 
         <!-- colonna interazioni -->
-        <div class="col-12 col-md-4 interaction-container">
+        <div class="col-12 col-md-4 interaction-container margin-top-nav">
           
           <!-- sezione messaggi -->
           <send-message
@@ -135,14 +135,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.profile-img {
-    width: 80%;
-    object-fit: cover;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+.container{
+  .margin-top-nav{
+    margin-top: 60px;
+    .profile-img {
+        width: 80%;
+        object-fit: cover;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+  }
 }
-
-
 
 </style>

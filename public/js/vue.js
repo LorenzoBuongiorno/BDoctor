@@ -2609,7 +2609,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".home-container .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n}", ""]);
 
 // exports
 
@@ -2685,7 +2685,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".profile-img[data-v-b4a66780] {\n  width: 80%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50px;\n  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;\n}", ""]);
+exports.push([module.i, ".container .margin-top-nav[data-v-b4a66780] {\n  margin-top: 60px;\n}\n.container .margin-top-nav .profile-img[data-v-b4a66780] {\n  width: 80%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50px;\n  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;\n}", ""]);
 
 // exports
 
@@ -5309,101 +5309,108 @@ var render = function () {
       _c("TheNavbar"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row my-5" }, [
-          _c("div", { staticClass: "col-12 col-md-8 info-container" }, [
-            _c("div", { staticClass: "container " }, [
-              _c("div", { staticClass: "row justify-content-center my-4" }, [
-                _c("h2", { staticClass: "col-12 title" }, [
-                  _vm._v(
-                    "\n                 " +
-                      _vm._s(_vm.doc.name) +
-                      " " +
-                      _vm._s(_vm.doc.surname) +
-                      "\n              "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row my-3" }, [
-                _c("div", { staticClass: "col-12 col-md-6" }, [
-                  _c("img", {
-                    staticClass: "profile-img",
-                    attrs: {
-                      src: _vm.doc.photo
-                        ? _vm.doc.photo
-                        : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-                      alt: "",
-                    },
-                  }),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-12 col-md-8 info-container margin-top-nav" },
+            [
+              _c("div", { staticClass: "container " }, [
+                _c("div", { staticClass: "row justify-content-center my-4" }, [
+                  _c("h2", { staticClass: "col-12 title" }, [
+                    _vm._v(
+                      "\n                 " +
+                        _vm._s(_vm.doc.name) +
+                        " " +
+                        _vm._s(_vm.doc.surname) +
+                        "\n              "
+                    ),
+                  ]),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-12 col-md-4" }, [
-                  _c("table", { staticClass: "table" }, [
-                    _c("tbody", [
-                      _c("tr", [
-                        _vm._m(0),
+                _c("div", { staticClass: "row my-3" }, [
+                  _c("div", { staticClass: "col-12 col-md-6" }, [
+                    _c("img", {
+                      staticClass: "profile-img",
+                      attrs: {
+                        src: _vm.doc.photo
+                          ? _vm.doc.photo
+                          : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
+                        alt: "",
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 col-md-4" }, [
+                    _c("table", { staticClass: "table" }, [
+                      _c("tbody", [
+                        _c("tr", [
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _vm._m(1),
+                        _c("tr", [
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _vm._m(2),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            " " +
-                              _vm._s(_vm.doc.address) +
-                              ", " +
-                              _vm._s(_vm.doc.city)
-                          ),
+                        _c("tr", [
+                          _vm._m(2),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              " " +
+                                _vm._s(_vm.doc.address) +
+                                ", " +
+                                _vm._s(_vm.doc.city)
+                            ),
+                          ]),
                         ]),
                       ]),
                     ]),
                   ]),
                 ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row my-4 flex-wrap" }, [
-                _c("div", { staticClass: "col-12" }, [
-                  _c("h4", [
-                    _vm._v(
-                      "\n                  Prestazioni:\n                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._v(
-                      "\n                  " +
-                        _vm._s(_vm.doc.medicalService) +
-                        "\n                "
-                    ),
-                  ]),
-                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-12 my-4" }, [
-                  _c("h4", [_vm._v("Curriculum:")]),
+                _c("div", { staticClass: "row my-4 flex-wrap" }, [
+                  _c("div", { staticClass: "col-12" }, [
+                    _c("h4", [
+                      _vm._v(
+                        "\n                  Prestazioni:\n                "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(_vm.doc.medicalService) +
+                          "\n                "
+                      ),
+                    ]),
+                  ]),
                   _vm._v(" "),
-                  _c("div", [
-                    _vm._v(
-                      "\n                  " +
-                        _vm._s(_vm.doc.curriculum) +
-                        "  \n                "
-                    ),
+                  _c("div", { staticClass: "col-12 my-4" }, [
+                    _c("h4", [_vm._v("Curriculum:")]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(_vm.doc.curriculum) +
+                          "  \n                "
+                      ),
+                    ]),
                   ]),
                 ]),
               ]),
-            ]),
-          ]),
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-12 col-md-4 interaction-container" },
+            {
+              staticClass:
+                "col-12 col-md-4 interaction-container margin-top-nav",
+            },
             [
               _c("send-message", {
                 staticClass: "my-3",
@@ -21479,7 +21486,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })
