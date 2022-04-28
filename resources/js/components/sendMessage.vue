@@ -37,18 +37,15 @@
       <label for="floatingTextarea2">Scrivi qui il tuo messaggio</label>
     </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <button class="btn btn-outline-info my-2" @click="postMessage()">Invia</button>
-        <h2>prova</h2>
-=======
+<!-- 
+    <button class="btn btn-outline-info my-2" @click="postMessage()">Invia</button>
+        
+
     <button class="btn btn-outline-info my-2" @click="openModal()">
       Invia
-    </button>
->>>>>>> origin/modals
-=======
-      <button class="btn btn-outline-info my-2 ms-1" @click="openModal(), postMessage()">Invia</button>
->>>>>>> 2789bc5f328003ceaf630c39d0ece895e97d582c
+    </button> -->
+
+    <button class="btn btn-outline-info my-2 ms-1" @click="openModal(), postMessage()">Invia</button>
 
     <div class="bg-modal">
       <div class="modal-contents">

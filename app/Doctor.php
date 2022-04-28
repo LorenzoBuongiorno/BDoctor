@@ -20,15 +20,15 @@ class Doctor extends Authenticatable
      */
     protected $fillable = [
         'name',
-         'surname', 
-         'email', 
-         'password',
-         'address',
-         'city',
-         'medicalService',
-         'curriculum',
-         'number',
-         'photo',
+        'surname', 
+        'email', 
+        'password',
+        'address',
+        'city',
+        'medicalService',
+        'curriculum',
+        'number',
+        'photo',
     ];
 
     /**
