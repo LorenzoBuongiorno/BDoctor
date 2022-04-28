@@ -2343,6 +2343,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2679,7 +2684,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -5180,7 +5185,7 @@ var render = function () {
             "div",
             {
               staticClass:
-                "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
+                "text-search col-lg-8 d-flex flex-column justify-content-center align-items-center",
             },
             [
               _c("p", { staticClass: "fw-normal text-white" }, [
@@ -5191,135 +5196,159 @@ var render = function () {
                 _vm._v("Prenota la tua visita"),
               ]),
               _vm._v(" "),
-              _c(
-                "form",
-                {
-                  staticClass: "text-center p-2",
-                  attrs: { method: "get", action: "/" },
-                },
-                [
-                  _c("input", {
-                    directives: [
+              _c("div", { staticClass: "container my-3" }, [
+                _c("form", { staticClass: "row g-3 align-items-center" }, [
+                  _c("div", { staticClass: "col-12 col-md-6 offset-md-1" }, [
+                    _c(
+                      "label",
                       {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.specialization,
-                        expression: "specialization",
+                        staticClass: "visually-hidden",
+                        attrs: { for: "inlineFormSelectPref" },
                       },
-                    ],
-                    staticClass: "col-7 rounded",
-                    attrs: {
-                      name: "specialization",
-                      type: "text",
-                      placeholder: "Cardiologo",
-                    },
-                    domProps: { value: _vm.specialization },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.specialization = $event.target.value
-                      },
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group row mb-3" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
-                      _c(
-                        "select",
-                        {
-                          staticClass: "form-select",
-                          attrs: {
-                            name: "specialization",
-                            "aria-label": "form-select-sm example",
+                      [_vm._v("Preference")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.specialization,
+                            expression: "specialization",
+                          },
+                        ],
+                        staticClass: "form-select",
+                        attrs: {
+                          id: "inlineFormSelectPref",
+                          name: "specialization",
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.specialization = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
                           },
                         },
-                        [
-                          _c(
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { selected: "" }, domProps: { value: "" } },
+                          [_vm._v("Cerca per specializzazione")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.specializations, function (item) {
+                          return _c(
                             "option",
-                            { attrs: { disabled: "", selected: "" } },
-                            [_vm._v("Cerca per specializzazione")]
-                          ),
-                          _vm._v(" "),
-                          _vm._l(_vm.specializations, function (item) {
-                            return _c(
-                              "option",
-                              {
-                                key: item.id,
-                                attrs: { value: "item.specialization" },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                      " +
-                                    _vm._s(item.specialization) +
-                                    "\n                  "
-                                ),
-                              ]
-                            )
-                          }),
+                            {
+                              key: item.id,
+                              domProps: { value: item.specialization },
+                            },
+                            [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(item.specialization) +
+                                  "\n                "
+                              ),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-6 col-md-3" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "visually-hidden",
+                        attrs: { for: "inlineFormInputGroupUsername" },
+                      },
+                      [_vm._v("Città")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "input-group-text" }, [
+                        _vm._v("Città"),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.city,
+                            expression: "city",
+                          },
                         ],
-                        2
-                      ),
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "inlineFormInputGroupUsername",
+                          placeholder: "es. Milano",
+                        },
+                        domProps: { value: _vm.city },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.city = $event.target.value
+                          },
+                        },
+                      }),
                     ]),
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
+                  _c("div", { staticClass: "col-6 col-md-1" }, [
+                    _c(
+                      "button",
                       {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.city,
-                        expression: "city",
+                        staticClass: "btn orange",
+                        attrs: { type: "submit", href: "#search-container" },
+                        on: {
+                          click: function ($event) {
+                            return _vm.search(_vm.city, _vm.specialization)
+                          },
+                        },
                       },
-                    ],
-                    staticClass: "col-4 rounded",
-                    attrs: { name: "city", type: "text", placeholder: "Roma" },
-                    domProps: { value: _vm.city },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.city = $event.target.value
-                      },
-                    },
-                  }),
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-2" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn orange",
-                    attrs: { type: "submit", href: "/search" },
-                    on: {
-                      click: function ($event) {
-                        return _vm.search(_vm.city, _vm.specialization)
-                      },
-                    },
-                  },
-                  [_vm._v("\n            Cerca\n          ")]
-                ),
+                      [_vm._v("\n              Cerca\n            ")]
+                    ),
+                  ]),
+                ]),
               ]),
             ]
           ),
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "d-flex flex-wrap" },
-            _vm._l(_vm.filteredDoc, function (doc) {
-              return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
-            }),
-            1
-          ),
-        ]),
-      ]),
+      _c(
+        "div",
+        { staticClass: "container", attrs: { id: "search-container" } },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "d-flex flex-wrap" },
+              _vm._l(_vm.filteredDoc, function (doc) {
+                return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
+              }),
+              1
+            ),
+          ]),
+        ]
+      ),
     ]),
   ])
 }
@@ -21521,7 +21550,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/agostinodefelice/Desktop/progetto finale/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })
