@@ -2225,8 +2225,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 this.newReview.name = '';
                 this.newReview.email = '';
                 this.newReview.text = '';
+                this.newReview.vote = '';
+                this.vote = '';
 
-              case 9:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -21460,7 +21462,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/agostinodefelice/Desktop/progetto finale/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

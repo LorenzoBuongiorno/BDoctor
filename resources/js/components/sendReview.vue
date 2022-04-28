@@ -77,6 +77,8 @@ export default {
             this.newReview.name = '';
             this.newReview.email = '';
             this.newReview.text = '';
+            this.newReview.vote = '';
+            this.vote = '';
 
         },
         mouseOver: function(index) {
