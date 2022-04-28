@@ -44,7 +44,7 @@ class ReviewController extends Controller
         $data = $request->validate([
             "name" => "required",
             "vote" => "required",
-            "text" => "required",
+            "text" => "nullable",
             "doctor_id" => "required",
           ]);
       

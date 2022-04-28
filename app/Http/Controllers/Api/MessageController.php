@@ -40,7 +40,7 @@ class MessageController extends Controller
             'text'=>'required',
             'doctor_id'=>'required',
             'name'=>'required',
-            'email'=>'required',
+            'email'=>'required|email',
         ]);
         // return dd($data);
         $newMessage = new Message();
