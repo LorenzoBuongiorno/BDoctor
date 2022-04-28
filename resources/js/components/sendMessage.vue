@@ -22,6 +22,7 @@
         id="floatingInput2"
         placeholder="email"
         v-model="newMessage.email"
+        required
       />
       <label for="floatingInput2">email</label>
     </div>
@@ -45,14 +46,8 @@
       Invia
     </button> -->
 
-    <button class="btn btn-outline-info my-2 ms-1" @click="openModal(), postMessage()">Invia</button>
+    <button class="btn btn-outline-info my-2 ms-1" @click="postMessage()">Invia</button>
 
-    <div class="bg-modal">
-      <div class="modal-contents">
-        <h5>Il tuo messaggio è stato inviato.</h5>
-        <button class="close btn btn-outline-info my-2 mt-4" @click="closeModal()">Invia un altro messaggio.</button>
-      </div>
-    </div>
     </div>
 
 </template>
@@ -77,50 +72,30 @@ export default {
   methods: {
     postMessage: async function () {
       this.newMessage.doctor_id = this.doctor_id;
-      await axios.post("api/message", this.newMessage);
-    },
-    openModal() {
-      document.querySelector(".bg-modal").style.display = "flex";
-    },
 
-    closeModal() {
-      document.querySelector(".bg-modal").style.display = "none";
+      if(this.newMessage.name == ''){
+                  alert("Inserire il nome mittente del messaggio");
+              } else if (this.newMessage.email == ''){
+                  alert("Inserire l'email per il messaggio");
+              } else if (this.newMessage.text == ''){
+                  alert("Inserire il testo del messaggio");
+              } else {
+                  alert("Messaggio inviato!");
+              }
+
+
+          await axios.post("api/message", this.newMessage);
+
+          this.newMessage.name = '';
+          this.newMessage.email = '';
+          this.newMessage.text = '';
+
+
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.message{
-    position: relative;
-}
- .bg-modal {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      border-radius: 20pxpx;
-    }
-    
-    .modal-contents {
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      border-radius: 4px;
-      background-color: #3A6EA5;
-      overflow: auto;
-    }
-    
-    .close {
-        width: 190px;
-        margin: 50px auto;
-        bottom: 0;
-        font-size: 14px;
-    }
+
 </style>
