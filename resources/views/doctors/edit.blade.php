@@ -12,7 +12,7 @@
 
           <div class="card-body">
 
-            <form action="{{ route('doctors.update', $doctor->id) }}" method="post">
+            <form action="{{ route('doctors.update', $doctor->id) }}" method="post" enctype="multipart/form-data">
               @csrf
               @method("patch")
 
@@ -111,7 +111,7 @@
 
               <div class="mb-3">
                 <label>Foto profilo</label>
-                <input type="text" name="photo" class="form-control @error('photo') is-invalid @enderror"
+                <input type="file" name="photo" class="form-control @error('photo') is-invalid @enderror"
                   placeholder="Inserisci URL della foto"
                   value="{{ old('photo', $doctor->photo ?? null) }}">
                 @error('photo')

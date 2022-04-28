@@ -9,7 +9,7 @@
         <div class="card mb-3 col-10 col-md-8">
             <div class="row g-0">
               <div class="col-md-4 d-flex align-self-center">
-                <img src="{{$doctor->photo}}" class="img-fluid" alt="..." style="vertical-align:middle;">
+                <img src="{{ asset('storage/' . $doctor->photo) }}" class="img-fluid" alt="..." style="vertical-align:middle;">
               </div>
               <div class="col-md-8">
                 <div class="card-body">

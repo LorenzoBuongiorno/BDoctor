@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Doctor;
 use App\Specialization;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DoctorController extends Controller
 {
@@ -102,9 +103,21 @@ class DoctorController extends Controller
           ]);
 
         // return dump($data);
-           
-        $doctor->update($data);
-        
+        $doctor->update($data); 
+
+          if (key_exists("photo", $data)) {
+            // controllare se a db esiste già un immagine
+            // Se si, PRIMA di caricare quella nuova, cancelliamo quella vecchia
+            if ($doctor->photo) {
+              Storage::delete($doctor->photo);
+            }
+            
+            $photo = Storage::put("doctorsImages", $data["photo"]);
+            
+            $doctor->photo = $photo;
+            
+            $doctor->save();
+          }
         $doctor->save($data);
 
 
