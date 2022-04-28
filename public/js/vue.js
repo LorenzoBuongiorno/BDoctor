@@ -1983,16 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2283,8 +2273,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_TheNavbar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TheNavbar.vue */ "./resources/js/components/TheNavbar.vue");
-/* harmony import */ var _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TheDoctorCard.vue */ "./resources/js/components/TheDoctorCard.vue");
+/* harmony import */ var _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TheDoctorCard.vue */ "./resources/js/components/TheDoctorCard.vue");
 //
 //
 //
@@ -2340,29 +2329,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    TheNavbar: _components_TheNavbar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    TheDoctorCard: _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    TheDoctorCard: _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
       doctors: [],
       city: "",
-      specialization: ""
+      specialization: "",
+      specializations: []
     };
   },
   // end of data
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    // chiamata API per specializzazioni
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specialization").then(function (resp) {
+      _this.specializations = resp.data;
+      console.log(_this.specializations);
+    });
+  },
   methods: {
     search: function search(city, specialization) {
-      var _this = this;
+      var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?city=" + city + "&specialization=" + specialization).then(function (element) {
-        _this.doctors = element.data;
+        _this2.doctors = element.data;
       });
     }
   },
@@ -2394,9 +2408,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_TheNavbar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/TheNavbar.vue */ "./resources/js/components/TheNavbar.vue");
-/* harmony import */ var _components_sendReview_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/sendReview.vue */ "./resources/js/components/sendReview.vue");
-/* harmony import */ var _components_sendMessage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/sendMessage.vue */ "./resources/js/components/sendMessage.vue");
+/* harmony import */ var _components_sendReview_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/sendReview.vue */ "./resources/js/components/sendReview.vue");
+/* harmony import */ var _components_sendMessage_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/sendMessage.vue */ "./resources/js/components/sendMessage.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2504,18 +2517,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    TheNavbar: _components_TheNavbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    SendReview: _components_sendReview_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    SendMessage: _components_sendMessage_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    SendReview: _components_sendReview_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    SendMessage: _components_sendMessage_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -2570,14 +2578,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TheNavbar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/TheNavbar.vue */ "./resources/js/components/TheNavbar.vue");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
 //
 //
 //
 //
 //
 //
-
+//
+ // import router from '../router'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2599,7 +2607,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-653167c5] {\n  width: 400px;\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n}", ""]);
+exports.push([module.i, ".card[data-v-653167c5] {\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n}", ""]);
 
 // exports
 
@@ -2618,7 +2626,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n}", ""]);
+exports.push([module.i, "nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n}\nnav .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\nnav ul li[data-v-eca07cf4] {\n  list-style: none;\n}", ""]);
 
 // exports
 
@@ -2656,7 +2664,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -4677,7 +4685,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mx-auto p-4" }, [
-    _c("div", { staticClass: "card col-xl-4 col-md-6 col-sm-8 col-xs-12" }, [
+    _c("div", { staticClass: "card col-12" }, [
       _c("div", { staticClass: "card-header bg-info text-white text-end" }, [
         _vm._v(_vm._s(_vm.doc.city)),
       ]),
@@ -4750,10 +4758,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "home-container" }, [
+    return _c("div", [
       _c("nav", { staticClass: "navbar navbar-expand-lg navbar-dark" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+        _c("div", { staticClass: "container-fluid mx-4 py-2" }, [
+          _c("a", { staticClass: "navbar-brand fs-2", attrs: { href: "/" } }, [
             _vm._v("BDoctor.it"),
           ]),
           _vm._v(" "),
@@ -4776,34 +4784,35 @@ var staticRenderFns = [
           _c(
             "div",
             {
-              staticClass:
-                "collapse navbar-collapse d-flex justify-content-end",
+              staticClass: "collapse navbar-collapse",
               attrs: { id: "navbarNav" },
             },
             [
-              _c("ul", { staticClass: "navbar-nav ms-5 mt-2" }, [
-                _c("li", { staticClass: "nav-item" }, [
+              _c("ul", { staticClass: "navbar-nav ms-auto" }, [
+                _c("li", { staticClass: "nav-item m-1" }, [
                   _c(
                     "a",
                     {
-                      staticClass: "nav-item active btn orange me-2",
+                      staticClass: "nav-link btn btn-info",
+                      attrs: { href: "/login" },
+                    },
+                    [_vm._v("Accedi")]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item m-1" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link btn orange",
                       attrs: { href: "/register" },
                     },
                     [
-                      _vm._v(" Sei un dottore? "),
+                      _vm._v("Sei un dottore? "),
                       _c("span", { staticClass: "text-white" }, [
                         _vm._v(" Iscriviti! "),
                       ]),
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-outline-info",
-                      attrs: { href: "/login" },
-                    },
-                    [_vm._v(" Accedi ")]
                   ),
                 ]),
               ]),
@@ -5081,117 +5090,171 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "home-container" },
-    [
-      _c("TheNavbar"),
-      _vm._v(" "),
-      _c("div", { staticClass: "main-content" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "jumbotron d-flex justify-content-center align-items-center flex-column py-4",
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "text-search col-lg-6 d-flex flex-column justify-content-center align-items-center",
-              },
-              [
-                _c("p", { staticClass: "fw-normal text-white" }, [
-                  _vm._v("Trova lo specialista che fa per te"),
-                ]),
-                _vm._v(" "),
-                _c("h1", { staticClass: "fw-normal text-white" }, [
-                  _vm._v("Prenota la tua visita"),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "form",
-                  {
-                    staticClass: "text-center p-2",
-                    attrs: { method: "get", action: "/" },
-                  },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.specialization,
-                          expression: "specialization",
-                        },
-                      ],
-                      staticClass: "col-7 rounded",
-                      attrs: {
-                        name: "specialization",
-                        type: "text",
-                        placeholder: "Cardiologo",
+  return _c("div", { staticClass: "home-container" }, [
+    _c("div", { staticClass: "main-content" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "jumbotron d-flex justify-content-center align-items-center flex-column py-4",
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass:
+                "text-search col-lg-8 d-flex flex-column justify-content-center align-items-center",
+            },
+            [
+              _c("p", { staticClass: "fw-normal text-white" }, [
+                _vm._v("Trova lo specialista che fa per te"),
+              ]),
+              _vm._v(" "),
+              _c("h1", { staticClass: "fw-normal text-white" }, [
+                _vm._v("Prenota la tua visita"),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "container my-3" }, [
+                _c("form", { staticClass: "row g-3 align-items-center" }, [
+                  _c("div", { staticClass: "col-12 col-md-6 offset-md-1" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "visually-hidden",
+                        attrs: { for: "inlineFormSelectPref" },
                       },
-                      domProps: { value: _vm.specialization },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.specialization = $event.target.value
-                        },
-                      },
-                    }),
+                      [_vm._v("Preference")]
+                    ),
                     _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.city,
-                          expression: "city",
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.specialization,
+                            expression: "specialization",
+                          },
+                        ],
+                        staticClass: "form-select",
+                        attrs: {
+                          id: "inlineFormSelectPref",
+                          name: "specialization",
                         },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.specialization = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          },
+                        },
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { selected: "" }, domProps: { value: "" } },
+                          [_vm._v("Cerca per specializzazione")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.specializations, function (item) {
+                          return _c(
+                            "option",
+                            {
+                              key: item.id,
+                              domProps: { value: item.specialization },
+                            },
+                            [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(item.specialization) +
+                                  "\n                "
+                              ),
+                            ]
+                          )
+                        }),
                       ],
-                      staticClass: "col-4 rounded",
-                      attrs: {
-                        name: "city",
-                        type: "text",
-                        placeholder: "Roma",
+                      2
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-6 col-md-3" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "visually-hidden",
+                        attrs: { for: "inlineFormInputGroupUsername" },
                       },
-                      domProps: { value: _vm.city },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.city = $event.target.value
+                      [_vm._v("Città")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group" }, [
+                      _c("div", { staticClass: "input-group-text" }, [
+                        _vm._v("Città"),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.city,
+                            expression: "city",
+                          },
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "inlineFormInputGroupUsername",
+                          placeholder: "es. Milano",
+                        },
+                        domProps: { value: _vm.city },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.city = $event.target.value
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-6 col-md-1" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn orange",
+                        attrs: { type: "submit", href: "#search-container" },
+                        on: {
+                          click: function ($event) {
+                            return _vm.search(_vm.city, _vm.specialization)
+                          },
                         },
                       },
-                    }),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "py-2" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn orange",
-                      attrs: { type: "submit", href: "/search" },
-                      on: {
-                        click: function ($event) {
-                          return _vm.search(_vm.city, _vm.specialization)
-                        },
-                      },
-                    },
-                    [_vm._v("\n            Cerca\n          ")]
-                  ),
+                      [_vm._v("\n              Cerca\n            ")]
+                    ),
+                  ]),
                 ]),
-              ]
-            ),
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
+              ]),
+            ]
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container", attrs: { id: "search-container" } },
+        [
           _c("div", { staticClass: "row" }, [
             _c(
               "div",
@@ -5202,11 +5265,10 @@ var render = function () {
               1
             ),
           ]),
-        ]),
-      ]),
-    ],
-    1
-  )
+        ]
+      ),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -5230,132 +5292,125 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("TheNavbar"),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-12 col-md-8 info-container margin-top-nav" },
-            [
-              _c("div", { staticClass: "container " }, [
-                _c("div", { staticClass: "row justify-content-center my-4" }, [
-                  _c("h2", { staticClass: "col-12 title" }, [
-                    _vm._v(
-                      "\n                 " +
-                        _vm._s(_vm.doc.name) +
-                        " " +
-                        _vm._s(_vm.doc.surname) +
-                        "\n              "
-                    ),
-                  ]),
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-md-8 info-container margin-top-nav" },
+          [
+            _c("div", { staticClass: "container " }, [
+              _c("div", { staticClass: "row justify-content-center my-4" }, [
+                _c("h2", { staticClass: "col-12 title" }, [
+                  _vm._v(
+                    "\n                 " +
+                      _vm._s(_vm.doc.name) +
+                      " " +
+                      _vm._s(_vm.doc.surname) +
+                      "\n              "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row my-3" }, [
+                _c("div", { staticClass: "col-12 col-md-6" }, [
+                  _c("img", {
+                    staticClass: "profile-img",
+                    attrs: {
+                      src: _vm.doc.photo
+                        ? _vm.doc.photo
+                        : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
+                      alt: "",
+                    },
+                  }),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "row my-3" }, [
-                  _c("div", { staticClass: "col-12 col-md-6" }, [
-                    _c("img", {
-                      staticClass: "profile-img",
-                      attrs: {
-                        src: _vm.doc.photo
-                          ? _vm.doc.photo
-                          : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-                        alt: "",
-                      },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-12 col-md-4" }, [
-                    _c("table", { staticClass: "table" }, [
-                      _c("tbody", [
-                        _c("tr", [
-                          _vm._m(0),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
-                        ]),
+                _c("div", { staticClass: "col-12 col-md-4" }, [
+                  _c("table", { staticClass: "table" }, [
+                    _c("tbody", [
+                      _c("tr", [
+                        _vm._m(0),
                         _vm._v(" "),
-                        _c("tr", [
-                          _vm._m(1),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
-                        ]),
+                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _vm._m(1),
                         _vm._v(" "),
-                        _c("tr", [
-                          _vm._m(2),
-                          _vm._v(" "),
-                          _c("td", [
-                            _vm._v(
-                              " " +
-                                _vm._s(_vm.doc.address) +
-                                ", " +
-                                _vm._s(_vm.doc.city)
-                            ),
-                          ]),
+                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _vm._m(2),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.doc.address) +
+                              ", " +
+                              _vm._s(_vm.doc.city)
+                          ),
                         ]),
                       ]),
                     ]),
                   ]),
                 ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row my-4 flex-wrap" }, [
-                  _c("div", { staticClass: "col-12" }, [
-                    _c("h4", [
-                      _vm._v(
-                        "\n                  Prestazioni:\n                "
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.doc.medicalService) +
-                          "\n                "
-                      ),
-                    ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row my-4 flex-wrap" }, [
+                _c("div", { staticClass: "col-12" }, [
+                  _c("h4", [
+                    _vm._v(
+                      "\n                  Prestazioni:\n                "
+                    ),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-12 my-4" }, [
-                    _c("h4", [_vm._v("Curriculum:")]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.doc.curriculum) +
-                          "  \n                "
-                      ),
-                    ]),
+                  _c("div", [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.doc.medicalService) +
+                        "\n                "
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 my-4" }, [
+                  _c("h4", [_vm._v("Curriculum:")]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.doc.curriculum) +
+                        "  \n                "
+                    ),
                   ]),
                 ]),
               ]),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-12 col-md-4 interaction-container margin-top-nav",
-            },
-            [
-              _c("send-message", {
-                staticClass: "my-3",
-                attrs: { doctor_id: _vm.doc.id },
-              }),
-              _vm._v(" "),
-              _c("send-review", {
-                staticClass: "my-3",
-                attrs: { doctor_id: _vm.doc.id },
-              }),
-            ],
-            1
-          ),
-        ]),
+            ]),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "col-12 col-md-4 interaction-container margin-top-nav",
+          },
+          [
+            _c("send-message", {
+              staticClass: "my-3",
+              attrs: { doctor_id: _vm.doc.id },
+            }),
+            _vm._v(" "),
+            _c("send-review", {
+              staticClass: "my-3",
+              attrs: { doctor_id: _vm.doc.id },
+            }),
+          ],
+          1
+        ),
       ]),
-    ],
-    1
-  )
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
@@ -5398,7 +5453,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("router-view")
+  return _c("div", [_c("the-navbar"), _vm._v(" "), _c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

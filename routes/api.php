@@ -35,3 +35,4 @@ use App\Http\Controllers\Api\MessageController;
 Route::resource('message', 'Api\messageController');
 Route::resource('doctor', 'Api\DoctorController');
 Route::resource('review', 'Api\ReviewController');
+Route::resource('specialization', 'Api\SpecializationController');
