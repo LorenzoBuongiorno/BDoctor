@@ -17,6 +17,20 @@
               placeholder="Cardiologo"
               v-model="specialization"
             />
+
+            <div class="form-group row mb-3">
+              <div class="col-md-6">
+                <select name="specialization" class="form-select" aria-label="form-select-sm example" >
+
+                    <option disabled selected>Cerca per specializzazione</option>
+                    <option v-for="item in specializations" :key="item.id" value="item.specialization">
+                        {{item.specialization}}
+                    </option>
+                    
+                </select>
+              </div>
+            </div>
+
             <input
               name="city"
               class="col-4 rounded"
@@ -65,13 +79,19 @@ export default {
       doctors: [],
       city: "",
       specialization: "",
+      specializations: [],
     };
   }, // end of data
   mounted() {
-
+    // chiamata API per specializzazioni
+    axios.get("/api/specialization").then((resp) => {
+      this.specializations = resp.data;
+      console.log(this.specializations)
+    });
+    
   },
   methods: {
-    search(city, specialization) {
+    search: function(city, specialization) {
       axios.get("/api/doctor?city=" +
             city +
             "&specialization=" +

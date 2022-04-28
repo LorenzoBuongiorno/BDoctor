@@ -2329,6 +2329,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2339,17 +2353,26 @@ __webpack_require__.r(__webpack_exports__);
     return {
       doctors: [],
       city: "",
-      specialization: ""
+      specialization: "",
+      specializations: []
     };
   },
   // end of data
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    // chiamata API per specializzazioni
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specialization").then(function (resp) {
+      _this.specializations = resp.data;
+      console.log(_this.specializations);
+    });
+  },
   methods: {
     search: function search(city, specialization) {
-      var _this = this;
+      var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?city=" + city + "&specialization=" + specialization).then(function (element) {
-        _this.doctors = element.data;
+        _this2.doctors = element.data;
       });
     }
   },
@@ -5200,6 +5223,46 @@ var render = function () {
                       },
                     },
                   }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row mb-3" }, [
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-select",
+                          attrs: {
+                            name: "specialization",
+                            "aria-label": "form-select-sm example",
+                          },
+                        },
+                        [
+                          _c(
+                            "option",
+                            { attrs: { disabled: "", selected: "" } },
+                            [_vm._v("Cerca per specializzazione")]
+                          ),
+                          _vm._v(" "),
+                          _vm._l(_vm.specializations, function (item) {
+                            return _c(
+                              "option",
+                              {
+                                key: item.id,
+                                attrs: { value: "item.specialization" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                      " +
+                                    _vm._s(item.specialization) +
+                                    "\n                  "
+                                ),
+                              ]
+                            )
+                          }),
+                        ],
+                        2
+                      ),
+                    ]),
+                  ]),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
