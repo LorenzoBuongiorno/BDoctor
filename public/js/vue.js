@@ -2187,6 +2187,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2249,6 +2255,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else if (index <= this.hoverIndex) {
         return 'active';
       }
+    },
+    openModale: function openModale() {
+      document.querySelector(".bg-modale").style.display = "flex";
+    },
+    closeModale: function closeModale() {
+      document.querySelector(".bg-modale").style.display = "none";
     }
   }
 });
@@ -2623,7 +2635,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".message[data-v-4d2a3ae4] {\n  position: relative;\n}\n.bg-modal[data-v-4d2a3ae4] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  display: none;\n  justify-content: center;\n  align-items: center;\n}\n.modal-contents[data-v-4d2a3ae4] {\n  height: 100%;\n  width: 500px;\n  background-color: white;\n  text-align: center;\n  padding: 20px;\n  position: relative;\n  border-radius: 4px;\n  background-color: #3A6EA5;\n  overflow: auto;\n}\n.close[data-v-4d2a3ae4] {\n  width: 190px;\n  margin: 50px auto;\n  bottom: 0;\n  font-size: 14px;\n}", ""]);
+exports.push([module.i, ".message[data-v-4d2a3ae4] {\n  position: relative;\n}\n.bg-modal[data-v-4d2a3ae4] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  display: none;\n  justify-content: center;\n  align-items: center;\n  border-radius: 20pxpx;\n}\n.modal-contents[data-v-4d2a3ae4] {\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  text-align: center;\n  padding: 20px;\n  position: relative;\n  border-radius: 4px;\n  background-color: #3A6EA5;\n  overflow: auto;\n}\n.close[data-v-4d2a3ae4] {\n  width: 190px;\n  margin: 50px auto;\n  bottom: 0;\n  font-size: 14px;\n}", ""]);
 
 // exports
 
@@ -2642,7 +2654,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".review .vote .fa-star[data-v-55b364ea] {\n  font-size: 30px;\n  color: #ccc;\n  cursor: pointer;\n}\n.review .vote .fa-star.active[data-v-55b364ea] {\n  color: rgb(253, 242, 116);\n}\n.review .vote .fa-star.selected[data-v-55b364ea] {\n  color: #ff6700;\n}", ""]);
+exports.push([module.i, ".review[data-v-55b364ea] {\n  position: relative;\n}\n.bg-modale[data-v-55b364ea] {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  display: none;\n  justify-content: center;\n  align-items: center;\n  border-radius: 20px;\n}\n.modale-contents[data-v-55b364ea] {\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  text-align: center;\n  padding: 20px;\n  position: relative;\n  border-radius: 4px;\n  background-color: #3A6EA5;\n  overflow: auto;\n}\n.close[data-v-55b364ea] {\n  width: 190px;\n  margin: 50px auto;\n  bottom: 0;\n  font-size: 14px;\n}\n.vote .fa-star[data-v-55b364ea] {\n  font-size: 30px;\n  color: #ccc;\n  cursor: pointer;\n}\n.vote .fa-star.active[data-v-55b364ea] {\n  color: rgb(253, 242, 116);\n}\n.vote .fa-star.selected[data-v-55b364ea] {\n  color: #ff6700;\n}", ""]);
 
 // exports
 
@@ -4974,10 +4986,10 @@ var render = function () {
     _c(
       "button",
       {
-        staticClass: "btn btn-outline-info my-2",
+        staticClass: "btn btn-outline-info my-2 ms-1",
         on: {
           click: function ($event) {
-            return _vm.openModal()
+            _vm.openModal(), _vm.postMessage()
           },
         },
       },
@@ -4988,12 +5000,10 @@ var render = function () {
       _c("div", { staticClass: "modal-contents" }, [
         _c("h5", [_vm._v("Il tuo messaggio è stato inviato.")]),
         _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
         _c(
           "button",
           {
-            staticClass: "close btn btn-outline-info my-2",
+            staticClass: "close btn btn-outline-info my-2 mt-4",
             on: {
               click: function ($event) {
                 return _vm.closeModal()
@@ -5006,14 +5016,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [_c("ul")])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5120,15 +5123,34 @@ var render = function () {
     _c(
       "button",
       {
-        staticClass: "btn btn-outline-info my-2",
+        staticClass: "btn btn-outline-info my-2 ms-1",
         on: {
           click: function ($event) {
-            return _vm.postReview()
+            _vm.openModale(), _vm.postReview()
           },
         },
       },
       [_vm._v("Invia")]
     ),
+    _vm._v(" "),
+    _c("div", { staticClass: "bg-modale" }, [
+      _c("div", { staticClass: "modale-contents" }, [
+        _c("h5", [_vm._v("La tua recensione è stata inviata.")]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "close btn btn-outline-info my-2 mt-4",
+            on: {
+              click: function ($event) {
+                return _vm.closeModale()
+              },
+            },
+          },
+          [_vm._v("Invia un'altra recensione.")]
+        ),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -5333,7 +5355,12 @@ var render = function () {
                 _c("div", { staticClass: "col-12 col-md-6" }, [
                   _c("img", {
                     staticClass: "profile-img",
-                    attrs: { src: _vm.doc.photo, alt: "" },
+                    attrs: {
+                      src: _vm.doc.photo
+                        ? _vm.doc.photo
+                        : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
+                      alt: "",
+                    },
                   }),
                 ]),
                 _vm._v(" "),
@@ -21479,7 +21506,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\CORSO\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

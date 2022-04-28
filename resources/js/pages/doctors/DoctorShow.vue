@@ -20,7 +20,7 @@
               <!-- img + info -->
               <div class="row my-3">
                 <div class="col-12 col-md-6">
-                  <img class="profile-img" :src="doc.photo" alt="">
+                  <img class="profile-img" :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" alt="">
 
                 </div>
 
