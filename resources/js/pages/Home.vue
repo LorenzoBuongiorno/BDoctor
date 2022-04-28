@@ -1,7 +1,6 @@
 <template>
 
   <div class="home-container">
-    <TheNavbar/>
 
     <!-- jumbotron -->
     <div class="main-content">
@@ -55,12 +54,10 @@
 
 <script>
 import axios from "axios";
-import TheNavbar from "../components/TheNavbar.vue";
 import TheDoctorCard from "../components/TheDoctorCard.vue";
 
 export default {
   components: { 
-    TheNavbar,
     TheDoctorCard 
   }, 
   data() {

@@ -1,8 +1,5 @@
 <template>
   <div>
-
-    <TheNavbar />
-
     <div class="container">
       <div class="row">
 
@@ -104,13 +101,11 @@
 
 <script>
 import axios from "axios";
-import TheNavbar from "../../components/TheNavbar.vue";
 import SendReview from "../../components/sendReview.vue";
 import SendMessage from '../../components/sendMessage.vue';
 
 export default {
   components: { 
-    TheNavbar,
     SendReview,
     SendMessage,
   },
