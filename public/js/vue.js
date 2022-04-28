@@ -2077,6 +2077,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
       newMessage: {
         name: "",
         email: "",
@@ -2097,10 +2098,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 if (this.newMessage.name == '') {
                   alert("Inserire il nome mittente del messaggio");
-                } else if (this.newMessage.email == '') {
-                  alert("Inserire l'email per il messaggio");
                 } else if (this.newMessage.text == '') {
                   alert("Inserire il testo del messaggio");
+                } else if (this.newMessage.email == '') {
+                  alert("Inserire l'E-mail per il messaggio");
+                } else if (!this.reg.test(this.newMessage.email)) {
+                  alert("E-mail non valida");
                 } else {
                   alert("Messaggio inviato!");
                 }
