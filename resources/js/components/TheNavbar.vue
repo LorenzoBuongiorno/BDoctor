@@ -16,11 +16,11 @@
           <span class="navbar-toggler-icon"></span>
           </button>
           <div
-          class="collapse navbar-collapse justify-content-end"
+          class="collapse navbar-collapse d-flex justify-content-end"
           id="navbarNav"
           >
           
-          <ul class="navbar-nav ms-5">
+          <ul class="navbar-nav ms-5 mt-2">
             <li class="nav-item">
             <a class="nav-item active btn orange me-2" href="/register"> Sei un dottore? <span class="text-white"> Iscriviti! </span> </a>
             <a class="btn btn-outline-info" href="/login"> Accedi </a>
@@ -49,31 +49,9 @@ export default {
   }
 
   nav {
-    height: 80px;
     background-color: #3a6ea5;
-  }
-
-  .jumbotron {
-    height: 91.5vh;
-    background-image: url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
-    background-size: cover;
-    background-position: center;
-
-    .text-search {
-      height: 200px;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      background: rgba(0, 0, 0, 0.274);
-
-      input {
-        border: 2px solid orange;
-        // border-radius: 8px;
-        // background: rgba(0, 0, 0, 0.274);
-      }
-    }
+    position: fixed;
+    width: 100%;
   }
 }
 
