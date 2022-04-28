@@ -1940,7 +1940,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     doc: Object
@@ -2324,8 +2323,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -2585,7 +2582,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-653167c5] {\n  width: 400px;\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n  overflow-y: auto;\n}", ""]);
+exports.push([module.i, ".card[data-v-653167c5] {\n  width: 400px;\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n}", ""]);
 
 // exports
 
@@ -2661,7 +2658,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".home-container[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n}\n.home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 91.5vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".home-container .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container nav[data-v-b3c5cf30] {\n  height: 80px;\n  background-color: #3a6ea5;\n}\n.home-container .jumbotron[data-v-b3c5cf30] {\n  height: 91.5vh;\n  background: url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.home-container .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.home-container .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.home-container .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
 
 // exports
 
@@ -4728,18 +4725,13 @@ var render = function () {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("h1", [
+        _c("h3", [
           _vm._v(_vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname)),
         ]),
         _vm._v(" "),
-        _c("h4", [_vm._v(_vm._s(_vm.doc.specialization))]),
+        _c("h5", [_vm._v(_vm._s(_vm.doc.specialization))]),
         _vm._v(" "),
-        _c("h6", [_vm._v(_vm._s(_vm.doc.vote))]),
-        _vm._v(" "),
-        _c("p", {
-          staticClass: "card-text",
-          domProps: { innerHTML: _vm._s(_vm.doc.curriculum) },
-        }),
+        _c("p", [_vm._v(_vm._s(_vm.doc.medicalService))]),
       ]),
       _vm._v(" "),
       _c(
@@ -5160,6 +5152,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "home-container" },
     [
       _c("TheNavbar"),
       _vm._v(" "),
@@ -21477,7 +21470,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/agostinodefelice/Desktop/progetto finale/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })

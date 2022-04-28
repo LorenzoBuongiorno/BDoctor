@@ -1,8 +1,6 @@
 <template>
 
-
-
-  <div>
+  <div class="home-container">
     <TheNavbar/>
 
     <!-- jumbotron -->
@@ -96,45 +94,45 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-    background: rgb(58,110,165);
-    background: linear-gradient(0deg, rgba(58,110,165,1) 65%, rgba(255,255,255,0) 91%);
-  .btn.orange {
-    background-color: #ff6700;
-    color: whitesmoke;
-  }
-
-  nav {
-    height: 80px;
-    background-color: #3a6ea5;
-  }
-
-  .jumbotron {
-    height: 91.5vh;
-    background: linear-gradient(to top, rgba(58,110,165,1) 0%, rgba(255,255,255,0) 15%), url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
-    
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
-    background-size: cover;
-    background-position: center;
-
+    // background: rgb(58,110,165);
+    // background: linear-gradient(0deg, rgba(58,110,165,1) 65%, rgba(255,255,255,0) 91%);
     .btn.orange {
       background-color: #ff6700;
       color: whitesmoke;
     }
 
-    .text-search {
-      height: 200px;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      background: rgba(0, 0, 0, 0.274);
+    nav {
+      height: 80px;
+      background-color: #3a6ea5;
+    }
 
-      input {
-        border: 2px solid orange;
-        // border-radius: 8px;
-        // background: rgba(0, 0, 0, 0.274);
+    .jumbotron {
+      height: 91.5vh;
+      // background: linear-gradient(to top, rgba(58,110,165,1) 0%, rgba(255,255,255,0) 15%);
+      background: url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");
+      // filter: blur(8px);
+      // -webkit-filter: blur(8px);
+      background-size: cover;
+      background-position: center;
+
+      .btn.orange {
+        background-color: #ff6700;
+        color: whitesmoke;
+      }
+
+      .text-search {
+        height: 200px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background: rgba(0, 0, 0, 0.274);
+
+        input {
+          border: 2px solid orange;
+          // border-radius: 8px;
+          // background: rgba(0, 0, 0, 0.274);
+        }
       }
     }
-  }
 }
 </style>

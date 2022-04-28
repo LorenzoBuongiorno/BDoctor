@@ -4,10 +4,9 @@
     <div class="card-header bg-info text-white text-end">{{doc.city}}</div>
     <img :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" class="card-img-top" alt="..."  />
     <div class="card-body">
-      <h1>{{ doc.name }} {{ doc.surname }}</h1>
-      <h4>{{ doc.specialization }}</h4>
-      <h6>{{ doc.vote }}</h6>
-      <p class="card-text" v-html="doc.curriculum"></p>
+      <h3>{{ doc.name }} {{ doc.surname }}</h3>
+      <h5>{{ doc.specialization }}</h5>
+      <p>{{doc.medicalService}}</p>
     </div>
 
     <!-- <button class="btn btn-info text-white text-end">Dettagli dottore ></button> -->
@@ -40,7 +39,6 @@ export default {
 
   .card-body {
     height: 250px;
-    overflow-y: auto;
   }
 
 }
