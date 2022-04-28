@@ -2685,7 +2685,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".container .margin-top-nav[data-v-b4a66780] {\n  margin-top: 60px;\n}\n.container .margin-top-nav .profile-img[data-v-b4a66780] {\n  width: 80%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50px;\n  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;\n}", ""]);
+exports.push([module.i, ".container .margin-top-nav[data-v-b4a66780] {\n  margin-top: 100px;\n}\n.container .margin-top-nav .profile-img[data-v-b4a66780] {\n  width: 80%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 50px;\n  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;\n}", ""]);
 
 // exports
 

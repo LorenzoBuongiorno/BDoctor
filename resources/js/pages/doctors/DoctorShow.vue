@@ -137,7 +137,7 @@ export default {
 <style lang="scss" scoped>
 .container{
   .margin-top-nav{
-    margin-top: 60px;
+    margin-top: 100px;
     .profile-img {
         width: 80%;
         object-fit: cover;
