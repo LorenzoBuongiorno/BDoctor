@@ -6,7 +6,7 @@
         </button>
         @if(Route::has('login'))
         @auth
-        <a class="nav-link text-white d-none d-lg-block d-xl-block" href="/login">
+        <a class="nav-link text-white d-none d-lg-block d-xl-block" href="{{ route('doctors.show', Auth::user()->id) }}">
             Benvenuto Dr. {{ Auth::user()->surname }}!
         </a>
         @endauth
@@ -16,13 +16,6 @@
             <ul class="navbar-nav">
  
                 @auth
-                
-                <li class="nav-item btn">
-                   
-                </li>
-                <li class="nav-item active btn">
-                    <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
-                </li>
                 <li class="nav-item active btn">
                     <a class="nav-link" href="{{ route('doctors.show', Auth::user()->id) }}">Profilo</a>
                 </li>
