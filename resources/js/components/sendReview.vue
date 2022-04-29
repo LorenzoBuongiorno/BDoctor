@@ -1,24 +1,24 @@
 <template>
     <div class="review">
 
-        <h4>
-            Lascia una recensione
-        </h4>
+        <div class="d-flex align-self-center " >
+            <h4 style="color:#ff6600b3;">Lascia una recensione</h4>
 
-        <!-- sistema di voto -->
-        <div class="vote my-3">
-            <i
-            v-for="index in 5"
-            :key="index" 
-            @click="voteStars(index)"
-            @mouseover="mouseOver(index)"
-            @mouseleave="mouseLeave()"
-            class="fa-solid fa-star mx-1"
-            :class="colorStars(index)"
-            >
-            </i>
+            <!-- sistema di voto -->
+            <div class="vote px-2 ms-auto">
+                <i
+                v-for="index in 5"
+                :key="index" 
+                @click="voteStars(index)"
+                @mouseover="mouseOver(index)"
+                @mouseleave="mouseLeave()"
+                class="fa-solid fa-star mx-1"
+                :class="colorStars(index)"
+                >
+                </i>
+            </div>
+            <!-- end of sistema di voto -->
         </div>
-        <!-- end of sistema di voto -->
 
         <div class="form-floating my-1">
             <input type="text" class="form-control" id="floatingInput" placeholder="Nome" v-model="newReview.name">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-floating my-1">
-            <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 200px" v-model="newReview.text"></textarea>
+            <textarea class="form-control" placeholder="Leave a review here" id="floatingTextarea2" style="height: 262px" v-model="newReview.text"></textarea>
             <label for="floatingTextarea2">Scrivi qui la tua recensione...</label>
         </div>
         <button class="btn btn-outline-info my-2 ms-1" @click="postReview()">Invia</button>
@@ -111,7 +111,7 @@ export default {
         .vote {
 
             .fa-star {
-                font-size: 30px;
+                font-size: 15px;
                 color: #ccc;
                 cursor: pointer;
 

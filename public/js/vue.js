@@ -2059,7 +2059,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2522,14 +2521,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2658,7 +2649,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".vote .fa-star[data-v-55b364ea] {\n  font-size: 30px;\n  color: #ccc;\n  cursor: pointer;\n}\n.vote .fa-star.active[data-v-55b364ea] {\n  color: rgb(253, 242, 116);\n}\n.vote .fa-star.selected[data-v-55b364ea] {\n  color: #ff6700;\n}", ""]);
+exports.push([module.i, ".vote .fa-star[data-v-55b364ea] {\n  font-size: 15px;\n  color: #ccc;\n  cursor: pointer;\n}\n.vote .fa-star.active[data-v-55b364ea] {\n  color: rgb(253, 242, 116);\n}\n.vote .fa-star.selected[data-v-55b364ea] {\n  color: #ff6700;\n}", ""]);
 
 // exports
 
@@ -4853,7 +4844,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "message" }, [
-    _c("h4", [_vm._v("Contatta il medico per un appuntamento")]),
+    _c("h4", { staticStyle: { color: "#ff6600b3" } }, [
+      _vm._v("Contatta il medico per un appuntamento"),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-floating my-1" }, [
       _c("input", {
@@ -4981,31 +4974,35 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "review" }, [
-    _c("h4", [_vm._v("\n        Lascia una recensione\n    ")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vote my-3" },
-      _vm._l(5, function (index) {
-        return _c("i", {
-          key: index,
-          staticClass: "fa-solid fa-star mx-1",
-          class: _vm.colorStars(index),
-          on: {
-            click: function ($event) {
-              return _vm.voteStars(index)
+    _c("div", { staticClass: "d-flex align-self-center " }, [
+      _c("h4", { staticStyle: { color: "#ff6600b3" } }, [
+        _vm._v("Lascia una recensione"),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vote px-2 ms-auto" },
+        _vm._l(5, function (index) {
+          return _c("i", {
+            key: index,
+            staticClass: "fa-solid fa-star mx-1",
+            class: _vm.colorStars(index),
+            on: {
+              click: function ($event) {
+                return _vm.voteStars(index)
+              },
+              mouseover: function ($event) {
+                return _vm.mouseOver(index)
+              },
+              mouseleave: function ($event) {
+                return _vm.mouseLeave()
+              },
             },
-            mouseover: function ($event) {
-              return _vm.mouseOver(index)
-            },
-            mouseleave: function ($event) {
-              return _vm.mouseLeave()
-            },
-          },
-        })
-      }),
-      0
-    ),
+          })
+        }),
+        0
+      ),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-floating my-1" }, [
       _c("input", {
@@ -5044,7 +5041,7 @@ var render = function () {
           },
         ],
         staticClass: "form-control",
-        staticStyle: { height: "200px" },
+        staticStyle: { height: "262px" },
         attrs: { placeholder: "Leave a review here", id: "floatingTextarea2" },
         domProps: { value: _vm.newReview.text },
         on: {
@@ -5299,122 +5296,116 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 col-md-8 info-container margin-top-nav" },
-          [
-            _c("div", { staticClass: "container " }, [
-              _c("div", { staticClass: "row justify-content-center my-4" }, [
-                _c("h2", { staticClass: "col-12 title" }, [
-                  _vm._v(
-                    "\n                 " +
-                      _vm._s(_vm.doc.name) +
-                      " " +
-                      _vm._s(_vm.doc.surname) +
-                      "\n              "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row my-3" }, [
-                _c("div", { staticClass: "col-12 col-md-6" }, [
-                  _c("img", {
-                    staticClass: "profile-img",
-                    attrs: {
-                      src: _vm.doc.photo
-                        ? _vm.doc.photo
-                        : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-                      alt: "",
-                    },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-12 col-md-4" }, [
-                  _c("table", { staticClass: "table" }, [
-                    _c("tbody", [
-                      _c("tr", [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
-                      ]),
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 info-container margin-top-nav" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center my-4" }, [
+            _c(
+              "h2",
+              {
+                staticClass: "col-12 fw-bold text-white p-3 mt-2 mb-4",
+                staticStyle: { "background-color": "#ff6600b3" },
+              },
+              [_vm._v(_vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname))]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row my-3" }, [
+            _c("div", { staticClass: "col-12 col-md-8" }, [
+              _c("img", {
+                staticClass: "profile-img",
+                attrs: {
+                  src: _vm.doc.photo
+                    ? _vm.doc.photo
+                    : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
+                  alt: "",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-12 col-md-4 align-self-center py-4" },
+              [
+                _c("table", { staticClass: "table" }, [
+                  _c("tbody", [
+                    _c("tr", [
+                      _vm._m(0),
                       _vm._v(" "),
-                      _c("tr", [
-                        _vm._m(1),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
-                      ]),
+                      _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _vm._m(1),
                       _vm._v(" "),
-                      _c("tr", [
-                        _vm._m(2),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            " " +
-                              _vm._s(_vm.doc.address) +
-                              ", " +
-                              _vm._s(_vm.doc.city)
-                          ),
-                        ]),
+                      _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.doc.address) +
+                            ", " +
+                            _vm._s(_vm.doc.city)
+                        ),
                       ]),
                     ]),
                   ]),
                 ]),
-              ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row py-4 flex-wrap" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("h4", { staticClass: "fw-bold" }, [_vm._v("Prestazioni:")]),
               _vm._v(" "),
-              _c("div", { staticClass: "row my-4 flex-wrap" }, [
-                _c("div", { staticClass: "col-12" }, [
-                  _c("h4", [
-                    _vm._v(
-                      "\n                  Prestazioni:\n                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._v(
-                      "\n                  " +
-                        _vm._s(_vm.doc.medicalService) +
-                        "\n                "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-12 my-4" }, [
-                  _c("h4", [_vm._v("Curriculum:")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._v(
-                      "\n                  " +
-                        _vm._s(_vm.doc.curriculum) +
-                        "  \n                "
-                    ),
-                  ]),
-                ]),
+              _c("div", [
+                _vm._v(
+                  "\n              " +
+                    _vm._s(_vm.doc.medicalService) +
+                    "\n            "
+                ),
               ]),
             ]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-12 col-md-4 interaction-container margin-top-nav",
-          },
-          [
-            _c("send-message", {
-              staticClass: "my-3",
-              attrs: { doctor_id: _vm.doc.id },
-            }),
             _vm._v(" "),
-            _c("send-review", {
-              staticClass: "my-3",
-              attrs: { doctor_id: _vm.doc.id },
-            }),
-          ],
-          1
-        ),
+            _c("div", { staticClass: "col-12 mt-4" }, [
+              _c("h4", { staticClass: "fw-bold" }, [_vm._v("Curriculum:")]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v(
+                  "\n              " +
+                    _vm._s(_vm.doc.curriculum) +
+                    "  \n            "
+                ),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "interaction-container pb-4 d-flex flex-wrap justify-content-between align-items-center",
+            },
+            [
+              _c("send-message", {
+                staticClass: "col-12 col-lg-6 pe-2 pb-2",
+                attrs: { doctor_id: _vm.doc.id },
+              }),
+              _vm._v(" "),
+              _c("send-review", {
+                staticClass: "col-12 col-lg-6 ps-2",
+                attrs: { doctor_id: _vm.doc.id },
+              }),
+            ],
+            1
+          ),
+        ]),
       ]),
     ]),
   ])
@@ -21457,7 +21448,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! /Users/Elisa/Sviluppo/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
 
 
 /***/ })
