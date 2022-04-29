@@ -1,14 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container" style="font-family: Arial, Helvetica, sans-serif;">
+<div class="container">
     <div class="row">
         {{-- TITOLO --}}
-        <div class="d-flex justify-content-center p-4">
-            <div class="col-12">
-                <h1 style="color:#FF6700">I tuoi messaggi</h1>
-            </div>
-        </div>
+        <h2 class="fw-bold text-white p-3 mt-2 mb-4" style="background-color:#ff6600b3;">I tuoi messaggi</h2>
 
         {{-- CORPO PAGINA --}}
         <div class="card-body">
