@@ -3,71 +3,73 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 pb-4">
-        <div class="card">
-          <div class="card-header d-flex">
-              Modifica dati profilo
-          </div>
+  <div class="row justify-content-center">
+    {{-- TITOLO --}}
+    <h2 class="fw-bold text-white p-3 mt-2 mb-4" style="background-color:#ff6600b3;">Modifica il tuo profilo</h2>
 
-          <div class="card-body">
+    {{-- EDIT FORM --}}
+    <div class="col-md-8 pb-4">
+      <div class="card">
+        <div class="card-header d-flex">
+            Modifica dati profilo
+        </div>
 
-            <form action="{{ route('doctors.update', $doctor->id) }}" method="post">
-              @csrf
-              @method("patch")
+        <div class="card-body">
 
-              <div class="mb-3">
-                <label>Nome*</label>
-                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                  placeholder="Inserisci il nome" value="{{ old('name', $doctor->name) }}" required>
-                @error('name')
-                  <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-              </div>
-              <div class="mb-3">
-                <label>Cognome*</label>
-                <input type="text" name="surname" class="form-control @error('surname') is-invalid @enderror"
-                  placeholder="Inserisci il cognome" value="{{ old('name', $doctor->surname) }}" required>
-                @error('surname')
-                  <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-              </div>
+          <form action="{{ route('doctors.update', $doctor->id) }}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method("patch")
 
-              <div class="form-group row mb-3">
-                <label for="specialization" class="col-md-4 col-form-label text-md-right">{{ __('Specializzazione *') }}</label>
-                <div class="col-md-6">
-
-
-                    <p> 
-
-                      <ul class="list-group">
-                      @foreach($specializations as $element)
-                        @if ($doctor->specialization->contains($element))
-                        <li class="list-group-item">
-                          {{$element->specialization}}
-                        </li>
-                        @endif
-                      @endforeach
-                      </ul>
-
-                      <button class="form-select form-select-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Scegli la specializzazione
-                      </button>
-
-                      
-                        <ul class="list-group collapse" id="collapseExample" >
-                          @foreach ($specializations as $element )
-                          <li class="list-group-item">
-                            <input class="form-check-input" type="checkbox" value="{{ $element->id }}"
-                            id="specialization_{{ $element->id }}" name="specializations[]" {{$doctor->specialization->contains($element) ? 'checked' : '' }}>
-                          <label class="form-check-label" for="specialization_{{ $element->id }}">{{ $element->specialization }}</label>
-                          </li>
-                          @endforeach
-                        </ul>
-                    </p>
-                   
-                </div>
+            <div class="mb-3">
+              <label>Nome*</label>
+              <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                placeholder="Inserisci il nome" value="{{ old('name', $doctor->name) }}" required>
+              @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
             </div>
+            <div class="mb-3">
+              <label>Cognome*</label>
+              <input type="text" name="surname" class="form-control @error('surname') is-invalid @enderror"
+                placeholder="Inserisci il cognome" value="{{ old('name', $doctor->surname) }}" required>
+              @error('surname')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
+            </div>
+
+            <div class="form-group row mb-3">
+              <label for="specialization" class="col-md-4 col-form-label text-md-right">{{ __('Specializzazione *') }}</label>
+              <div class="col-md-6">
+
+                <p> 
+
+                  <ul class="list-group">
+                  @foreach($specializations as $element)
+                    @if ($doctor->specialization->contains($element))
+                    <li class="list-group-item">
+                      {{$element->specialization}}
+                    </li>
+                    @endif
+                  @endforeach
+                  </ul>
+
+                  <button class="form-select form-select-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Scegli la specializzazione
+                  </button>
+
+                  
+                    <ul class="list-group collapse" id="collapseExample" >
+                      @foreach ($specializations as $element )
+                      <li class="list-group-item">
+                        <input class="form-check-input" type="checkbox" value="{{ $element->id }}"
+                        id="specialization_{{ $element->id }}" name="specializations[]" {{$doctor->specialization->contains($element) ? 'checked' : '' }}>
+                      <label class="form-check-label" for="specialization_{{ $element->id }}">{{ $element->specialization }}</label>
+                      </li>
+                      @endforeach
+                    </ul>
+                </p>
+                  
+              </div>
 
               <div class="mb-3">
                 <label>Email*</label>
@@ -111,7 +113,7 @@
 
               <div class="mb-3">
                 <label>Foto profilo</label>
-                <input type="text" name="photo" class="form-control @error('photo') is-invalid @enderror"
+                <input type="file" name="photo" class="form-control @error('photo') is-invalid @enderror"
                   placeholder="Inserisci URL della foto"
                   value="{{ old('photo', $doctor->photo ?? null) }}">
                 @error('photo')
@@ -129,7 +131,6 @@
                 @enderror
               </div>
 
-
               <div class="form-group row mb-3">
                 <label for="curriculum" class="col-md-4 col-form-label text-md-right">{{ __('curriculum') }}</label>
 
@@ -141,19 +142,19 @@
                         </span>
                     @enderror
                 </div>
-            </div>
-
-
+              </div>
 
               <div class="form-group">
                 <a href="{{ route('doctors.show', $doctor->id) }}" class="btn orange">Annulla</a>
                 <button type="submit" class="btn btn-primary">Salva</button>
               </div>
-            </form>
-          </div>
+
+            </div>
+          </form>
         </div>
       </div>
     </div>
+
   </div>
     
 @endsection

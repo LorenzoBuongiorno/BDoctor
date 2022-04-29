@@ -1,8 +1,7 @@
 <template>
   <div class="message">
-    <h4>Contatta il medico per un appuntamento</h4>
+    <h4 style="color:#ff6600b3;">Contatta il medico per un appuntamento</h4>
 
-  
 
     <div class="form-floating my-1">
       <input
@@ -37,8 +36,8 @@
       ></textarea>
       <label for="floatingTextarea2">Scrivi qui il tuo messaggio</label>
     </div>
-
-<!-- 
+   
+    <!-- 
     <button class="btn btn-outline-info my-2" @click="postMessage()">Invia</button>
         
 
@@ -48,7 +47,7 @@
 
     <button class="btn btn-outline-info my-2 ms-1" @click="postMessage()">Invia</button>
 
-    </div>
+  </div>
 
 </template>
 

@@ -6,8 +6,8 @@
     <div class="main-content">
       <div class="jumbotron d-flex justify-content-center align-items-center flex-column py-4">
         <div class="text-search col-lg-8 d-flex flex-column justify-content-center align-items-center">
-          <p class="fw-normal text-white">Trova lo specialista che fa per te</p>
-          <h1 class="fw-normal text-white">Prenota la tua visita</h1>
+          <p class="text-white fs-5">Trova lo specialista che fa per te</p>
+          <h1 class="text-white">Prenota la tua visita</h1>
 
           <div class="container my-3">
             <div class="row g-3 align-items-center">
@@ -140,16 +140,16 @@ export default {
 }
 .main-content{
 
-    background: rgb(58,110,165);
+    background: #3a6ea5;
 
     .jumbotron {
         background: linear-gradient(0deg, rgba(58,110,165,1) 65%, rgba(255,255,255,0) 91%);
         height: 100vh;
-        background: linear-gradient(to top, rgba(58,110,165,1) 0%, rgba(255,255,255,0) 15%), url("https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg");  
+        background: linear-gradient(to top, rgba(58,110,165,1) 0%, rgba(255,255,255,0) 15%), url("https://images.unsplash.com/photo-1625134673337-519d4d10b313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2738&q=80");  
         // filter: blur(8px);
         // -webkit-filter: blur(8px);
         background-size: cover;
-        background-position: center;
+        background-position: right;
 
         .btn.orange {
           background-color: #ff6700;
@@ -161,68 +161,13 @@ export default {
           height: 200px;
           border-radius: 20px;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          background: rgba(0, 0, 0, 0.274);
+            0 6px 20px 0 rgba(0, 0, 0, 0.1);
+          background: rgba(0, 0, 0, 0.3);
 
-      }
-    }
-
-    .doctor-list {
-      .row {
-
-        .img-div {
-          border-bottom: #ff6700 3px solid;
-          overflow: hidden;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-
-          &:hover img {
-            transform: scale(1.2);
-            transition: 0.3s;
-          }
-          img {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-          border-top-left-radius: 20px;
-          border-top-right-radius: 20px;
-          cursor: pointer;
-          transition: 0.3s;
-
-          
-        }
-        }
-        
-        .info-card {
-          padding-left: 24px;
-          position: relative;
-          padding-bottom: 5px;
-          border-bottom: 3px #ff6700 solid;
-
-          color: whitesmoke;
-         
-          button {
-            background-color: #ff6700;
-            color: whitesmoke;
-            width: 160px;
-            justify-self: flex-end;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-
-            border-radius: 0px;
-            border-top-right-radius: 15px;
-            border-top-left-radius: 15px;
-
-            transition: 0.3s;
-
-            &:hover {
-            //  background-color: #004e98;
-            //  right: -5px;
-            font-size: 16px;
-            width: 180px;
-             transition: 0.3s;
-            }
+          input {
+            border: 2px solid #ff6700;
+            // border-radius: 8px;
+            // background: rgba(0, 0, 0, 0.274);
           }
           
         }
@@ -230,6 +175,6 @@ export default {
 
       }
     }
-}
+
 
 </style>

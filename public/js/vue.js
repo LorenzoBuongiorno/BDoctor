@@ -2092,7 +2092,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2258,8 +2257,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 this.newReview.name = '';
                 this.newReview.email = '';
                 this.newReview.text = '';
+                this.newReview.vote = '';
+                this.vote = '';
 
-              case 9:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -2573,14 +2574,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2709,7 +2702,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".vote .fa-star[data-v-55b364ea] {\n  font-size: 30px;\n  color: #ccc;\n  cursor: pointer;\n}\n.vote .fa-star.active[data-v-55b364ea] {\n  color: rgb(253, 242, 116);\n}\n.vote .fa-star.selected[data-v-55b364ea] {\n  color: #ff6700;\n}", ""]);
+exports.push([module.i, ".vote .fa-star[data-v-55b364ea] {\n  font-size: 15px;\n  color: #ccc;\n  cursor: pointer;\n}\n.vote .fa-star.active[data-v-55b364ea] {\n  color: rgb(253, 242, 116);\n}\n.vote .fa-star.selected[data-v-55b364ea] {\n  color: #ff6700;\n}", ""]);
 
 // exports
 
@@ -2728,7 +2721,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .doctor-list .row .img-div[data-v-b3c5cf30] {\n  border-bottom: #ff6700 3px solid;\n  overflow: hidden;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n}\n.main-content .doctor-list .row .img-div:hover img[data-v-b3c5cf30] {\n  transform: scale(1.2);\n  transition: 0.3s;\n}\n.main-content .doctor-list .row .img-div img[data-v-b3c5cf30] {\n  width: 100%;\n  height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n.main-content .doctor-list .row .info-card[data-v-b3c5cf30] {\n  padding-left: 24px;\n  position: relative;\n  padding-bottom: 5px;\n  border-bottom: 3px #ff6700 solid;\n  color: whitesmoke;\n}\n.main-content .doctor-list .row .info-card button[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n  width: 160px;\n  justify-self: flex-end;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  border-radius: 0px;\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  transition: 0.3s;\n}\n.main-content .doctor-list .row .info-card button[data-v-b3c5cf30]:hover {\n  font-size: 16px;\n  width: 180px;\n  transition: 0.3s;\n}", ""]);
+exports.push([module.i, ".btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content[data-v-b3c5cf30] {\n  background: #3a6ea5;\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://images.unsplash.com/photo-1625134673337-519d4d10b313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2738&q=80\");\n  background-size: cover;\n  background-position: right;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\n  background: rgba(0, 0, 0, 0.3);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid #ff6700;\n}", ""]);
 
 // exports
 
@@ -4922,7 +4915,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "message" }, [
-    _c("h4", [_vm._v("Contatta il medico per un appuntamento")]),
+    _c("h4", { staticStyle: { color: "#ff6600b3" } }, [
+      _vm._v("Contatta il medico per un appuntamento"),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-floating my-1" }, [
       _c("input", {
@@ -5050,31 +5045,35 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "review" }, [
-    _c("h4", [_vm._v("\n        Lascia una recensione\n    ")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "vote my-3" },
-      _vm._l(5, function (index) {
-        return _c("i", {
-          key: index,
-          staticClass: "fa-solid fa-star mx-1",
-          class: _vm.colorStars(index),
-          on: {
-            click: function ($event) {
-              return _vm.voteStars(index)
+    _c("div", { staticClass: "d-flex align-self-center " }, [
+      _c("h4", { staticStyle: { color: "#ff6600b3" } }, [
+        _vm._v("Lascia una recensione"),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "vote px-2 ms-auto" },
+        _vm._l(5, function (index) {
+          return _c("i", {
+            key: index,
+            staticClass: "fa-solid fa-star mx-1",
+            class: _vm.colorStars(index),
+            on: {
+              click: function ($event) {
+                return _vm.voteStars(index)
+              },
+              mouseover: function ($event) {
+                return _vm.mouseOver(index)
+              },
+              mouseleave: function ($event) {
+                return _vm.mouseLeave()
+              },
             },
-            mouseover: function ($event) {
-              return _vm.mouseOver(index)
-            },
-            mouseleave: function ($event) {
-              return _vm.mouseLeave()
-            },
-          },
-        })
-      }),
-      0
-    ),
+          })
+        }),
+        0
+      ),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "form-floating my-1" }, [
       _c("input", {
@@ -5113,7 +5112,7 @@ var render = function () {
           },
         ],
         staticClass: "form-control",
-        staticStyle: { height: "200px" },
+        staticStyle: { height: "262px" },
         attrs: { placeholder: "Leave a review here", id: "floatingTextarea2" },
         domProps: { value: _vm.newReview.text },
         on: {
@@ -5183,11 +5182,11 @@ var render = function () {
                 "text-search col-lg-8 d-flex flex-column justify-content-center align-items-center",
             },
             [
-              _c("p", { staticClass: "fw-normal text-white" }, [
+              _c("p", { staticClass: "text-white fs-5" }, [
                 _vm._v("Trova lo specialista che fa per te"),
               ]),
               _vm._v(" "),
-              _c("h1", { staticClass: "fw-normal text-white" }, [
+              _c("h1", { staticClass: "text-white" }, [
                 _vm._v("Prenota la tua visita"),
               ]),
               _vm._v(" "),
@@ -5365,122 +5364,116 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 col-md-8 info-container margin-top-nav" },
-          [
-            _c("div", { staticClass: "container " }, [
-              _c("div", { staticClass: "row justify-content-center my-4" }, [
-                _c("h2", { staticClass: "col-12 title" }, [
-                  _vm._v(
-                    "\n                 " +
-                      _vm._s(_vm.doc.name) +
-                      " " +
-                      _vm._s(_vm.doc.surname) +
-                      "\n              "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row my-3" }, [
-                _c("div", { staticClass: "col-12 col-md-6" }, [
-                  _c("img", {
-                    staticClass: "profile-img",
-                    attrs: {
-                      src: _vm.doc.photo
-                        ? _vm.doc.photo
-                        : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-                      alt: "",
-                    },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-12 col-md-4" }, [
-                  _c("table", { staticClass: "table" }, [
-                    _c("tbody", [
-                      _c("tr", [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
-                      ]),
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 info-container margin-top-nav" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row justify-content-center my-4" }, [
+            _c(
+              "h2",
+              {
+                staticClass: "col-12 fw-bold text-white p-3 mt-2 mb-4",
+                staticStyle: { "background-color": "#ff6600b3" },
+              },
+              [_vm._v(_vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname))]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row my-3" }, [
+            _c("div", { staticClass: "col-12 col-md-8" }, [
+              _c("img", {
+                staticClass: "profile-img",
+                attrs: {
+                  src: _vm.doc.photo
+                    ? _vm.doc.photo
+                    : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
+                  alt: "",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-12 col-md-4 align-self-center py-4" },
+              [
+                _c("table", { staticClass: "table" }, [
+                  _c("tbody", [
+                    _c("tr", [
+                      _vm._m(0),
                       _vm._v(" "),
-                      _c("tr", [
-                        _vm._m(1),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
-                      ]),
+                      _c("td", [_vm._v(" " + _vm._s(_vm.doc.email) + " ")]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _vm._m(1),
                       _vm._v(" "),
-                      _c("tr", [
-                        _vm._m(2),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            " " +
-                              _vm._s(_vm.doc.address) +
-                              ", " +
-                              _vm._s(_vm.doc.city)
-                          ),
-                        ]),
+                      _c("td", [_vm._v(" " + _vm._s(_vm.doc.number))]),
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.doc.address) +
+                            ", " +
+                            _vm._s(_vm.doc.city)
+                        ),
                       ]),
                     ]),
                   ]),
                 ]),
-              ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row py-4 flex-wrap" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("h4", { staticClass: "fw-bold" }, [_vm._v("Prestazioni:")]),
               _vm._v(" "),
-              _c("div", { staticClass: "row my-4 flex-wrap" }, [
-                _c("div", { staticClass: "col-12" }, [
-                  _c("h4", [
-                    _vm._v(
-                      "\n                  Prestazioni:\n                "
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._v(
-                      "\n                  " +
-                        _vm._s(_vm.doc.medicalService) +
-                        "\n                "
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-12 my-4" }, [
-                  _c("h4", [_vm._v("Curriculum:")]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _vm._v(
-                      "\n                  " +
-                        _vm._s(_vm.doc.curriculum) +
-                        "  \n                "
-                    ),
-                  ]),
-                ]),
+              _c("div", [
+                _vm._v(
+                  "\n              " +
+                    _vm._s(_vm.doc.medicalService) +
+                    "\n            "
+                ),
               ]),
             ]),
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-12 col-md-4 interaction-container margin-top-nav",
-          },
-          [
-            _c("send-message", {
-              staticClass: "my-3",
-              attrs: { doctor_id: _vm.doc.id },
-            }),
             _vm._v(" "),
-            _c("send-review", {
-              staticClass: "my-3",
-              attrs: { doctor_id: _vm.doc.id },
-            }),
-          ],
-          1
-        ),
+            _c("div", { staticClass: "col-12 mt-4" }, [
+              _c("h4", { staticClass: "fw-bold" }, [_vm._v("Curriculum:")]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v(
+                  "\n              " +
+                    _vm._s(_vm.doc.curriculum) +
+                    "  \n            "
+                ),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "interaction-container pb-4 d-flex flex-wrap justify-content-between align-items-center",
+            },
+            [
+              _c("send-message", {
+                staticClass: "col-12 col-lg-6 pe-2 pb-2",
+                attrs: { doctor_id: _vm.doc.id },
+              }),
+              _vm._v(" "),
+              _c("send-review", {
+                staticClass: "col-12 col-lg-6 ps-2",
+                attrs: { doctor_id: _vm.doc.id },
+              }),
+            ],
+            1
+          ),
+        ]),
       ]),
     ]),
   ])
