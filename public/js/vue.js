@@ -1920,8 +1920,27 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1971,12 +1990,42 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      reviews: [],
       average: 0
     };
   },
   // end of data
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    this.getAverage();
+  },
+  methods: {
+    getAverage: function () {
+      var _getAverage = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _this = this;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/review/".concat(this.doctor.id)).then(function (res) {
+                  _this.average = res.data;
+                });
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getAverage() {
+        return _getAverage.apply(this, arguments);
+      }
+
+      return getAverage;
+    }()
+  }
 });
 
 /***/ }),
@@ -2664,7 +2713,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".row[data-v-653167c5] {\n  height: 200px;\n}\n.row .img-div[data-v-653167c5] {\n  border-bottom: #ff6700 3px solid;\n  overflow: hidden;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  height: 100%;\n}\n.row .img-div:hover img[data-v-653167c5] {\n  transform: scale(1.1);\n  transition: 0.3s;\n}\n.row .img-div img[data-v-653167c5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n.row .info-card[data-v-653167c5] {\n  padding-left: 24px;\n  position: relative;\n  padding-bottom: 5px;\n  border-bottom: 3px #ff6700 solid;\n  color: whitesmoke;\n}\n.row .info-card button[data-v-653167c5] {\n  background-color: #ff6700;\n  color: whitesmoke;\n  width: 160px;\n  justify-self: flex-end;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  border-radius: 0px;\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  transition: 0.3s;\n}\n.row .info-card button[data-v-653167c5]:hover {\n  font-size: 16px;\n  width: 180px;\n  transition: 0.3s;\n}", ""]);
+exports.push([module.i, ".row[data-v-653167c5] {\n  position: relative;\n  height: 200px;\n}\n.row .img-div[data-v-653167c5] {\n  border-bottom: #ff6700 3px solid;\n  overflow: hidden;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  height: 100%;\n}\n.row .img-div:hover img[data-v-653167c5] {\n  transform: scale(1.1);\n  transition: 0.3s;\n}\n.row .img-div img[data-v-653167c5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n.row .info-card[data-v-653167c5] {\n  padding-left: 24px;\n  position: relative;\n  padding-bottom: 5px;\n  border-bottom: 3px #ff6700 solid;\n  color: whitesmoke;\n}\n.row .info-card .stars[data-v-653167c5] {\n  position: absolute;\n  top: 0px;\n  right: 0px;\n}\n.row .info-card .stars .fa-star[data-v-653167c5] {\n  color: rgb(253, 242, 116);\n  font-size: 13px;\n}\n.row .info-card button[data-v-653167c5] {\n  background-color: #ff6700;\n  color: whitesmoke;\n  width: 160px;\n  justify-self: flex-end;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  border-radius: 0px;\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  transition: 0.3s;\n}\n.row .info-card button[data-v-653167c5]:hover {\n  font-size: 16px;\n  width: 180px;\n  transition: 0.3s;\n}", ""]);
 
 // exports
 
@@ -4742,16 +4791,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row justify-content-center" }, [
-    _c("div", { staticClass: "col-10 col-md-3 px-0 img-div" }, [
-      _c("img", {
-        attrs: { src: _vm.doctor.photo, alt: "photo-" + _vm.doctor.surname },
-        on: {
-          click: function ($event) {
-            return _vm.pagePush(_vm.doctor)
-          },
-        },
-      }),
-    ]),
+    _c("div", { staticClass: "col-10 col-md-3 px-0 img-div" }),
     _vm._v(" "),
     _c("div", { staticClass: "col-10 col-md-7 mt-3 px-0" }, [
       _c("div", { staticClass: "h-100 info-card" }, [
@@ -4784,9 +4824,18 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c(
+          "div",
+          { staticClass: "stars" },
+          _vm._l(_vm.average, function (index) {
+            return _c("i", { key: index, staticClass: "fa-solid fa-star mx-1" })
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c(
           "button",
           {
-            staticClass: "btn orange",
+            staticClass: "btn",
             on: {
               click: function ($event) {
                 return _vm.pagePush(_vm.doctor)

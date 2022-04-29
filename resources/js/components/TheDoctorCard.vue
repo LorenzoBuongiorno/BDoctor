@@ -6,9 +6,9 @@
 
             <!-- foto -->
             <div class="col-10 col-md-3 px-0 img-div">
-              <img :src="doctor.photo" :alt="'photo-'+doctor.surname"
+              <!-- <img :src="doctor.photo" :alt="'photo-'+doctor.surname"
               @click="pagePush(doctor)"
-              >
+              > -->
             </div>
 
             <!-- info -->
@@ -26,13 +26,24 @@
                 <div>
                   {{doctor.medicalService}}
                 </div>
+               
+                <div class="stars">
+                    <i
+                    v-for="index in average"
+                    :key="index" 
+                    class="fa-solid fa-star mx-1"
+                    >
+                    </i>
+                </div>
 
                 <button 
-                class="btn orange"
+                class="btn"
                 @click="pagePush(doctor)"
                 >
                   Dettaglio dottore
                 </button>
+              </div>
+
               </div>
             </div>
             <!-- end of info -->
@@ -49,21 +60,31 @@ export default {
   },
   data() {
     return {
-      reviews: [],
       average: 0,
 
     }
   }, // end of data
   mounted() {
 
-  }
+    this.getAverage()
+
+      
+  },
+  methods: {
+    getAverage: async function() {
+       await axios.get(`/api/review/${this.doctor.id}`).then((res) => {
+        this.average = res.data
+      })
+
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
   
       .row {
-
+        position: relative;
         height: 200px;
         .img-div {
           border-bottom: #ff6700 3px solid;
@@ -84,8 +105,6 @@ export default {
           border-top-right-radius: 20px;
           cursor: pointer;
           transition: 0.3s;
-
-          
         }
         }
         
@@ -97,6 +116,17 @@ export default {
 
           color: whitesmoke;
          
+          .stars {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+
+            .fa-star {
+              color: rgb(253, 242, 116);
+              font-size: 13px;
+            }
+          }
+
           button {
             background-color: #ff6700;
             color: whitesmoke;
@@ -120,6 +150,7 @@ export default {
              transition: 0.3s;
             }
           }
+          
           
         }
 

@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Review;
-use App\Doctor;
 use App\Specialization;
 
-class ReviewController extends Controller
+class SpecializationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +16,8 @@ class ReviewController extends Controller
     public function index()
     {
         //
-       
-       
+        $specializations = Specialization::all();
+        return response()->json($specializations);
     }
 
     /**
@@ -31,7 +28,6 @@ class ReviewController extends Controller
     public function create()
     {
         //
-
     }
 
     /**
@@ -43,25 +39,6 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         //
-        $data = $request->validate([
-            "name" => "required",
-            "vote" => "required",
-            "text" => "nullable",
-            "doctor_id" => "required",
-          ]);
-      
-          $newReview = new Review();
-        //   $newReview->fill($data);
-
-          $newReview->name = $data['name'];
-          $newReview->vote = $data['vote'];
-          $newReview->text = $data['text'];
-          $newReview->doctor_id = $data['doctor_id'];
-
-
-          $newReview->save();
-
-          return response()->json($newReview);
     }
 
     /**
@@ -70,17 +47,9 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($doctor_id)
+    public function show($id)
     {
-    
-        $reviews = Review::where('doctor_id', '=', $doctor_id)->get();
-
-        $average = $reviews->avg('vote');
-
-        return response()->json($average);
-        
-
-       
+        //
     }
 
     /**
