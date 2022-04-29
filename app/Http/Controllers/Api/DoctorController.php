@@ -24,21 +24,21 @@ class DoctorController extends Controller
 
         $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
             ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
-            ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
-            ->where('doctors.city','LIKE','%'.$search_city.'%')
+            ->where('specializations.specialization', 'LIKE', '%' . $search_specialization . '%')
+            ->where('doctors.city', 'LIKE', '%' . $search_city . '%')
             ->get();
-            $doctors->each(function ($doctor) {
-                if($doctor->photo) {
-                    $doctor->photo = asset("storage/" . $doctor->photo);
-                } else {
-                    $doctor->photo = "https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png";
-                }
-            });
+        $doctors->each(function ($doctor) {
+            if ($doctor->photo) {
+                $doctor->photo = asset("storage/" . $doctor->photo);
+            } else {
+                $doctor->photo = "https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png";
+            }
+        });
         return response()->json($doctors);
 
         //  $doctors = Doctor::paginate(4);
 
-        
+
         // return response()->json($doctors);
 
     }
@@ -75,7 +75,13 @@ class DoctorController extends Controller
         // $doctor = Doctor::where("id", $id);
         $doctor = Doctor::findOrFail($id);
 
-        $doctor->load("Specialization","Review");
+       
+            if ($doctor->photo) {
+                $doctor->photo = asset("storage/" . $doctor->photo);
+            } else {
+                $doctor->photo = "https://www.logistec.com/wp-content/uploads/2017/12/placeholder.png";
+            }
+        $doctor->load("Specialization", "Review",);
 
         return response()->json($doctor);
     }
@@ -141,13 +147,13 @@ class DoctorController extends Controller
 
 
         $doctors = Specialization::join('doctor_specialization', 'doctor_specialization.specialization_id', '=', 'specializations.id')
-                                ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
-                                ->where('specializations.specialization','LIKE','%'.$search_specialization.'%')
-                                ->where('doctors.city','LIKE','%'.$search_city.'%')
-                                ->where('doctors.medicalService','LIKE','%'.$search_medical.'%')
-                                ->where('doctors.name','LIKE','%'.$search_name.'%')
-                                ->where('doctors.surname','LIKE','%'.$search_surname.'%')
-                                ->get();
+            ->join('doctors', 'doctor_specialization.doctor_id', '=', 'doctors.id')
+            ->where('specializations.specialization', 'LIKE', '%' . $search_specialization . '%')
+            ->where('doctors.city', 'LIKE', '%' . $search_city . '%')
+            ->where('doctors.medicalService', 'LIKE', '%' . $search_medical . '%')
+            ->where('doctors.name', 'LIKE', '%' . $search_name . '%')
+            ->where('doctors.surname', 'LIKE', '%' . $search_surname . '%')
+            ->get();
 
         return response()->json($doctors);
 

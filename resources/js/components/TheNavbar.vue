@@ -34,6 +34,10 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 5;
+ -webkit-box-shadow: 0px 11px 50px -2px #000000;
+-moz-box-shadow: 0px 11px 50px -2px #000000;
+-o-box-shadow: 0px 11px 50px -2px #000000;
+box-shadow: 0px 11px 50px -2px #000000;
     
   .btn.orange {
     background-color: #ff6700;

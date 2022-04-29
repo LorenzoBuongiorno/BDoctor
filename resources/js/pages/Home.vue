@@ -106,11 +106,6 @@ export default {
     
   },
   methods: {
-    pagePush: function(doctor){
-      // <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
-      router.push({ name: 'doctors.show', params: { doc: doctor.id } })
-      // router.push({ name: 'user', params: { username: 'eduardo' } })
-    },
     console: function(test) {
       console.log(test)
     },
@@ -164,11 +159,11 @@ export default {
             0 6px 20px 0 rgba(0, 0, 0, 0.1);
           background: rgba(0, 0, 0, 0.3);
 
-          input {
-            border: 2px solid #ff6700;
-            // border-radius: 8px;
-            // background: rgba(0, 0, 0, 0.274);
-          }
+          // input {
+          //   // border: 2px solid #ff6700;
+          //   // border-radius: 8px;
+          //   // background: rgba(0, 0, 0, 0.274);
+          // }
           
         }
 

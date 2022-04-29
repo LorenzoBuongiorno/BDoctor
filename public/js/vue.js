@@ -1922,6 +1922,7 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
 //
 //
 //
@@ -1965,17 +1966,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     doctor: Object
   },
   data: function data() {
-    return {
-      reviews: [],
-      average: 0
-    };
+    return {};
   },
   // end of data
+  methods: {
+    pagePush: function pagePush() {
+      // <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
+      _router__WEBPACK_IMPORTED_MODULE_1__["default"].push({
+        name: 'doctors.show',
+        params: {
+          doc: this.doctor.id
+        }
+      }); // router.push({ name: 'user', params: { username: 'eduardo' } })
+    }
+  },
   mounted: function mounted() {}
 });
 
@@ -2099,7 +2109,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+      reg: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       newMessage: {
         name: "",
         email: "",
@@ -2415,15 +2425,6 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    pagePush: function pagePush(doctor) {
-      // <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
-      _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
-        name: 'doctors.show',
-        params: {
-          doc: doctor.id
-        }
-      }); // router.push({ name: 'user', params: { username: 'eduardo' } })
-    },
     console: function (_console) {
       function console(_x) {
         return _console.apply(this, arguments);
@@ -2683,7 +2684,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n}\nnav .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\nnav ul li[data-v-eca07cf4] {\n  list-style: none;\n}", ""]);
+exports.push([module.i, "nav[data-v-eca07cf4] {\n  background-color: #3a6ea5;\n  position: fixed;\n  width: 100%;\n  z-index: 5;\n  -o-box-shadow: 0px 11px 50px -2px #000000;\n  box-shadow: 0px 11px 50px -2px #000000;\n}\nnav .btn.orange[data-v-eca07cf4] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\nnav ul li[data-v-eca07cf4] {\n  list-style: none;\n}", ""]);
 
 // exports
 
@@ -2721,7 +2722,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content[data-v-b3c5cf30] {\n  background: #3a6ea5;\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://images.unsplash.com/photo-1625134673337-519d4d10b313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2738&q=80\");\n  background-size: cover;\n  background-position: right;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\n  background: rgba(0, 0, 0, 0.3);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid #ff6700;\n}", ""]);
+exports.push([module.i, ".btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content[data-v-b3c5cf30] {\n  background: #3a6ea5;\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://images.unsplash.com/photo-1625134673337-519d4d10b313?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2738&q=80\");\n  background-size: cover;\n  background-position: right;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\n  background: rgba(0, 0, 0, 0.3);\n}", ""]);
 
 // exports
 
@@ -4789,7 +4790,7 @@ var render = function () {
             staticClass: "btn orange",
             on: {
               click: function ($event) {
-                return _vm.pagePush(_vm.doctor)
+                return _vm.pagePush()
               },
             },
           },
@@ -5383,12 +5384,7 @@ var render = function () {
             _c("div", { staticClass: "col-12 col-md-8" }, [
               _c("img", {
                 staticClass: "profile-img",
-                attrs: {
-                  src: _vm.doc.photo
-                    ? _vm.doc.photo
-                    : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-                  alt: "",
-                },
+                attrs: { src: _vm.doc.photo, alt: "" },
               }),
             ]),
             _vm._v(" "),
@@ -21516,7 +21512,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/agostinodefelice/Desktop/progetto finale/BDoctor/resources/js/vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\ermax\Boolean\BDoctor\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

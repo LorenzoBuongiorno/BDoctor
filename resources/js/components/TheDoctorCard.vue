@@ -29,7 +29,7 @@
 
                 <button 
                 class="btn orange"
-                @click="pagePush(doctor)"
+                @click="pagePush()"
                 >
                   Dettaglio dottore
                 </button>
@@ -42,6 +42,7 @@
 
 <script>
 import axios from "axios";
+import router from '../router';
 
 export default {
   props: { 
@@ -49,11 +50,17 @@ export default {
   },
   data() {
     return {
-      reviews: [],
-      average: 0,
 
     }
   }, // end of data
+  methods:{
+    pagePush: function(){
+      // <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
+      router.push({ name: 'doctors.show', params: { doc: this.doctor.id } })
+      // router.push({ name: 'user', params: { username: 'eduardo' } })
+    },
+
+  },
   mounted() {
 
   }
