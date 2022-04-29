@@ -54,14 +54,21 @@
       </div>
       <!-- end of jumbotron -->
 
-      <!-- doctors list -->
-      <div class="container" id="search-container">
-          <div class="row">
-              <div class="d-flex flex-wrap">
-              <TheDoctorCard v-for="doc in filteredDoc" :key="doc.id" :doc="doc" />
-              </div>
-          </div>
+      <!-- doctor list -->
+      <div class="d-flex flex-column doctor-list">
+       
+        <div class="container py-3"
+        v-for="doctor in filteredDoc"
+        :key="doctor.id"
+        >
+          <the-doctor-card
+          :doctor="doctor"
+          />
+
+        </div>
       </div>
+      <!-- end of doctor list -->
+
     </div>
 
   </div> 
@@ -70,6 +77,7 @@
 </template>
 
 <script>
+import router from '../router';
 import axios from "axios";
 import TheDoctorCard from "../components/TheDoctorCard.vue";
 
@@ -83,6 +91,8 @@ export default {
       city: "",
       specialization: "",
       specializations: [],
+      reviews: [],
+      averageVote: '',
     };
   }, // end of data
   mounted() {
@@ -91,9 +101,16 @@ export default {
       this.specializations = resp.data;
       console.log(this.specializations)
     });
+
+    
     
   },
   methods: {
+    pagePush: function(doctor){
+      // <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
+      router.push({ name: 'doctors.show', params: { doc: doctor.id } })
+      // router.push({ name: 'user', params: { username: 'eduardo' } })
+    },
     console: function(test) {
       console.log(test)
     },
@@ -116,6 +133,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.btn.orange {
+  background-color: #ff6700;
+  color: whitesmoke;        
+}
 .main-content{
 
     background: rgb(58,110,165);
@@ -132,6 +154,7 @@ export default {
         .btn.orange {
           background-color: #ff6700;
           color: whitesmoke;
+
         }
 
         .text-search {
@@ -141,11 +164,70 @@ export default {
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
           background: rgba(0, 0, 0, 0.274);
 
-          input {
-            border: 2px solid orange;
-            // border-radius: 8px;
-            // background: rgba(0, 0, 0, 0.274);
+      }
+    }
+
+    .doctor-list {
+      .row {
+
+        .img-div {
+          border-bottom: #ff6700 3px solid;
+          overflow: hidden;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+
+          &:hover img {
+            transform: scale(1.2);
+            transition: 0.3s;
           }
+          img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+
+          
+        }
+        }
+        
+        .info-card {
+          padding-left: 24px;
+          position: relative;
+          padding-bottom: 5px;
+          border-bottom: 3px #ff6700 solid;
+
+          color: whitesmoke;
+         
+          button {
+            background-color: #ff6700;
+            color: whitesmoke;
+            width: 160px;
+            justify-self: flex-end;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            border-radius: 0px;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+
+            transition: 0.3s;
+
+            &:hover {
+            //  background-color: #004e98;
+            //  right: -5px;
+            font-size: 16px;
+            width: 180px;
+             transition: 0.3s;
+            }
+          }
+          
+        }
+
+
       }
     }
 }

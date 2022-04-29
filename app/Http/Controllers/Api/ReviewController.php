@@ -19,6 +19,8 @@ class ReviewController extends Controller
     public function index()
     {
         //
+       
+       
     }
 
     /**
@@ -59,7 +61,6 @@ class ReviewController extends Controller
 
           $newReview->save();
 
-          return var_dump($newReview);
           return response()->json($newReview);
     }
 
@@ -69,9 +70,14 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($doctor_id)
     {
-        //
+    
+        $reviews = Review::where('doctor_id', '=', $doctor_id);
+
+        return response()->json($reviews);
+
+       
     }
 
     /**

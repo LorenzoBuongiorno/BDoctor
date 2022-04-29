@@ -1,45 +1,129 @@
 <template>
-<div class="mx-auto p-4">
-  <div class="card col-12">
-    <div class="card-header bg-info text-white text-end">{{doc.city}}</div>
-    <img :src="doc.photo ? doc.photo : 'https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png'" class="card-img-top" alt="..."  />
-    <div class="card-body">
-      <h3>{{ doc.name }} {{ doc.surname }}</h3>
-      <h5>{{ doc.specialization }}</h5>
-      <p>{{doc.medicalService}}</p>
-    </div>
+ <!-- new doctor list -->
+      
 
-    <!-- <button class="btn btn-info text-white text-end">Dettagli dottore ></button> -->
-    <div class="btn btn-ouline-info text-white text-end p-2">
-      <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
-    </div>
-  </div>
+          <div class="row justify-content-center">
 
-</div>
+            <!-- foto -->
+            <div class="col-10 col-md-3 px-0 img-div">
+              <img :src="doctor.photo" :alt="'photo-'+doctor.surname"
+              @click="pagePush(doctor)"
+              >
+            </div>
+
+            <!-- info -->
+            <div class="col-10 col-md-7 mt-3 px-0">
+              <div class="h-100 info-card">
+                <h3 class="">
+                  {{doctor.name}} {{doctor.surname}}
+                </h3>
+
+                <h5>
+                  {{doctor.specialization}}
+                </h5>
+
+                <div>Prestazioni:</div>
+                <div>
+                  {{doctor.medicalService}}
+                </div>
+
+                <button 
+                class="btn orange"
+                @click="pagePush(doctor)"
+                >
+                  Dettaglio dottore
+                </button>
+              </div>
+            </div>
+            <!-- end of info -->
+    
+          </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props: { 
-    doc: Object 
+    doctor: Object 
   },
+  data() {
+    return {
+      reviews: [],
+      average: 0,
+
+    }
+  }, // end of data
+  mounted() {
+
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.card {
-  // width: 400px;
-  height: 500px;
+  
+      .row {
 
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 280px; 
-  }
+        height: 200px;
+        .img-div {
+          border-bottom: #ff6700 3px solid;
+          overflow: hidden;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          height: 100%;
 
-  .card-body {
-    height: 250px;
-  }
+          &:hover img {
+            transform: scale(1.1);
+            transition: 0.3s;
+          }
+          img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          cursor: pointer;
+          transition: 0.3s;
 
-}
+          
+        }
+        }
+        
+        .info-card {
+          padding-left: 24px;
+          position: relative;
+          padding-bottom: 5px;
+          border-bottom: 3px #ff6700 solid;
+
+          color: whitesmoke;
+         
+          button {
+            background-color: #ff6700;
+            color: whitesmoke;
+            width: 160px;
+            justify-self: flex-end;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            border-radius: 0px;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+
+            transition: 0.3s;
+
+            &:hover {
+            //  background-color: #004e98;
+            //  right: -5px;
+            font-size: 16px;
+            width: 180px;
+             transition: 0.3s;
+            }
+          }
+          
+        }
+
+
+      }
+    
 </style>

@@ -1920,6 +1920,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1940,10 +1942,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    doc: Object
-  }
+    doctor: Object
+  },
+  data: function data() {
+    return {
+      reviews: [],
+      average: 0
+    };
+  },
+  // end of data
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2271,9 +2304,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TheDoctorCard.vue */ "./resources/js/components/TheDoctorCard.vue");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TheDoctorCard.vue */ "./resources/js/components/TheDoctorCard.vue");
 //
 //
 //
@@ -2345,18 +2379,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    TheDoctorCard: _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    TheDoctorCard: _components_TheDoctorCard_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
       doctors: [],
       city: "",
       specialization: "",
-      specializations: []
+      specializations: [],
+      reviews: [],
+      averageVote: ''
     };
   },
   // end of data
@@ -2364,12 +2408,21 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // chiamata API per specializzazioni
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/specialization").then(function (resp) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/specialization").then(function (resp) {
       _this.specializations = resp.data;
       console.log(_this.specializations);
     });
   },
   methods: {
+    pagePush: function pagePush(doctor) {
+      // <router-link :to=" { name: 'doctors.show', params: { doc: doc.id } }">Dettagli medico</router-link>
+      _router__WEBPACK_IMPORTED_MODULE_0__["default"].push({
+        name: 'doctors.show',
+        params: {
+          doc: doctor.id
+        }
+      }); // router.push({ name: 'user', params: { username: 'eduardo' } })
+    },
     console: function (_console) {
       function console(_x) {
         return _console.apply(this, arguments);
@@ -2386,7 +2439,7 @@ __webpack_require__.r(__webpack_exports__);
     search: function search(city, specialization) {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/doctor?city=" + city + "&specialization=" + specialization).then(function (element) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/doctor?city=" + city + "&specialization=" + specialization).then(function (element) {
         _this2.doctors = element.data;
       });
     }
@@ -2618,7 +2671,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card[data-v-653167c5] {\n  height: 500px;\n}\n.card img[data-v-653167c5] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  height: 280px;\n}\n.card .card-body[data-v-653167c5] {\n  height: 250px;\n}", ""]);
+exports.push([module.i, ".row[data-v-653167c5] {\n  height: 200px;\n}\n.row .img-div[data-v-653167c5] {\n  border-bottom: #ff6700 3px solid;\n  overflow: hidden;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  height: 100%;\n}\n.row .img-div:hover img[data-v-653167c5] {\n  transform: scale(1.1);\n  transition: 0.3s;\n}\n.row .img-div img[data-v-653167c5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n.row .info-card[data-v-653167c5] {\n  padding-left: 24px;\n  position: relative;\n  padding-bottom: 5px;\n  border-bottom: 3px #ff6700 solid;\n  color: whitesmoke;\n}\n.row .info-card button[data-v-653167c5] {\n  background-color: #ff6700;\n  color: whitesmoke;\n  width: 160px;\n  justify-self: flex-end;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  border-radius: 0px;\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  transition: 0.3s;\n}\n.row .info-card button[data-v-653167c5]:hover {\n  font-size: 16px;\n  width: 180px;\n  transition: 0.3s;\n}", ""]);
 
 // exports
 
@@ -2675,7 +2728,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .jumbotron .text-search input[data-v-b3c5cf30] {\n  border: 2px solid orange;\n}", ""]);
+exports.push([module.i, ".btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content[data-v-b3c5cf30] {\n  background: rgb(58, 110, 165);\n}\n.main-content .jumbotron[data-v-b3c5cf30] {\n  background: linear-gradient(0deg, rgb(58, 110, 165) 65%, rgba(255, 255, 255, 0) 91%);\n  height: 100vh;\n  background: linear-gradient(to top, rgb(58, 110, 165) 0%, rgba(255, 255, 255, 0) 15%), url(\"https://www.juniordoctors.eu/themes/custom/ejd/images/ejd-home-header.jpg\");\n  background-size: cover;\n  background-position: center;\n}\n.main-content .jumbotron .btn.orange[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n}\n.main-content .jumbotron .text-search[data-v-b3c5cf30] {\n  height: 200px;\n  border-radius: 20px;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  background: rgba(0, 0, 0, 0.274);\n}\n.main-content .doctor-list .row .img-div[data-v-b3c5cf30] {\n  border-bottom: #ff6700 3px solid;\n  overflow: hidden;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n}\n.main-content .doctor-list .row .img-div:hover img[data-v-b3c5cf30] {\n  transform: scale(1.2);\n  transition: 0.3s;\n}\n.main-content .doctor-list .row .img-div img[data-v-b3c5cf30] {\n  width: 100%;\n  height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-top-left-radius: 20px;\n  border-top-right-radius: 20px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n.main-content .doctor-list .row .info-card[data-v-b3c5cf30] {\n  padding-left: 24px;\n  position: relative;\n  padding-bottom: 5px;\n  border-bottom: 3px #ff6700 solid;\n  color: whitesmoke;\n}\n.main-content .doctor-list .row .info-card button[data-v-b3c5cf30] {\n  background-color: #ff6700;\n  color: whitesmoke;\n  width: 160px;\n  justify-self: flex-end;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  border-radius: 0px;\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  transition: 0.3s;\n}\n.main-content .doctor-list .row .info-card button[data-v-b3c5cf30]:hover {\n  font-size: 16px;\n  width: 180px;\n  transition: 0.3s;\n}", ""]);
 
 // exports
 
@@ -4695,48 +4748,61 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mx-auto p-4" }, [
-    _c("div", { staticClass: "card col-12" }, [
-      _c("div", { staticClass: "card-header bg-info text-white text-end" }, [
-        _vm._v(_vm._s(_vm.doc.city)),
-      ]),
-      _vm._v(" "),
+  return _c("div", { staticClass: "row justify-content-center" }, [
+    _c("div", { staticClass: "col-10 col-md-3 px-0 img-div" }, [
       _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: _vm.doc.photo
-            ? _vm.doc.photo
-            : "https://blumagnolia.ch/wp-content/uploads/2021/05/placeholder-126.png",
-          alt: "...",
+        attrs: { src: _vm.doctor.photo, alt: "photo-" + _vm.doctor.surname },
+        on: {
+          click: function ($event) {
+            return _vm.pagePush(_vm.doctor)
+          },
         },
       }),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("h3", [
-          _vm._v(_vm._s(_vm.doc.name) + " " + _vm._s(_vm.doc.surname)),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-10 col-md-7 mt-3 px-0" }, [
+      _c("div", { staticClass: "h-100 info-card" }, [
+        _c("h3", {}, [
+          _vm._v(
+            "\n                 " +
+              _vm._s(_vm.doctor.name) +
+              " " +
+              _vm._s(_vm.doctor.surname) +
+              "\n               "
+          ),
         ]),
         _vm._v(" "),
-        _c("h5", [_vm._v(_vm._s(_vm.doc.specialization))]),
+        _c("h5", [
+          _vm._v(
+            "\n                 " +
+              _vm._s(_vm.doctor.specialization) +
+              "\n               "
+          ),
+        ]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.doc.medicalService))]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "btn btn-ouline-info text-white text-end p-2" },
-        [
-          _c(
-            "router-link",
-            {
-              attrs: {
-                to: { name: "doctors.show", params: { doc: _vm.doc.id } },
+        _c("div", [_vm._v("Prestazioni:")]),
+        _vm._v(" "),
+        _c("div", [
+          _vm._v(
+            "\n                 " +
+              _vm._s(_vm.doctor.medicalService) +
+              "\n               "
+          ),
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn orange",
+            on: {
+              click: function ($event) {
+                return _vm.pagePush(_vm.doctor)
               },
             },
-            [_vm._v("Dettagli medico")]
-          ),
-        ],
-        1
-      ),
+          },
+          [_vm._v("\n                 Dettaglio dottore\n               ")]
+        ),
+      ]),
     ]),
   ])
 }
@@ -5263,19 +5329,16 @@ var render = function () {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "container", attrs: { id: "search-container" } },
-        [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "d-flex flex-wrap" },
-              _vm._l(_vm.filteredDoc, function (doc) {
-                return _c("TheDoctorCard", { key: doc.id, attrs: { doc: doc } })
-              }),
-              1
-            ),
-          ]),
-        ]
+        { staticClass: "d-flex flex-column doctor-list" },
+        _vm._l(_vm.filteredDoc, function (doctor) {
+          return _c(
+            "div",
+            { key: doctor.id, staticClass: "container py-3" },
+            [_c("the-doctor-card", { attrs: { doctor: doctor } })],
+            1
+          )
+        }),
+        0
       ),
     ]),
   ])
